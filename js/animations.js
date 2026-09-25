@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 1. Intersection Observer for Scroll Reveals
 function initScrollReveal() {
-  const reveals = document.querySelectorAll('.reveal');
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   if (!reveals.length) return;
 
   const observerOptions = {

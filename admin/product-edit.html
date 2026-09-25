@@ -62,78 +62,66 @@
     </header>
 
     <div class="admin-content">
-      <div class="admin-card" style="padding: 32px; max-width: 900px;">
+      <div class="admin-card" style="padding: 32px; max-width: 800px; margin: 0 auto;">
         <form id="product-edit-form">
-          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
-            <div class="admin-form-group">
-              <label for="prod-id">Product ID</label>
-              <input type="text" id="prod-id" class="admin-input" required>
-            </div>
-            <div class="admin-form-group">
-              <label for="prod-title">Product Title</label>
-              <input type="text" id="prod-title" class="admin-input" required placeholder="e.g. Segmental Launching Gantry">
-            </div>
-          </div>
+          <!-- Hidden Auto-Generated Fields -->
+          <input type="hidden" id="prod-id">
+          <input type="hidden" id="prod-slug">
+          <input type="hidden" id="prod-image">
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div class="admin-form-group">
-              <label for="prod-slug">URL Slug</label>
-              <input type="text" id="prod-slug" class="admin-input" placeholder="segmental-launching-gantry">
-            </div>
-            <div class="admin-form-group">
-              <label for="prod-category">Category</label>
-              <select id="prod-category" class="admin-select" required></select>
-            </div>
-          </div>
-
+          <!-- 1. Product Title -->
           <div class="admin-form-group">
-            <label for="prod-shortDesc">Short Description (for Cards & Previews)</label>
-            <textarea id="prod-shortDesc" class="admin-textarea" style="min-height:70px;" required></textarea>
+            <label for="prod-title" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Product Title *</label>
+            <input type="text" id="prod-title" class="admin-input" required placeholder="e.g. Pre-Engineered Steel Warehouse Building" style="font-size:1rem; padding:12px 14px;">
           </div>
 
+          <!-- 2. Category -->
           <div class="admin-form-group">
-            <label for="prod-desc">Full Detailed Description</label>
-            <textarea id="prod-desc" class="admin-textarea" style="min-height:140px;" required></textarea>
+            <label for="prod-category" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Category *</label>
+            <select id="prod-category" class="admin-select" required style="font-size:0.95rem; padding:11px 14px;"></select>
           </div>
 
+          <!-- 3. Image (File Upload) -->
           <div class="admin-form-group">
-            <label for="prod-image">Cover Image URL (Direct link or upload path)</label>
-            <input type="text" id="prod-image" class="admin-input" required placeholder="https://images.unsplash.com/...">
-          </div>
-
-          <div class="admin-form-group">
-            <label for="prod-features">Key Engineering Features (One per line)</label>
-            <textarea id="prod-features" class="admin-textarea" placeholder="Feature 1&#10;Feature 2&#10;Feature 3"></textarea>
-          </div>
-
-          <div class="admin-form-group">
-            <label for="prod-specs">Specifications Matrix (JSON format key-value pairs)</label>
-            <textarea id="prod-specs" class="admin-textarea" style="font-family:monospace; font-size:0.85rem;" placeholder='{ "Capacity": "1,800 MT", "Span": "60m" }'></textarea>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items:center;">
-            <div class="admin-form-group">
-              <label for="prod-status">Status</label>
-              <select id="prod-status" class="admin-select">
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-              </select>
+            <label style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Product Image *</label>
+            
+            <!-- Image Live Preview Box -->
+            <div id="image-preview-container" style="display:none; margin-bottom:12px;">
+              <div style="position:relative; display:inline-block;">
+                <img id="image-preview" src="" alt="Product Preview" style="max-height:220px; max-width:100%; border-radius:8px; object-fit:cover; border:1px solid #CBD5E1; display:block; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                <button type="button" id="btn-remove-image" style="position:absolute; top:8px; right:8px; background:rgba(220,38,38,0.92); color:#fff; border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; font-weight:bold; font-size:16px; line-height:1; display:flex; align-items:center; justify-content:center;" title="Remove image">&times;</button>
+              </div>
+              <div style="margin-top:10px;">
+                <button type="button" class="btn-admin btn-admin-outline" id="btn-change-image" style="padding:6px 14px; font-size:0.85rem;">
+                  📁 Change Image
+                </button>
+              </div>
             </div>
-            <div class="admin-form-group">
-              <label for="prod-displayOrder">Display Order</label>
-              <input type="number" id="prod-displayOrder" class="admin-input" value="1">
+
+            <!-- Upload Dropzone -->
+            <div id="upload-dropzone" style="border: 2px dashed #0067B1; border-radius: 8px; padding: 32px 20px; text-align: center; background: #F8FAFC; cursor: pointer; transition: all 0.2s;">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0067B1" stroke-width="2" style="margin: 0 auto 12px; display:block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              <div style="font-weight: 700; color: #0F172A; font-size: 1rem; margin-bottom: 6px;">Click to select an image from your computer / phone</div>
+              <div style="font-size: 0.825rem; color: #64748B;">Supports JPG, PNG, WEBP (automatically optimized)</div>
             </div>
-            <div class="admin-form-group" style="margin-top:16px;">
-              <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
-                <input type="checkbox" id="prod-featured" style="width:18px; height:18px;">
-                <span>Featured Product</span>
-              </label>
-            </div>
+            <input type="file" id="prod-image-file" accept="image/*" style="display: none;">
           </div>
 
-          <div style="display: flex; gap: 14px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--admin-border);">
-            <button type="submit" class="btn-admin btn-admin-primary">Save Product</button>
-            <a href="products.html" class="btn-admin btn-admin-outline">Cancel</a>
+          <!-- 4. Short Description -->
+          <div class="admin-form-group">
+            <label for="prod-shortDesc" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Short Description * <span style="font-weight:400; color:#64748B; font-size:0.85rem;">(Summary for product cards & catalog listings)</span></label>
+            <textarea id="prod-shortDesc" class="admin-textarea" style="min-height:85px; font-size:0.95rem; line-height:1.6;" required placeholder="Brief 1-2 sentence summary of this product..."></textarea>
+          </div>
+
+          <!-- 5. Full Detailed Description -->
+          <div class="admin-form-group">
+            <label for="prod-desc" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Full Detailed Description *</label>
+            <textarea id="prod-desc" class="admin-textarea" style="min-height:160px; font-size:0.95rem; line-height:1.6;" required placeholder="Detailed information about design, applications, capacities, and engineering details..."></textarea>
+          </div>
+
+          <div style="display: flex; gap: 14px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--admin-border);">
+            <button type="submit" class="btn-admin btn-admin-primary" style="padding:10px 24px; font-size:0.95rem;">Save Product</button>
+            <a href="products.html" class="btn-admin btn-admin-outline" style="padding:10px 20px; font-size:0.95rem;">Cancel</a>
           </div>
         </form>
       </div>
