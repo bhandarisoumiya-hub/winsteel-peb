@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Facilities | Winsteel Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/logo/winsteel-logo.png" alt="Winsteel Logo" class="sidebar-logo">
+      <div class="sidebar-title-group">
+        <span class="sidebar-title">Winsteel</span>
+        <span class="sidebar-subtitle">Admin Panel</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+      <li class="nav-section-title">Content</li>
+      <li><a href="products.html" class="sidebar-link">Products</a></li>
+      <li><a href="projects.html" class="sidebar-link">Projects</a></li>
+      <li><a href="facilities.html" class="sidebar-link active">Facilities</a></li>
+      <li><a href="strengths.html" class="sidebar-link">Strengths</a></li>
+      <li><a href="certificates.html" class="sidebar-link">Certificates</a></li>
+      <li><a href="clients.html" class="sidebar-link">Clients</a></li>
+      <li><a href="news.html" class="sidebar-link">News & Media</a></li>
+      <li class="nav-section-title">Website</li>
+      <li><a href="categories.html" class="sidebar-link">Categories</a></li>
+      <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="#" class="btn-sidebar-logout">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="topbar-toggle-sidebar" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="topbar-page-title">Manufacturing Facilities</h1>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="btn-add-facility" class="btn-admin btn-admin-primary">+ Add Facility</button>
+        <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="admin-card">
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Facility Bay / Unit</th>
+                <th>Capacity</th>
+                <th>Covered Area</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-facilities-table-body">
+              <tr><td colspan="6" style="text-align:center; padding:30px;">Loading facilities...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Facility Modal -->
+  <div id="facility-modal" style="display:none; position:fixed; inset:0; background:rgba(7,21,34,0.8); z-index:999; align-items:center; justify-content:center; padding:20px;">
+    <div style="background:#FFF; border-radius:8px; max-width:640px; width:100%; padding:30px; max-height:90vh; overflow-y:auto;">
+      <h2 id="fac-modal-title" style="font-size:1.3rem; margin-bottom:20px; color:#071522;">Add Facility</h2>
+      <form id="facility-form">
+        <input type="hidden" id="fac-id">
+        <div class="admin-form-group">
+          <label>Facility Name</label>
+          <input type="text" id="fac-title" class="admin-input" required placeholder="e.g. Heavy Fabrication Bay 1">
+        </div>
+        <div class="admin-form-group">
+          <label>Description</label>
+          <textarea id="fac-desc" class="admin-textarea" style="min-height:80px;" required></textarea>
+        </div>
+        <div class="admin-form-group">
+          <label>Image URL</label>
+          <input type="text" id="fac-image" class="admin-input" required placeholder="https://images.unsplash.com/...">
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="admin-form-group">
+            <label>Capacity</label>
+            <input type="text" id="fac-capacity" class="admin-input" placeholder="e.g. 2,500 MT / month">
+          </div>
+          <div class="admin-form-group">
+            <label>Covered Area</label>
+            <input type="text" id="fac-area" class="admin-input" placeholder="e.g. 120,000 Sq. Ft.">
+          </div>
+        </div>
+        <div class="admin-form-group">
+          <label>Key Equipment</label>
+          <input type="text" id="fac-equipment" class="admin-input" placeholder="e.g. Demag Cranes, Messer CNC Oxy-Fuel">
+        </div>
+        <div class="admin-form-group">
+          <label>Status</label>
+          <select id="fac-status" class="admin-select">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:20px;">
+          <button type="button" id="close-fac-modal" class="btn-admin btn-admin-outline">Cancel</button>
+          <button type="submit" class="btn-admin btn-admin-primary">Save Facility</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+  <script src="js/facilities.js"></script>
+</body>
+</html>

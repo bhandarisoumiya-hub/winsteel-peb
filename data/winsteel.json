@@ -1,0 +1,942 @@
+{
+  "categories": {
+    "products": [
+      "All",
+      "Pre-Engineered Buildings (PEB)",
+      "Industrial Sheds & Warehouses",
+      "Multi-Storey Steel Buildings",
+      "Formworks and Moulds",
+      "Movable Scaffolding Systems",
+      "Launching Gantries",
+      "Tunnel Formworks",
+      "Custom Made Moulds",
+      "Residential and Commercial Projects",
+      "Special Purpose Equipments"
+    ],
+    "projects": [
+      "All",
+      "Industrial PEB Structures",
+      "Highway Bridges",
+      "Metro Rail",
+      "Special Structures",
+      "Marine & Ports"
+    ]
+  },
+  "settings": {
+    "companyName": "Winsteel Engineering Works Pvt. Ltd.",
+    "tagline": "Forming The Future",
+    "shortAbout": "Premier turnkey manufacturer of Pre-Engineered Steel Buildings (PEB), heavy industrial sheds, clear-span logistics warehouses, multi-storey steel complexes, and heavy infrastructure steel systems.",
+    "phone": "+91 22 4192 8800",
+    "altPhone": "+91 98201 44520",
+    "email": "contact@winsteel.com",
+    "salesEmail": "sales@winsteel.com",
+    "address": "Plot No. 42-45, Industrial Mega Fabricators Park, Phase II, Taloja MIDC, Navi Mumbai, Maharashtra 410208, India",
+    "branchAddress": "Corporate Tower 7, BKC Bandra East, Mumbai, Maharashtra 400051",
+    "googleMapsUrl": "https://maps.google.com/?q=Taloja+MIDC+Industrial+Area+Navi+Mumbai",
+    "workingHours": "Mon - Sat: 8:30 AM - 6:30 PM",
+    "facebookUrl": "https://facebook.com/winsteelworks",
+    "instagramUrl": "https://instagram.com/winsteelengineering",
+    "linkedinUrl": "https://linkedin.com/company/winsteel-engineering-works",
+    "youtubeUrl": "https://youtube.com/@winsteelengineering",
+    "seo": {
+      "defaultTitle": "Winsteel Engineering Works | Pre-Engineered Buildings (PEB) & Steel Structures",
+      "defaultDescription": "Winsteel Engineering Works is an industry leader in Pre-Engineered Steel Buildings (PEB), industrial sheds, clear-span warehouses, multi-storey steel buildings, and heavy infrastructure engineering.",
+      "defaultKeywords": "Winsteel, PEB, Pre-Engineered Buildings, industrial shed, steel warehouse, clear span steel building, structural steel fabrication, Navi Mumbai, Maharashtra",
+      "ogImage": "assets/logo/winsteel-logo.png"
+    }
+  },
+  "products": [
+    {
+      "id": "prod-peb-1",
+      "title": "Turnkey Pre-Engineered Steel Buildings (PEB)",
+      "slug": "turnkey-pre-engineered-buildings",
+      "category": "Pre-Engineered Buildings (PEB)",
+      "shortDescription": "Complete design, 3D structural engineering, precision fabrication and rapid erection of custom Pre-Engineered Steel Buildings.",
+      "description": "Winsteel Engineering Works is an industry-leading manufacturer of turnkey Pre-Engineered Buildings (PEB). We design, engineer, fabricate and erect state-of-the-art PEB structures for heavy manufacturing plants, logistics hubs, automotive complexes, and commercial facilities. Utilizing high-tensile steel (IS 2062 / ASTM A572 Grade 50), automated submerged arc welding, and precision CNC cold-formed C/Z purlins, our PEB structures provide up to 90m clear-span column-free space, 40% faster erection than conventional concrete, and superior seismic and wind resistance.",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85",
+      "gallery": [
+        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=85"
+      ],
+      "features": [
+        "Clear span designs up to 90 meters without intermediate columns for maximum floor flexibility",
+        "100% custom-engineered to site dimensions, wind speeds up to 200 km/h, and seismic zone requirements",
+        "Manufactured with high-tensile IS 2062 E350/E450 steel with automated submerged arc welding (SAW)",
+        "Integrated crane runway systems supporting 5T to 100T heavy-duty EOT cranes",
+        "Energy-efficient insulated sandwich panel roofing, continuous ridge ventilators, and polycarbonate skylights"
+      ],
+      "specifications": {
+        "Max Clear Span": "Up to 90 Meters (Zero internal columns)",
+        "Steel Standards": "IS 2062 E350 / E450 & ASTM A572 Grade 50",
+        "Secondary Framing": "Galvanized cold-formed Z & C purlins (275 GSM coating)",
+        "Roofing System": "Standing Seam 360° double-lock leakproof Galvalume AZ150",
+        "Design Compliance": "IS 800:2007, MBMA 2012, AISC 360, IS 875 (Part 3)",
+        "Erection Speed": "Up to 40% faster turnaround compared to conventional RCC"
+      },
+      "status": "Active",
+      "featured": true,
+      "displayOrder": 1
+    },
+    {
+      "id": "prod-peb-2",
+      "title": "Clear-Span Industrial Sheds & Logistics Warehouses",
+      "slug": "industrial-sheds-logistics-warehouses",
+      "category": "Industrial Sheds & Warehouses",
+      "shortDescription": "Heavy-duty industrial sheds, clear-span distribution centers, and high-bay logistics warehouses built for heavy operations.",
+      "description": "Winsteel fabricates high-volume, clear-span industrial sheds and automated logistics warehouses engineered for maximum volumetric storage and seamless internal material flow. Designed to support heavy overhead EOT cranes, automated storage and retrieval systems (ASRS), mezzanine floors, and multi-bay dock levelers, our warehouses are built to withstand rigorous industrial operational cycles.",
+      "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
+      "gallery": [
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85"
+      ],
+      "features": [
+        "High-bay vertical clearances up to 18 meters for high-density multi-tier racking",
+        "Heavy-duty EOT crane girder design from 10 MT to 80 MT capacity",
+        "Continuous gravity ridge monitors and power turbo ventilators for natural air circulation",
+        "Polycarbonate daylight skylight strips reducing daytime lighting costs by up to 60%",
+        "Engineered dock-leveler pits and wide canopy projections for 24/7 all-weather logistics"
+      ],
+      "specifications": {
+        "Bay Spacing": "6m to 9m standard (customizable up to 12m)",
+        "Clear Height": "6m to 18m eave height",
+        "Floor Area": "5,000 to 1,00,000+ sq. meters",
+        "Crane Capacity": "Up to 80 MT crane runways",
+        "Wall Cladding": "Color Coated Galvalume / PUF insulated sandwich panels",
+        "Corrosion Protection": "Blast cleaned SA 2.5 + Epoxy primer + Polyurethane finish"
+      },
+      "status": "Active",
+      "featured": true,
+      "displayOrder": 2
+    },
+    {
+      "id": "prod-peb-3",
+      "title": "Multi-Storey Commercial & Industrial Steel Buildings",
+      "slug": "multi-storey-steel-buildings",
+      "category": "Multi-Storey Steel Buildings",
+      "shortDescription": "Fast-track multi-level commercial complexes, IT parks, factory mezzanine structures, and heavy industrial towers.",
+      "description": "Modern commercial and high-density industrial facilities demand rapid construction speed, large column-free interior floor plates, and flexible architectural aesthetics. Winsteel's multi-storey structural steel framing systems with composite metal deck slabs reduce foundation dead loads by 30% and compress construction schedules by half compared to conventional RCC.",
+      "image": "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=85",
+      "gallery": [
+        "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"
+      ],
+      "features": [
+        "Composite steel beam and profiled metal decking slabs for lightened structural weight",
+        "Up to 50% faster floor-by-floor cycle completion compared to conventional concrete frame",
+        "Flexible column grids allowing adaptable open-plan commercial floor plates",
+        "Factory-applied fireproof intumescent coating meeting 2-hour and 4-hour fire ratings",
+        "Service penetrations pre-engineered into castellated beams for seamless HVAC routing"
+      ],
+      "specifications": {
+        "Number of Storeys": "G+2 up to G+15 storeys",
+        "Structural System": "Rigid Moment Resisting Frame / Braced Frame System",
+        "Floor Deck": "Galvanized Profiled Metal Deck (1.0mm/1.2mm)",
+        "Foundation Load": "~30% dead weight reduction vs reinforced concrete",
+        "Design Standards": "IS 800:2007, AISC 341 (Seismic Design Manual)",
+        "Fire Rating": "Up to 4-Hour intumescent coating compliance"
+      },
+      "status": "Active",
+      "featured": true,
+      "displayOrder": 3
+    },
+    {
+      "id": "prod-1",
+      "title": "Segmental Launching Gantry (Span-by-Span)",
+      "slug": "segmental-launching-gantry",
+      "category": "Launching Gantries",
+      "shortDescription": "High-capacity overhead launching gantry engineered for rapid span-by-span precast segmental bridge and viaduct erection.",
+      "description": "Winsteel's Span-by-Span Launching Gantries are meticulously engineered to execute rapid, high-precision assembly of precast segmental concrete spans for expressways, elevated highways, and high-speed rail corridors. Manufactured under strict ISO 3834-2 welding quality tolerances, these gantries incorporate electro-hydraulic self-launching mechanisms, heavy-duty winch trolleys, and integrated computerized load-monitoring systems that ensure peak operational safety and millimeter-accurate alignment.",
+      "image": "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "features": [
+        "Span lengths from 30m to 60m with lifting capacities up to 1,800 Metric Tonnes",
+        "Fully automated self-launching hydraulic cycle minimizing cycle turnaround time",
+        "Multi-point tensioning and micro-adjustment suspension bars for horizontal & vertical curves",
+        "Heavy-duty wind locks and dual safety braking systems on all hoisting winches",
+        "Modular box-girder main truss design facilitating straightforward jobsite transport and reassembly"
+      ],
+      "specifications": {
+        "Span Capacity": "30m to 60m standard (customizable up to 75m)",
+        "Lifting Capacity": "Up to 1,800 MT",
+        "Steel Grade": "High-Tensile IS 2062 E350 / E450 & S355JR",
+        "Operation Speed": "Hoisting 0 - 2.5 m/min; Cross-travel 0 - 8 m/min",
+        "Control System": "PLC-Controlled with Radio Remote & Cabin Station",
+        "Compliance": "ISO 9001:2015, EN 13001, Indian Railway Standards (IRS)"
+      },
+      "status": "Active",
+      "featured": false,
+      "displayOrder": 4
+    },
+    {
+      "id": "prod-2",
+      "title": "Movable Scaffolding System (MSS) - Overhead & Underslung",
+      "slug": "movable-scaffolding-system",
+      "category": "Movable Scaffolding Systems",
+      "shortDescription": "Advanced in-situ bridge casting solution designed for cast-in-place concrete box girders across demanding terrains.",
+      "description": "Winsteel Movable Scaffolding Systems (MSS) provide an autonomous, self-advancing falsework solution for casting continuous in-situ concrete spans without touching the ground below. Ideal for deep valleys, water crossings, and congested urban zones where ground scaffolding is impractical. Engineered with finite element structural analysis (FEA), the MSS guarantees minimal deflection during pour sequences and rapid self-launching between bridge piers.",
+      "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "features": [
+        "Available in Overhead type (for tight pier clearances) and Underslung type (unobstructed deck)",
+        "Integrated hydraulic stripping and opening system for swift formwork release",
+        "Custom radius and super-elevation compensation mechanisms",
+        "Robust seal profiles preventing grout loss and honeycombing",
+        "Equipped with motorized launch trollies and synchronized hydraulic push cylinders"
+      ],
+      "specifications": {
+        "Span Range": "35m to 70m",
+        "Pour Weight": "Up to 2,400 MT concrete mass",
+        "Formwork Skin": "6mm to 8mm CNC machined steel faceplate with laser flattening",
+        "Advance Cycle": "4 to 7 days per span",
+        "Drive System": "Heavy hydraulic push-pull unit with automatic locking",
+        "Certification": "CE marked, ISO 9001 certified structural integrity"
+      },
+      "status": "Active",
+      "featured": false,
+      "displayOrder": 5
+    },
+    {
+      "id": "prod-3",
+      "title": "Heavy-Duty Tunnel Shuttering & Formwork Gantry",
+      "slug": "tunnel-formworks",
+      "category": "Tunnel Formworks",
+      "shortDescription": "Motorized full-round and horseshoe tunnel lining shutter systems for metro, railway, and hydro-power projects.",
+      "description": "Winsteel Tunnel Formwork Gantries provide flawless monolithic lining for high-speed railway tunnels, metro rail bored caverns, and hydro-electric water transfer tunnels. Engineered for high repetition cycles, our tunnel shutters integrate automated hydraulic collapse, telescopic self-advance, vibrator brackets, inspection windows, and automated concrete delivery ports for seamless underwater and subterranean placement.",
+      "image": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "features": [
+        "Tailored for horseshoe, circular, D-shape, and asymmetrical tunnel cross-sections",
+        "Modular lengths of 6m, 9m, 12m, and 15m shutter sections",
+        "Integrated high-frequency pneumatic vibrator mounts ensure bubble-free surface finish",
+        "Self-contained motorized drive with rail-mounted or rubber-tyred bogies",
+        "Equipped with emergency hydrostatic relief valves and pressure sensor monitoring"
+      ],
+      "specifications": {
+        "Tunnel Diameter": "4.0m to 14.5m internal finished bore",
+        "Pour Pressure": "Rated for concrete hydrostatic heads up to 120 kN/m²",
+        "Advancement": "Self-propelled hydraulic wheel drives (0 - 6 m/min)",
+        "Steel Specification": "ASTM A572 Grade 50 / IS 2062 Grade B",
+        "Cycle Time": "24-hour cycle capability per segment"
+      },
+      "status": "Active",
+      "featured": false,
+      "displayOrder": 6
+    },
+    {
+      "id": "prod-4",
+      "title": "Precast Segmental & Pier Mould Systems",
+      "slug": "formworks-and-moulds",
+      "category": "Formworks and Moulds",
+      "shortDescription": "Precision machined short-line and long-line match-casting moulds for elevated metro and highway viaduct segments.",
+      "description": "Engineered with sub-millimeter manufacturing tolerances, Winsteel Match Casting Segment Moulds are the gold standard for high-volume casting yards in metro rail and expressway projects. Our systems include bottom form, fixed bulkhead, conjugate bulkhead, and hydraulic retractable side wings, providing flawless joint sealing and mirror-smooth concrete aesthetics.",
+      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "features": [
+        "Short-line match casting method with precision motorized 3D adjustment screws",
+        "Precision machined keyway inserts and shear key templates",
+        "Hydraulically folding wings and sliding bulkheads for fast stripping",
+        "High durability design exceeding 300+ pours without thermal deformation",
+        "Integrated heating conduit provisions for accelerated steam curing"
+      ],
+      "specifications": {
+        "Segment Dimensions": "Width up to 13.5m; Height up to 4.2m",
+        "Dimensional Tolerance": "± 1.0mm over 10 meters profile",
+        "Skin Plate": "8mm to 10mm high-yield hot rolled carbon steel",
+        "Casting Cycle": "1 segment / mould / 24 hours"
+      },
+      "status": "Active",
+      "featured": false,
+      "displayOrder": 7
+    },
+    {
+      "id": "prod-5",
+      "title": "Marine Caisson & Jetty Formwork Systems",
+      "slug": "ports-and-jetties-formwork",
+      "category": "Ports and Jetties",
+      "shortDescription": "Heavy marine steel moulds for floating concrete caissons, breakwater accropodes, quay walls, and jetty pile caps.",
+      "description": "Marine environments present aggressive chemical challenges and require massive structural sections. Winsteel fabricates specialized heavy-gauge steel moulds for offshore concrete caissons, monolithic quay walls, tetra-pods, and submerged pile caps. Built to resist heavy saltwater splash zones and repeated high-impact pours, these moulds ensure watertight joint sealing and structural durability for decades.",
+      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "features": [
+        "Marine grade anti-corrosive epoxy lining and zinc-rich coatings",
+        "Reinforced stiffeners resisting extreme offshore swell and wave actions during nearshore pours",
+        "Hydraulic internal core collapse for rapid floating caisson de-moulding",
+        "Integrated lifting lug certification for heavy crane barge handling"
+      ],
+      "specifications": {
+        "Caisson Dimensions": "Up to 25m length x 20m width x 18m height",
+        "Steel Thickness": "10mm to 16mm plate fabrication",
+        "Standard": "EN 1993-1-1 & DNV-GL Offshore Standards compliant"
+      },
+      "status": "Active",
+      "featured": false,
+      "displayOrder": 8
+    },
+    {
+      "id": "prod-6",
+      "title": "Custom Heavy Fabricated Architectural Moulds",
+      "slug": "custom-made-moulds",
+      "category": "Custom Made Moulds",
+      "shortDescription": "Tailor-made complex geometries, parabolic pier shapes, architectural facades, and nuclear containment structures.",
+      "description": "When standard geometry is not enough, Winsteel's engineering division develops custom 3D algorithmic moulds. Using 5-axis CNC plasma cutting, submerged arc welding, and specialized plate rolling machinery, we bring architecturally ambitious curved bridge piers, stadium cantilevers, and sculptural architectural concrete elements to fruition with absolute dimensional fidelity.",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "features": [
+        "Custom 3D parametric CAD/CAM modeling and stress FEA simulation",
+        "Bespoke modular flange connections for rapid assembly and disassembly",
+        "Smooth architectural finish ready for exposed fair-faced concrete (Class 4B)",
+        "Full trial pre-assembly and laser tracker verification at Winsteel workshops"
+      ],
+      "specifications": {
+        "Shapes": "Flared, Elliptical, Hyperbolic, Free-form curved",
+        "Surface Finish": "Mirror polish / shot-blasted to Ra < 3.2 µm",
+        "Quality Checks": "100% UT/MPI tested weld seams"
+      },
+      "status": "Active",
+      "featured": false,
+      "displayOrder": 9
+    },
+    {
+      "id": "prod-7",
+      "title": "Commercial & Residential Climbing Core Formwork",
+      "slug": "residential-commercial-formwork",
+      "category": "Residential and Commercial Projects",
+      "shortDescription": "Automatic self-climbing formwork (ACS) systems for high-rise elevator cores, shear walls, and commercial towers.",
+      "description": "Designed for rapid vertical construction in 50+ story commercial towers and luxury residential skyscrapers. The Winsteel Hydraulic Self-Climbing Formwork system operates crane-independently, climbing smoothly on embedded brackets even under high wind speeds, enabling tight 4-day floor cycle execution.",
+      "image": "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "features": [
+        "Completely crane-independent hydraulic climbing mechanism",
+        "Multi-level enclosed working platforms for complete crew safety at high altitudes",
+        "Weather protection screens and integrated concrete placing boom supports",
+        "High cycle life with over 120 repeat pours per set"
+      ],
+      "specifications": {
+        "Climbing Speed": "3.5 to 4.5 meters in under 45 minutes",
+        "Max Wind Operating Limit": "Up to 72 km/h during climbing",
+        "Safety Standard": "OSHA 1926 & EN 12812 structural falsework codes"
+      },
+      "status": "Active",
+      "featured": false,
+      "displayOrder": 10
+    },
+    {
+      "id": "prod-8",
+      "title": "RMC Batching Plant Structural Equipment & Silos",
+      "slug": "rmc-batching-plant-equipments",
+      "category": "RMC Batching Plant Equipments",
+      "shortDescription": "Heavy cement storage silos, aggregate feed bins, weighing hoppers, and structural conveyor bridges.",
+      "description": "Winsteel supplies robust, wear-resistant steel equipment for Ready-Mix Concrete (RMC) batching plants. Our range includes bolted and welded cement/fly-ash storage silos from 50 to 1,500 MT capacity, multi-compartment aggregate hoppers with Hardox wear plates, screw conveyor housings, and heavy mixing chassis.",
+      "image": "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "features": [
+        "High-grade wear-resistant liner plate integration (Hardox 400/500)",
+        "Leak-proof precision flanged segments for effortless shipping in standard 40ft containers",
+        "Pre-engineered safety relief valves, dust filters, and digital bin level sensors",
+        "Double-coat polyurethane marine paint finish for chemical & acid rain resistance"
+      ],
+      "specifications": {
+        "Silo Capacity": "50 MT to 1,500 MT",
+        "Plate Thickness": "5mm to 12mm plate body with heavy angle ring stiffeners",
+        "Discharge Cone": "60° fluidizing hopper with pneumatic aeration pads"
+      },
+      "status": "Active",
+      "featured": false,
+      "displayOrder": 11
+    },
+    {
+      "id": "prod-9",
+      "title": "Special Purpose Heavy Hydraulic Lifting Gantries",
+      "slug": "special-purpose-equipments",
+      "category": "Special Purpose Equipments",
+      "shortDescription": "Heavy-lift strand jack towers, straddle carriers, and custom overhead rail cranes for extreme load applications.",
+      "description": "Engineered for monumental industrial lifting tasks, Winsteel's Special Purpose Equipments include custom motorized rubber-tyred straddle carriers (up to 400T), strand-jack heavy lifting portal frames, and high-clearance yard gantry cranes for precast logistics.",
+      "image": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "features": [
+        "Tailored load charts and dual-redundancy failsafe hydraulic circuits",
+        "PLC synchronized multi-point lifting and load leveling",
+        "Heavy-duty wheel bogies with 360-degree electronic steering capability",
+        "Certified proof load testing up to 125% of rated capacity prior to delivery"
+      ],
+      "specifications": {
+        "Lifting Capacity": "Up to 500 MT per tower unit",
+        "Clear Height": "Up to 32 meters",
+        "Steering Modes": "Crab steer, pivot steer, 90-degree transversal"
+      },
+      "status": "Active",
+      "featured": false,
+      "displayOrder": 12
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-peb-1",
+      "title": "65,000 Sq. Mtr. Automated PEB Logistics & Distribution Hub",
+      "slug": "mega-peb-logistics-distribution-park",
+      "category": "Industrial PEB Structures",
+      "location": "Chakan Industrial Corridor, Pune, India",
+      "year": "2024",
+      "client": "National Logistics Parks Ltd / Global E-Commerce Major",
+      "shortDescription": "Turnkey engineering, automated CNC fabrication, and high-speed erection of a 65,000 sq. mtr. clear-span Pre-Engineered steel warehouse.",
+      "description": "Winsteel executed the complete turnkey Pre-Engineered Building (PEB) contract for one of Western India's largest automated fulfillment centers. Featuring 72-meter clear spans without intermediate columns, heavy 35-tonne mezzanine sorting floors, 48 automated dock-leveler bays, and standing-seam leakproof roofing with integrated skylights. The entire 4,800 MT structural steel superstructure was delivered and erected in record 5.5 months.",
+      "coverImage": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85",
+      "gallery": [
+        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"
+      ],
+      "scopeOfWork": "Architectural concept planning, 3D TEKLA detailing, automated CNC H-beam line fabrication, PUF insulation cladding, and fast-track site erection.",
+      "materials": "4,800 MT High-Yield E350/E450 Steel, 275 GSM Galvalume Roofing, High-Strength 10.9 Grade Bolts.",
+      "status": "Completed",
+      "featured": true,
+      "displayOrder": 1
+    },
+    {
+      "id": "proj-peb-2",
+      "title": "Heavy Machinery Manufacturing PEB Plant with 50T Crane System",
+      "slug": "heavy-machinery-peb-manufacturing-plant",
+      "category": "Industrial PEB Structures",
+      "location": "Sanand Industrial Estate, Gujarat, India",
+      "year": "2024",
+      "client": "Precision Auto-Components Pvt. Ltd.",
+      "shortDescription": "38,000 sq. mtr. heavy manufacturing PEB shed with heavy crane gantries, insulated wall cladding, and turbo-ventilated roof monitors.",
+      "description": "Designed for heavy automotive component forging and assembly, this PEB structure accommodates multi-tier overhead EOT cranes with capacities up to 50 Metric Tonnes operating simultaneously along 300-meter continuous bays. Winsteel's engineering team optimized the primary tapered portal frames to handle severe dynamic fatigue loads while saving 18% steel mass compared to conventional hot-rolled sections.",
+      "coverImage": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
+      "gallery": [
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "scopeOfWork": "Structural dynamic analysis, fabrication of built-up I-sections and crane runway beams, fireproof intumescent coating, turnkey erection.",
+      "materials": "3,100 MT Built-up High-Tensile Steel, 0.55mm Bare Galvalume Standing Seam Sheets, Polycarbonate Daylighting Strips.",
+      "status": "Completed",
+      "featured": true,
+      "displayOrder": 2
+    },
+    {
+      "id": "proj-1",
+      "title": "Mumbai Trans Harbour Link (Atal Setu) - Marine Viaduct Launchers",
+      "slug": "mumbai-trans-harbour-link",
+      "category": "Marine & Ports",
+      "location": "Mumbai - Navi Mumbai, India",
+      "year": "2023",
+      "client": "L&T - IHI Infrastructure Consortium",
+      "shortDescription": "Fabrication and site commissioning of two 1,200 MT specialized marine launching gantries and segmental match moulds for India's longest sea bridge.",
+      "description": "Winsteel Engineering Works was entrusted with the crucial structural fabrication and precision mechanical assembly of two 1,200 MT segmental launching gantries deployed over the open waters of Mumbai Bay for the historic 21.8 km Mumbai Trans Harbour Link. Operating in aggressive marine saltwater winds, the gantries operated 24/7 with zero downtime, completing over 450 spans ahead of project timeline.",
+      "coverImage": "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "scopeOfWork": "Engineering detail design, procurement of high-tensile E350/E450 steel, full workshop trial assembly, ultrasonic weld testing, marine multi-coat epoxy paint, and on-site commissioning supervision.",
+      "materials": "3,400 Metric Tonnes of Structural Steel, High-Tensile 10.9 Grade Fasteners, Rexroth Hydraulic Power Units, Siemens S7 PLC Automation.",
+      "status": "Completed",
+      "featured": true,
+      "displayOrder": 3
+    },
+    {
+      "id": "proj-2",
+      "title": "Delhi - Varanasi High Speed Rail Viaduct Formwork Systems",
+      "slug": "delhi-varanasi-hsr-viaduct",
+      "category": "Highway Bridges",
+      "location": "Uttar Pradesh Corridor, India",
+      "year": "2024",
+      "client": "National High Speed Rail Corporation Ltd (NHSRCL) / Tata Projects",
+      "shortDescription": "Delivery of 4 sets of 40-meter full span precast box girder moulds and high-speed launching equipment with sub-millimeter tolerances.",
+      "description": "For the High Speed Bullet Train viaduct section, Winsteel designed and manufactured massive 40-meter monolithic box-girder steel moulds weighing over 280 tonnes each. The project mandated extreme surface tolerances to accommodate trains traveling at 320 km/h. Winsteel's CNC precision machined side wings and hydraulic stripping systems delivered mirror-smooth concrete surfaces compliant with Japanese Shinkansen standards.",
+      "coverImage": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "scopeOfWork": "Turnkey design, 3D laser-guided fabrication, hydraulic folding system integration, and yard erection support.",
+      "materials": "1,950 MT High-Strength Structural Steel, Automated Hydraulic Synchronization manifolds.",
+      "status": "Completed",
+      "featured": false,
+      "displayOrder": 4
+    },
+    {
+      "id": "proj-3",
+      "title": "Mumbai Metro Line 3 (Aqua Line) Underground Tunnel Shutters",
+      "slug": "mumbai-metro-line-3-tunnel",
+      "category": "Metro Rail",
+      "location": "Mumbai, India",
+      "year": "2023",
+      "client": "Mumbai Metro Rail Corporation (MMRCL) / Dogus-Soma JV",
+      "shortDescription": "Engineered self-propelled hydraulic tunnel shuttering gantries for underground station cross-overs and cut-and-cover sections.",
+      "description": "Constructing underground metro stations amidst high groundwater tables and congested heritage districts required zero vibration and 100% watertight concrete liners. Winsteel engineered 6 sets of telescopic tunnel lining gantries that achieved seamless 12-meter monolithic pours with high-frequency external consolidation.",
+      "coverImage": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "scopeOfWork": "Design, manufacture, mechanical proof-load testing, and underground commissioning of 6 motorized tunnel gantries.",
+      "materials": "850 MT Grade 50 Steel, Pneumatic external vibrators, Hydraulic wheel-bogies.",
+      "status": "Completed",
+      "featured": false,
+      "displayOrder": 5
+    },
+    {
+      "id": "proj-4",
+      "title": "Kochi International Container Transshipment Terminal Quay Wall Moulds",
+      "slug": "kochi-port-quay-wall",
+      "category": "Marine & Ports",
+      "location": "Vallarpadam, Kochi, India",
+      "year": "2022",
+      "client": "Afcons Infrastructure Ltd",
+      "shortDescription": "Massive 450 MT modular steel forms for reinforced concrete breakwater blocks and deep-water berthing quay structures.",
+      "description": "Supplied specialized modular marine shutters for the expansion of deep-draft container berths at Kochi Port. Engineered with sacrificial zinc sacrificial anodes and specialized release face coatings that withstand high sulfate and chloride sea-water exposures.",
+      "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "scopeOfWork": "Engineering design, CNC plasma fabrication, marine grade anti-corrosive coating, site delivery and erection.",
+      "materials": "IS 2062 Grade E350 Steel with 12mm skin plates and heavy cold-formed box stiffeners.",
+      "status": "Completed",
+      "featured": false,
+      "displayOrder": 6
+    },
+    {
+      "id": "proj-5",
+      "title": "Bangalore Metro Phase II Elevated Viaduct Pier & Pier-Cap Moulds",
+      "slug": "bangalore-metro-phase-2",
+      "category": "Metro Rail",
+      "location": "Bengaluru, Karnataka, India",
+      "year": "2024",
+      "client": "BMRCL / ITD Cementation India",
+      "shortDescription": "Precision fabricated steel forms for flared architectural metro piers, portal beams, and hammerhead pier-caps.",
+      "description": "Winsteel provided 18 sets of architectural flared pier moulds for Bangalore Metro Phase II reaching heights of up to 18 meters. The moulds feature quick-release hinge pins and integrated all-around work platforms with fail-safe safety interlocks.",
+      "coverImage": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "scopeOfWork": "Parametric form design, precision laser cutting, sub-assembly welding, and dimensional laser scan audit.",
+      "materials": "620 MT Structural Steel with polyurethane anti-stick coating.",
+      "status": "Completed",
+      "featured": false,
+      "displayOrder": 7
+    },
+    {
+      "id": "proj-6",
+      "title": "Zojila Himalayan Tunnel Project - Heavy Formwork Arch Solutions",
+      "slug": "zojila-tunnel-special-structure",
+      "category": "Special Structures",
+      "location": "Jammu & Kashmir / Ladakh, India",
+      "year": "2025",
+      "client": "Megha Engineering & Infrastructures Ltd (MEIL)",
+      "shortDescription": "Sub-zero climate custom tunnel arch forms engineered for one of Asia's longest and highest altitude bi-directional tunnels.",
+      "description": "Operating under extreme Himalayan conditions with winter temperatures dipping below -25°C, Winsteel delivered cold-weather engineered tunnel forms featuring built-in electric heating jacketing, heavy hydraulic power units with low-temperature fluid lines, and reinforced profiles to withstand immense squeezing rock pressures.",
+      "coverImage": "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "scopeOfWork": "Extreme climate structural thermal analysis, heavy steel fabrication, multi-stage cold test simulations.",
+      "materials": "1,100 MT Impact-Tested Cryogenic Grade Structural Steel, Heated Hydraulic Power Packs.",
+      "status": "Completed",
+      "featured": false,
+      "displayOrder": 8
+    }
+  ],
+  "facilities": [
+    {
+      "id": "fac-1",
+      "title": "Mega Heavy Fabrication Bay 1 & 2",
+      "description": "Our primary heavy fabrication facility spanning 120,000 sq. ft. with 32-meter clear roof height, equipped with heavy overhead EOT cranes configured for tandem lifts up to 120 MT.",
+      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+      "capacity": "2,500 Metric Tonnes per month",
+      "area": "120,000 Sq. Ft. Covered Bay",
+      "equipment": "4 x 60T Demag Tandem EOT Cranes, Submerged Arc Welding (SAW) booms, 12m Plate Rolling Machine (up to 70mm thickness)",
+      "features": [
+        "Floor load capacity of 40 MT/m² for mega pre-assembly",
+        "Tandem heavy lifting cranes with remote synchronized control",
+        "Dedicated gas manifolds for continuous multi-operator welding",
+        "Direct highway connectivity for oversized cargo transport (ODC)"
+      ],
+      "displayOrder": 1,
+      "status": "Active"
+    },
+    {
+      "id": "fac-2",
+      "title": "CNC Plate Cutting & Automated Profiling Center",
+      "description": "High-precision computer numerical controlled cutting hub housing underwater CNC plasma systems, oxy-fuel multi-torch portals, and 12kW fiber laser cutting tables.",
+      "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+      "capacity": "1,200 MT steel plate processing / month",
+      "area": "35,000 Sq. Ft.",
+      "equipment": "Messer CNC Multi-Torch Oxy-Fuel (up to 200mm thickness), 12kW Fiber Laser 4m x 12m bed, High-Definition CNC Beveling Plasma",
+      "features": [
+        "Automated CAD-to-cut nesting software minimizing material scrap",
+        "Weld-prep chamfering cut directly in single pass (V, Y, K bevels)",
+        "Optical plate thickness scanner and plate traceability stamping"
+      ],
+      "displayOrder": 2,
+      "status": "Active"
+    },
+    {
+      "id": "fac-3",
+      "title": "Heavy Machining & Horizontal Boring Division",
+      "description": "Equipped with precision CNC horizontal floor borers, 8-meter plano-millers, and multi-axis radial drilling centers capable of machining critical pin-holes and bearing seats with 15-micron tolerances.",
+      "image": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80",
+      "capacity": "600 hours precision machining / month",
+      "area": "25,000 Sq. Ft. Climate-Controlled Bay",
+      "equipment": "Toshiba CNC Floor Borer (X=12m, Y=4m), Waldrich Coburg Double-Housing Plano-Miller, 100mm Radial Drills",
+      "features": [
+        "Laser tracker calibrated coordinate measurement",
+        "Precision in-line line boring for heavy gantry hinge pins",
+        "Surface finish verification to Ra 1.6 microns"
+      ],
+      "displayOrder": 3,
+      "status": "Active"
+    },
+    {
+      "id": "fac-4",
+      "title": "Automated Shot Blasting & Marine Coating Plant",
+      "description": "Environmentally enclosed blast chambers with automatic steel grit recovery and temperature-controlled airless paint spray booths ensuring SA 2.5 and SA 3 surface cleanliness.",
+      "image": "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80",
+      "capacity": "30,000 Sq. Meters coating area / month",
+      "area": "30,000 Sq. Ft. Enclosed Booth Complex",
+      "equipment": "Wheelabrator 8-Wheel Automatic Shot Blasting Line, Graco Airless Spray Systems, Dehumidification & Heating Units",
+      "features": [
+        "ISO 8501-1 SA 2.5 / SA 3 surface preparation certification",
+        "Multi-layer marine epoxy, polyurethane, and zinc silicate coating capability",
+        "Full environmental compliance with dust filtration and VOC recovery"
+      ],
+      "displayOrder": 4,
+      "status": "Active"
+    },
+    {
+      "id": "fac-5",
+      "title": "Comprehensive NDT & Metallurgy Testing Laboratory",
+      "description": "In-house quality assurance laboratory accredited to ISO/IEC 17025 with certified Level-III NDT inspectors covering Ultrasonic, Radiographic, Magnetic Particle, and Chemical Spectroscopy.",
+      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+      "capacity": "Continuous 100% QA Inspection",
+      "area": "8,000 Sq. Ft. Lab",
+      "equipment": "Olympus Phased Array Ultrasonic Flaw Detectors, Oxford Optical Emission Spectrometer, 1000 kN Universal Testing Machine (UTM)",
+      "features": [
+        "Certified Level II & III NDT inspectors in-house",
+        "Charpy V-Notch impact testing down to -40°C",
+        "100% Mill Test Certificate (MTC) tracking and chemical re-testing"
+      ],
+      "displayOrder": 5,
+      "status": "Active"
+    },
+    {
+      "id": "fac-6",
+      "title": "Open Assembly & Trial Erection Yard",
+      "description": "Massive 200,000 sq. ft. heavy-paved outdoor staging yard dedicated to 100% full-scale trial erection, kinematic functional testing, and client inspection before dispatch.",
+      "image": "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=80",
+      "capacity": "Simultaneous assembly of 4 major launching gantries",
+      "area": "200,000 Sq. Ft. Heavy Concrete Paved Yard",
+      "equipment": "Rubber-Tyred Gantry Cranes, 150T Mobile Telescopic Cranes, Heavy Strand-Jack Testing Towers",
+      "features": [
+        "Full 3D laser scan inspection of assembled systems",
+        "Complete electrical and hydraulic power cycle commissioning on site",
+        "Zero-surprise delivery assurance for EPC contractors"
+      ],
+      "displayOrder": 6,
+      "status": "Active"
+    }
+  ],
+  "strengths": [
+    {
+      "id": "str-1",
+      "title": "Engineering Precision & Design Mastery",
+      "description": "Our in-house design engineering cell employs advanced 3D FEA (Finite Element Analysis) simulation and kinematic modelling to optimize weight, stiffness, and fatigue life of heavy structures.",
+      "icon": "drafting-compass",
+      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+      "displayOrder": 1,
+      "status": "Active"
+    },
+    {
+      "id": "str-2",
+      "title": "Rigorous Quality Assurance",
+      "description": "Accredited under ISO 9001:2015 and ISO 3834-2, we maintain uncompromised metallurgical standards, 100% traceability on all raw plates, and stringent multi-method NDT inspection.",
+      "icon": "shield-check",
+      "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+      "displayOrder": 2,
+      "status": "Active"
+    },
+    {
+      "id": "str-3",
+      "title": "Advanced Heavy Fabrication Muscle",
+      "description": "With over 200,000 sq. ft. of covered manufacturing bays, 120-tonne tandem crane capacity, and high-definition automated cutting, we can build monumental structures under one roof.",
+      "icon": "cog",
+      "image": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
+      "displayOrder": 3,
+      "status": "Active"
+    },
+    {
+      "id": "str-4",
+      "title": "Veteran Engineering Team",
+      "description": "Guided by seasoned technocrats with over 35 years in structural bridge engineering, our 250+ workforce brings deep domain expertise to every fabrication challenge.",
+      "icon": "users",
+      "image": "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=800&q=80",
+      "displayOrder": 4,
+      "status": "Active"
+    },
+    {
+      "id": "str-5",
+      "title": "Unrivaled Delivery Timelines",
+      "description": "Our integrated operations—from raw material stocking to in-house machining and coating—eliminate sub-contractor delays, ensuring on-time delivery on mission-critical infrastructure deadlines.",
+      "icon": "clock",
+      "image": "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80",
+      "displayOrder": 5,
+      "status": "Active"
+    },
+    {
+      "id": "str-6",
+      "title": "Safety First Culture (Zero Harm)",
+      "description": "Strict compliance with ISO 45001:2018 safety standards ensures an accident-free environment across our manufacturing plants, testing bays, and site commissioning locations.",
+      "icon": "hard-hat",
+      "image": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80",
+      "displayOrder": 6,
+      "status": "Active"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert-1",
+      "certificateName": "ISO 9001:2015 Quality Management System",
+      "issuingOrganization": "Bureau Veritas Certification",
+      "certificateNumber": "IN-BV-QMS-90214",
+      "issueDate": "2023-04-12",
+      "expiryDate": "2026-04-11",
+      "image": "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=800&q=80",
+      "document": "ISO-9001-2015-Winsteel.pdf",
+      "status": "Active"
+    },
+    {
+      "id": "cert-2",
+      "certificateName": "ISO 3834-2 Comprehensive Quality Requirements for Fusion Welding",
+      "issuingOrganization": "TÜV NORD CERT GmbH",
+      "certificateNumber": "TUV-WELD-3834-0849",
+      "issueDate": "2022-11-15",
+      "expiryDate": "2025-11-14",
+      "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80",
+      "document": "ISO-3834-2-Welding-Quality.pdf",
+      "status": "Active"
+    },
+    {
+      "id": "cert-3",
+      "certificateName": "EN 1090-2 Execution of Steel Structures - EXC4 (Highest Execution Class)",
+      "issuingOrganization": "DNV GL Business Assurance",
+      "certificateNumber": "DNV-EN1090-EXC4-110",
+      "issueDate": "2023-01-20",
+      "expiryDate": "2026-01-19",
+      "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+      "document": "EN-1090-2-EXC4-Certification.pdf",
+      "status": "Active"
+    },
+    {
+      "id": "cert-4",
+      "certificateName": "ISO 45001:2018 Occupational Health & Safety Management",
+      "issuingOrganization": "BSI Group (British Standards Institution)",
+      "certificateNumber": "OHS-BSI-774021",
+      "issueDate": "2023-08-10",
+      "expiryDate": "2026-08-09",
+      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+      "document": "ISO-45001-2018-Safety.pdf",
+      "status": "Active"
+    },
+    {
+      "id": "cert-5",
+      "certificateName": "Indian Railway Standards (IRS) Approved Fabrication Facility",
+      "issuingOrganization": "RDSO - Ministry of Railways, Govt. of India",
+      "certificateNumber": "RDSO/B&S/QA/WIN/2021",
+      "issueDate": "2021-06-05",
+      "expiryDate": "2026-06-04",
+      "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
+      "document": "RDSO-Railway-Approval.pdf",
+      "status": "Active"
+    },
+    {
+      "id": "cert-6",
+      "certificateName": "ASME U-Stamp Authorization for Pressure & Structural Vessels",
+      "issuingOrganization": "The American Society of Mechanical Engineers",
+      "certificateNumber": "ASME-U-58921",
+      "issueDate": "2022-09-18",
+      "expiryDate": "2025-09-17",
+      "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80",
+      "document": "ASME-U-Stamp-Authorization.pdf",
+      "status": "Active"
+    }
+  ],
+  "clients": [
+    {
+      "id": "cli-1",
+      "companyName": "Larsen & Toubro (L&T Construction)",
+      "logo": "L&T",
+      "website": "https://lntecc.com",
+      "category": "EPC Infrastructure",
+      "displayOrder": 1,
+      "status": "Active"
+    },
+    {
+      "id": "cli-2",
+      "companyName": "Afcons Infrastructure Limited",
+      "logo": "AFCONS",
+      "website": "https://afcons.com",
+      "category": "Heavy Civil & Marine",
+      "displayOrder": 2,
+      "status": "Active"
+    },
+    {
+      "id": "cli-3",
+      "companyName": "Tata Projects Ltd",
+      "logo": "TATA PROJECTS",
+      "website": "https://tataprojects.com",
+      "category": "Urban Infrastructure & Metro",
+      "displayOrder": 3,
+      "status": "Active"
+    },
+    {
+      "id": "cli-4",
+      "companyName": "Dilip Buildcon Limited",
+      "logo": "DBL",
+      "website": "https://dilipbuildcon.com",
+      "category": "Highways & Expressways",
+      "displayOrder": 4,
+      "status": "Active"
+    },
+    {
+      "id": "cli-5",
+      "companyName": "ITD Cementation India Ltd",
+      "logo": "ITD CEM",
+      "website": "https://itdcem.co.in",
+      "category": "Marine & Underground Metros",
+      "displayOrder": 5,
+      "status": "Active"
+    },
+    {
+      "id": "cli-6",
+      "companyName": "J. Kumar Infraprojects Ltd",
+      "logo": "J. KUMAR",
+      "website": "https://jkumar.com",
+      "category": "Elevated Metro Viaducts",
+      "displayOrder": 6,
+      "status": "Active"
+    },
+    {
+      "id": "cli-7",
+      "companyName": "HCC (Hindustan Construction Co.)",
+      "logo": "HCC",
+      "website": "https://hccindia.com",
+      "category": "Hydroelectric & Nuclear Structures",
+      "displayOrder": 7,
+      "status": "Active"
+    },
+    {
+      "id": "cli-8",
+      "companyName": "Megha Engineering & Infrastructures (MEIL)",
+      "logo": "MEIL",
+      "website": "https://meil.in",
+      "category": "Tunnels & Heavy Industrial",
+      "displayOrder": 8,
+      "status": "Active"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "name": "Rajeshwar Rao",
+      "designation": "Executive Vice President - Heavy Civil Infrastructure",
+      "company": "L&T Construction",
+      "quote": "Winsteel delivered two complex 1,200 MT marine launching gantries for our sea viaduct package with remarkable precision. Their engineering depth, structural integrity, and dedicated site support enabled us to achieve landmark erection cycle times.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+    },
+    {
+      "id": "test-2",
+      "name": "K. Venkatesh",
+      "designation": "Chief Project Director",
+      "company": "Tata Projects Ltd",
+      "quote": "When constructing High Speed Rail corridors, tolerances are measured in fractions of a millimeter. Winsteel's CNC machined match-casting box girder moulds delivered the highest quality concrete finish we have seen in the country.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+    },
+    {
+      "id": "test-3",
+      "name": "Subhashish Sen",
+      "designation": "Head of Technical Equipment",
+      "company": "Afcons Infrastructure",
+      "quote": "Winsteel is our trusted partner for severe marine formworks and tunnel gantries. Their understanding of practical jobsite conditions, combined with world-class welding and hydraulic integration, is second to none.",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80"
+    }
+  ],
+  "news": [
+    {
+      "id": "news-1",
+      "title": "Winsteel Successfully Delivers Next-Gen 1,800 MT Automated Launching Gantry",
+      "slug": "winsteel-delivers-1800mt-automated-launching-gantry",
+      "category": "Corporate Milestone",
+      "date": "2026-08-14",
+      "author": "Engineering Desk",
+      "image": "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=80",
+      "shortDescription": "Flagship 1,800 MT span-by-span launching gantry passes stringent trial erection and is dispatched for a major coastal expressway project.",
+      "content": "Winsteel Engineering Works has achieved another breakthrough milestone with the fabrication and workshop trial assembly of its highest-capacity launching gantry to date. Commissioned for a critical coastal elevated transit corridor, the 1,800 MT overhead gantry features full PLC-guided self-launching hydraulic circuits and real-time load telemetry. Over 250 engineers and technicians collaborated at the Taloja manufacturing facility to conclude trial tests in record time.",
+      "status": "Published",
+      "featured": true
+    },
+    {
+      "id": "news-2",
+      "title": "Expansion of Taloja Facility: 35,000 Sq. Ft. Precision CNC Machining Bay Commissioned",
+      "slug": "expansion-of-taloja-facility-cnc-machining-bay",
+      "category": "Expansion",
+      "date": "2026-06-02",
+      "author": "Corporate Communications",
+      "image": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80",
+      "shortDescription": "New climate-controlled bay equipped with double-housing plano-millers and 12-meter floor borers to meet surging infrastructure demand.",
+      "content": "To meet accelerating demand from bullet train and metro corridor projects across India and the Middle East, Winsteel Engineering Works has inaugurated its new Heavy Machining Division. Featuring high-precision Italian and Japanese CNC floor borers, the new unit expands internal machining capacity by 45%, ensuring that high-tolerance gantry hinge pins and match-mould flanges are finished strictly in-house under controlled temperature conditions.",
+      "status": "Published",
+      "featured": true
+    },
+    {
+      "id": "news-3",
+      "title": "Innovations in Underwater Tunnel Formwork: Achieving Zero Deflection Concrete Linings",
+      "slug": "innovations-underwater-tunnel-formwork",
+      "category": "Technical Paper",
+      "date": "2026-03-20",
+      "author": "Chief Technical Officer",
+      "image": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1200&q=80",
+      "shortDescription": "A technical white paper on finite element dynamic modeling for heavy subterranean tunnel formworks subject to high hydrostatic pressure.",
+      "content": "Winsteel's R&D department has published a comprehensive technical brief detailing advanced structural solutions for deep sub-aqueous tunnel linings. Through finite element analysis (FEA) and specialized multi-point hydraulic lockouts, Winsteel's latest tunnel gantries neutralize concrete hydrostatic thrust of up to 120 kN/m², guaranteeing crack-free, monolithic subterranean arches.",
+      "status": "Published",
+      "featured": false
+    },
+    {
+      "id": "news-4",
+      "title": "Winsteel Renews ISO 3834-2 & EN 1090-2 EXC4 Global Welding Accreditations",
+      "slug": "winsteel-renews-global-welding-accreditations",
+      "category": "Quality & Standards",
+      "date": "2026-01-18",
+      "author": "QA Division",
+      "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+      "shortDescription": "Independent international audit confirms highest tier fusion welding competence and structural fabrication compliance.",
+      "content": "Following a rigorous multi-week audit by TÜV NORD and DNV GL, Winsteel Engineering Works has successfully renewed its EN 1090-2 Execution Class 4 (EXC4) and ISO 3834-2 welding quality management certifications. This achievement reinforces Winsteel's capability to deliver bridge superstructures and nuclear safety containment steelwork conforming to the strictest global codes.",
+      "status": "Published",
+      "featured": false
+    }
+  ]
+}

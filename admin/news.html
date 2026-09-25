@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage News | Winsteel Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/logo/winsteel-logo.png" alt="Winsteel Logo" class="sidebar-logo">
+      <div class="sidebar-title-group">
+        <span class="sidebar-title">Winsteel</span>
+        <span class="sidebar-subtitle">Admin Panel</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+      <li class="nav-section-title">Content</li>
+      <li><a href="products.html" class="sidebar-link">Products</a></li>
+      <li><a href="projects.html" class="sidebar-link">Projects</a></li>
+      <li><a href="facilities.html" class="sidebar-link">Facilities</a></li>
+      <li><a href="strengths.html" class="sidebar-link">Strengths</a></li>
+      <li><a href="certificates.html" class="sidebar-link">Certificates</a></li>
+      <li><a href="clients.html" class="sidebar-link">Clients</a></li>
+      <li><a href="news.html" class="sidebar-link active">News & Media</a></li>
+      <li class="nav-section-title">Website</li>
+      <li><a href="categories.html" class="sidebar-link">Categories</a></li>
+      <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="#" class="btn-sidebar-logout">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="topbar-toggle-sidebar" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="topbar-page-title">News Releases & Publications</h1>
+      </div>
+      <div class="topbar-actions">
+        <a href="news-edit.html" class="btn-admin btn-admin-primary">+ Add News</a>
+        <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="admin-card">
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Thumbnail</th>
+                <th>Headline</th>
+                <th>Category</th>
+                <th>Published Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-news-table-body">
+              <tr><td colspan="6" style="text-align:center; padding:30px;">Loading news...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+  <script src="js/news.js"></script>
+</body>
+</html>

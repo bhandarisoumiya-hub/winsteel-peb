@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Article | Winsteel Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/logo/winsteel-logo.png" alt="Winsteel Logo" class="sidebar-logo">
+      <div class="sidebar-title-group">
+        <span class="sidebar-title">Winsteel</span>
+        <span class="sidebar-subtitle">Admin Panel</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+      <li class="nav-section-title">Content</li>
+      <li><a href="products.html" class="sidebar-link">Products</a></li>
+      <li><a href="projects.html" class="sidebar-link">Projects</a></li>
+      <li><a href="facilities.html" class="sidebar-link">Facilities</a></li>
+      <li><a href="strengths.html" class="sidebar-link">Strengths</a></li>
+      <li><a href="certificates.html" class="sidebar-link">Certificates</a></li>
+      <li><a href="clients.html" class="sidebar-link">Clients</a></li>
+      <li><a href="news.html" class="sidebar-link active">News & Media</a></li>
+      <li class="nav-section-title">Website</li>
+      <li><a href="categories.html" class="sidebar-link">Categories</a></li>
+      <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="#" class="btn-sidebar-logout">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <a href="news.html" class="btn-admin btn-admin-outline" style="margin-right:12px;">← Back</a>
+        <h1 class="topbar-page-title" id="edit-news-page-title">Create / Edit News Article</h1>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="admin-card" style="padding: 32px; max-width: 900px;">
+        <form id="news-edit-form">
+          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
+            <div class="admin-form-group">
+              <label for="news-id">Article ID</label>
+              <input type="text" id="news-id" class="admin-input" required>
+            </div>
+            <div class="admin-form-group">
+              <label for="news-title">Headline</label>
+              <input type="text" id="news-title" class="admin-input" required placeholder="Article title...">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+            <div class="admin-form-group">
+              <label for="news-category">Category</label>
+              <input type="text" id="news-category" class="admin-input" required placeholder="e.g. Corporate Milestone">
+            </div>
+            <div class="admin-form-group">
+              <label for="news-date">Publication Date</label>
+              <input type="date" id="news-date" class="admin-input" required>
+            </div>
+            <div class="admin-form-group">
+              <label for="news-author">Author / Desk</label>
+              <input type="text" id="news-author" class="admin-input" placeholder="e.g. Corporate Communications">
+            </div>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="news-image">Hero Image URL</label>
+            <input type="text" id="news-image" class="admin-input" required placeholder="https://images.unsplash.com/...">
+          </div>
+
+          <div class="admin-form-group">
+            <label for="news-shortDesc">Summary Excerpt</label>
+            <textarea id="news-shortDesc" class="admin-textarea" style="min-height:70px;" required></textarea>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="news-content">Full Body Content</label>
+            <textarea id="news-content" class="admin-textarea" style="min-height:160px;" required></textarea>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items:center;">
+            <div class="admin-form-group">
+              <label for="news-status">Status</label>
+              <select id="news-status" class="admin-select">
+                <option value="Published">Published</option>
+                <option value="Draft">Draft</option>
+              </select>
+            </div>
+            <div class="admin-form-group" style="margin-top:16px;">
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+                <input type="checkbox" id="news-featured" style="width:18px; height:18px;">
+                <span>Highlight as Featured News</span>
+              </label>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--admin-border);">
+            <button type="submit" class="btn-admin btn-admin-primary">Save Release</button>
+            <a href="news.html" class="btn-admin btn-admin-outline">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+  <script src="js/news.js"></script>
+</body>
+</html>

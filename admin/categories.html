@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Categories | Winsteel Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/logo/winsteel-logo.png" alt="Winsteel Logo" class="sidebar-logo">
+      <div class="sidebar-title-group">
+        <span class="sidebar-title">Winsteel</span>
+        <span class="sidebar-subtitle">Admin Panel</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+      <li class="nav-section-title">Content</li>
+      <li><a href="products.html" class="sidebar-link">Products</a></li>
+      <li><a href="projects.html" class="sidebar-link">Projects</a></li>
+      <li><a href="facilities.html" class="sidebar-link">Facilities</a></li>
+      <li><a href="strengths.html" class="sidebar-link">Strengths</a></li>
+      <li><a href="certificates.html" class="sidebar-link">Certificates</a></li>
+      <li><a href="clients.html" class="sidebar-link">Clients</a></li>
+      <li><a href="news.html" class="sidebar-link">News & Media</a></li>
+      <li class="nav-section-title">Website</li>
+      <li><a href="categories.html" class="sidebar-link active">Categories</a></li>
+      <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="#" class="btn-sidebar-logout">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="topbar-toggle-sidebar" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="topbar-page-title">Category Architecture</h1>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+        <!-- Product Categories -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Product Categories</h2>
+          </div>
+          <div style="padding: 24px;">
+            <ul id="product-cat-list" style="list-style:none; margin-bottom:20px; display:flex; flex-direction:column; gap:8px;"></ul>
+            <div style="display:flex; gap:10px;">
+              <input type="text" id="new-prod-cat" class="admin-input" placeholder="New product category...">
+              <button id="btn-add-prod-cat" class="btn-admin btn-admin-primary" style="white-space:nowrap;">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Categories -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Project Categories</h2>
+          </div>
+          <div style="padding: 24px;">
+            <ul id="project-cat-list" style="list-style:none; margin-bottom:20px; display:flex; flex-direction:column; gap:8px;"></ul>
+            <div style="display:flex; gap:10px;">
+              <input type="text" id="new-proj-cat" class="admin-input" placeholder="New project category...">
+              <button id="btn-add-proj-cat" class="btn-admin btn-admin-primary" style="white-space:nowrap;">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const data = await AdminApp.getWorkingData();
+      if (!data) return;
+
+      const prodUl = document.getElementById('product-cat-list');
+      const projUl = document.getElementById('project-cat-list');
+
+      function renderCategories() {
+        if (!data.categories) data.categories = { products: ['All'], projects: ['All'] };
+
+        prodUl.innerHTML = data.categories.products.map(c => `
+          <li style="display:flex; justify-content:space-between; align-items:center; background:#F8FAFC; border:1px solid #E2E8F0; padding:10px 14px; border-radius:6px;">
+            <strong>${c}</strong>
+            ${c !== 'All' ? `<button onclick="removeProdCat('${c}')" style="background:none; border:none; color:#DC2626; cursor:pointer; font-weight:700;">&times;</button>` : '<span style="font-size:0.75rem; color:#64748B;">System</span>'}
+          </li>
+        `).join('');
+
+        projUl.innerHTML = data.categories.projects.map(c => `
+          <li style="display:flex; justify-content:space-between; align-items:center; background:#F8FAFC; border:1px solid #E2E8F0; padding:10px 14px; border-radius:6px;">
+            <strong>${c}</strong>
+            ${c !== 'All' ? `<button onclick="removeProjCat('${c}')" style="background:none; border:none; color:#DC2626; cursor:pointer; font-weight:700;">&times;</button>` : '<span style="font-size:0.75rem; color:#64748B;">System</span>'}
+          </li>
+        `).join('');
+      }
+
+      window.removeProdCat = function(name) {
+        data.categories.products = data.categories.products.filter(c => c !== name);
+        AdminApp.saveWorkingData(data);
+        renderCategories();
+      };
+
+      window.removeProjCat = function(name) {
+        data.categories.projects = data.categories.projects.filter(c => c !== name);
+        AdminApp.saveWorkingData(data);
+        renderCategories();
+      };
+
+      document.getElementById('btn-add-prod-cat').addEventListener('click', () => {
+        const val = document.getElementById('new-prod-cat').value.trim();
+        if (val && !data.categories.products.includes(val)) {
+          data.categories.products.push(val);
+          AdminApp.saveWorkingData(data);
+          document.getElementById('new-prod-cat').value = '';
+          renderCategories();
+        }
+      });
+
+      document.getElementById('btn-add-proj-cat').addEventListener('click', () => {
+        const val = document.getElementById('new-proj-cat').value.trim();
+        if (val && !data.categories.projects.includes(val)) {
+          data.categories.projects.push(val);
+          AdminApp.saveWorkingData(data);
+          document.getElementById('new-proj-cat').value = '';
+          renderCategories();
+        }
+      });
+
+      renderCategories();
+    });
+  </script>
+</body>
+</html>

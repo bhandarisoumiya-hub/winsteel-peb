@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Strengths | Winsteel Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/logo/winsteel-logo.png" alt="Winsteel Logo" class="sidebar-logo">
+      <div class="sidebar-title-group">
+        <span class="sidebar-title">Winsteel</span>
+        <span class="sidebar-subtitle">Admin Panel</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+      <li class="nav-section-title">Content</li>
+      <li><a href="products.html" class="sidebar-link">Products</a></li>
+      <li><a href="projects.html" class="sidebar-link">Projects</a></li>
+      <li><a href="facilities.html" class="sidebar-link">Facilities</a></li>
+      <li><a href="strengths.html" class="sidebar-link active">Strengths</a></li>
+      <li><a href="certificates.html" class="sidebar-link">Certificates</a></li>
+      <li><a href="clients.html" class="sidebar-link">Clients</a></li>
+      <li><a href="news.html" class="sidebar-link">News & Media</a></li>
+      <li class="nav-section-title">Website</li>
+      <li><a href="categories.html" class="sidebar-link">Categories</a></li>
+      <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="#" class="btn-sidebar-logout">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="topbar-toggle-sidebar" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="topbar-page-title">Company Strengths</h1>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="btn-add-strength" class="btn-admin btn-admin-primary">+ Add Strength</button>
+        <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="admin-card">
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Strength Pillar</th>
+                <th>Description</th>
+                <th>Icon</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="strengths-table-body">
+              <tr><td colspan="6" style="text-align:center; padding:30px;">Loading strengths...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Strength Modal -->
+  <div id="strength-modal" style="display:none; position:fixed; inset:0; background:rgba(7,21,34,0.8); z-index:999; align-items:center; justify-content:center; padding:20px;">
+    <div style="background:#FFF; border-radius:8px; max-width:550px; width:100%; padding:30px;">
+      <h2 id="strength-modal-title" style="font-size:1.3rem; margin-bottom:20px;">Add Core Strength</h2>
+      <form id="strength-form">
+        <input type="hidden" id="str-id">
+        <div class="admin-form-group">
+          <label>Title</label>
+          <input type="text" id="str-title" class="admin-input" required placeholder="e.g. Engineering Precision">
+        </div>
+        <div class="admin-form-group">
+          <label>Description</label>
+          <textarea id="str-desc" class="admin-textarea" style="min-height:90px;" required></textarea>
+        </div>
+        <div class="admin-form-group">
+          <label>Icon Identifier / Keyword</label>
+          <input type="text" id="str-icon" class="admin-input" placeholder="e.g. drafting-compass, shield-check, cog">
+        </div>
+        <div class="admin-form-group">
+          <label>Status</label>
+          <select id="str-status" class="admin-select">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:20px;">
+          <button type="button" id="close-strength-modal" class="btn-admin btn-admin-outline">Cancel</button>
+          <button type="submit" class="btn-admin btn-admin-primary">Save Strength</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const data = await AdminApp.getWorkingData();
+      const tbody = document.getElementById('strengths-table-body');
+      const modal = document.getElementById('strength-modal');
+      const form = document.getElementById('strength-form');
+
+      function render() {
+        if (!data || !data.strengths || !data.strengths.length) {
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:30px; color:#64748B;">No strengths listed.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = data.strengths.map(s => `
+          <tr>
+            <td><code>${s.id}</code></td>
+            <td><strong>${s.title}</strong></td>
+            <td>${s.description}</td>
+            <td><code style="font-size:0.8rem;">${s.icon || 'star'}</code></td>
+            <td><span class="badge-status ${s.status.toLowerCase()}">${s.status}</span></td>
+            <td>
+              <div style="display:flex; gap:6px;">
+                <button class="btn-admin btn-admin-outline" style="padding:4px 8px; font-size:0.75rem;" onclick="editStrength('${s.id}')">Edit</button>
+                <button class="btn-admin btn-admin-danger" style="padding:4px 8px; font-size:0.75rem;" onclick="deleteStrength('${s.id}')">Delete</button>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      window.editStrength = function (id) {
+        const s = data.strengths.find(item => item.id === id);
+        if (!s) return;
+        document.getElementById('strength-modal-title').textContent = 'Edit Core Strength';
+        document.getElementById('str-id').value = s.id;
+        document.getElementById('str-title').value = s.title;
+        document.getElementById('str-desc').value = s.description;
+        document.getElementById('str-icon').value = s.icon || '';
+        document.getElementById('str-status').value = s.status || 'Active';
+        modal.style.display = 'flex';
+      };
+
+      window.deleteStrength = function (id) {
+        if (confirm(`Delete strength: ${id}?`)) {
+          data.strengths = data.strengths.filter(item => item.id !== id);
+          AdminApp.saveWorkingData(data);
+          render();
+        }
+      };
+
+      document.getElementById('btn-add-strength').addEventListener('click', () => {
+        document.getElementById('strength-modal-title').textContent = 'Add Core Strength';
+        form.reset();
+        document.getElementById('str-id').value = `str-${(data.strengths || []).length + 1}`;
+        modal.style.display = 'flex';
+      });
+
+      document.getElementById('close-strength-modal').addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const id = document.getElementById('str-id').value.trim();
+        const title = document.getElementById('str-title').value.trim();
+        const description = document.getElementById('str-desc').value.trim();
+        const icon = document.getElementById('str-icon').value.trim();
+        const status = document.getElementById('str-status').value;
+
+        const obj = { id, title, description, icon, status, displayOrder: 1 };
+        const idx = (data.strengths || []).findIndex(s => s.id === id);
+        if (idx !== -1) {
+          data.strengths[idx] = obj;
+        } else {
+          if (!data.strengths) data.strengths = [];
+          data.strengths.push(obj);
+        }
+
+        AdminApp.saveWorkingData(data);
+        modal.style.display = 'none';
+        render();
+      });
+
+      render();
+    });
+  </script>
+</body>
+</html>

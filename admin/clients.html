@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Clients | Winsteel Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/logo/winsteel-logo.png" alt="Winsteel Logo" class="sidebar-logo">
+      <div class="sidebar-title-group">
+        <span class="sidebar-title">Winsteel</span>
+        <span class="sidebar-subtitle">Admin Panel</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+      <li class="nav-section-title">Content</li>
+      <li><a href="products.html" class="sidebar-link">Products</a></li>
+      <li><a href="projects.html" class="sidebar-link">Projects</a></li>
+      <li><a href="facilities.html" class="sidebar-link">Facilities</a></li>
+      <li><a href="strengths.html" class="sidebar-link">Strengths</a></li>
+      <li><a href="certificates.html" class="sidebar-link">Certificates</a></li>
+      <li><a href="clients.html" class="sidebar-link active">Clients</a></li>
+      <li><a href="news.html" class="sidebar-link">News & Media</a></li>
+      <li class="nav-section-title">Website</li>
+      <li><a href="categories.html" class="sidebar-link">Categories</a></li>
+      <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="#" class="btn-sidebar-logout">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="topbar-toggle-sidebar" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="topbar-page-title">Client Portfolio</h1>
+      </div>
+      <div class="topbar-actions">
+        <button id="btn-add-client" class="btn-admin btn-admin-primary">+ Add Client</button>
+        <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="admin-card">
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Brand Name</th>
+                <th>Sector</th>
+                <th>Website URL</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="clients-table-body">
+              <tr><td colspan="6" style="text-align:center; padding:30px;">Loading client directory...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Client Modal -->
+  <div id="client-modal" style="display:none; position:fixed; inset:0; background:rgba(7,21,34,0.8); z-index:999; align-items:center; justify-content:center; padding:20px;">
+    <div style="background:#FFF; border-radius:8px; max-width:520px; width:100%; padding:30px;">
+      <h2 id="client-modal-title" style="font-size:1.3rem; margin-bottom:20px;">Add Client</h2>
+      <form id="client-form">
+        <input type="hidden" id="cli-id">
+        <div class="admin-form-group">
+          <label>Company Name</label>
+          <input type="text" id="cli-name" class="admin-input" required placeholder="e.g. Larsen & Toubro">
+        </div>
+        <div class="admin-form-group">
+          <label>Sector / Category</label>
+          <input type="text" id="cli-cat" class="admin-input" placeholder="e.g. EPC Infrastructure">
+        </div>
+        <div class="admin-form-group">
+          <label>Website URL</label>
+          <input type="url" id="cli-url" class="admin-input" placeholder="https://...">
+        </div>
+        <div class="admin-form-group">
+          <label>Status</label>
+          <select id="cli-status" class="admin-select">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:20px;">
+          <button type="button" id="close-client-modal" class="btn-admin btn-admin-outline">Cancel</button>
+          <button type="submit" class="btn-admin btn-admin-primary">Save Client</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const data = await AdminApp.getWorkingData();
+      const tbody = document.getElementById('clients-table-body');
+      const modal = document.getElementById('client-modal');
+      const form = document.getElementById('client-form');
+
+      function render() {
+        if (!data || !data.clients || !data.clients.length) {
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:30px; color:#64748B;">No clients listed.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = data.clients.map(c => `
+          <tr>
+            <td><code>${c.id}</code></td>
+            <td><strong>${c.companyName}</strong></td>
+            <td>${c.category || 'EPC Contractor'}</td>
+            <td><a href="${c.website || '#'}" target="_blank" style="color:#0067B1; text-decoration:underline;">${c.website || 'N/A'}</a></td>
+            <td><span class="badge-status ${c.status.toLowerCase()}">${c.status}</span></td>
+            <td>
+              <div style="display:flex; gap:6px;">
+                <button class="btn-admin btn-admin-outline" style="padding:4px 8px; font-size:0.75rem;" onclick="editClient('${c.id}')">Edit</button>
+                <button class="btn-admin btn-admin-danger" style="padding:4px 8px; font-size:0.75rem;" onclick="deleteClient('${c.id}')">Delete</button>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      window.editClient = function(id) {
+        const c = data.clients.find(item => item.id === id);
+        if (!c) return;
+        document.getElementById('client-modal-title').textContent = 'Edit Client';
+        document.getElementById('cli-id').value = c.id;
+        document.getElementById('cli-name').value = c.companyName;
+        document.getElementById('cli-cat').value = c.category || '';
+        document.getElementById('cli-url').value = c.website || '';
+        document.getElementById('cli-status').value = c.status || 'Active';
+        modal.style.display = 'flex';
+      };
+
+      window.deleteClient = function(id) {
+        if (confirm(`Delete client: ${id}?`)) {
+          data.clients = data.clients.filter(item => item.id !== id);
+          AdminApp.saveWorkingData(data);
+          render();
+        }
+      };
+
+      document.getElementById('btn-add-client').addEventListener('click', () => {
+        document.getElementById('client-modal-title').textContent = 'Add Client';
+        form.reset();
+        document.getElementById('cli-id').value = `cli-${(data.clients || []).length + 1}`;
+        modal.style.display = 'flex';
+      });
+
+      document.getElementById('close-client-modal').addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const id = document.getElementById('cli-id').value.trim();
+        const companyName = document.getElementById('cli-name').value.trim();
+        const category = document.getElementById('cli-cat').value.trim();
+        const website = document.getElementById('cli-url').value.trim();
+        const status = document.getElementById('cli-status').value;
+
+        const obj = { id, companyName, logo: companyName, website, category, displayOrder: 1, status };
+        const idx = (data.clients || []).findIndex(c => c.id === id);
+        if (idx !== -1) {
+          data.clients[idx] = obj;
+        } else {
+          if (!data.clients) data.clients = [];
+          data.clients.push(obj);
+        }
+
+        AdminApp.saveWorkingData(data);
+        modal.style.display = 'none';
+        render();
+      });
+
+      render();
+    });
+  </script>
+</body>
+</html>

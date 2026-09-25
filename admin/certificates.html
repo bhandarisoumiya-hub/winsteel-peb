@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Certificates | Winsteel Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/logo/winsteel-logo.png" alt="Winsteel Logo" class="sidebar-logo">
+      <div class="sidebar-title-group">
+        <span class="sidebar-title">Winsteel</span>
+        <span class="sidebar-subtitle">Admin Panel</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+      <li class="nav-section-title">Content</li>
+      <li><a href="products.html" class="sidebar-link">Products</a></li>
+      <li><a href="projects.html" class="sidebar-link">Projects</a></li>
+      <li><a href="facilities.html" class="sidebar-link">Facilities</a></li>
+      <li><a href="strengths.html" class="sidebar-link">Strengths</a></li>
+      <li><a href="certificates.html" class="sidebar-link active">Certificates</a></li>
+      <li><a href="clients.html" class="sidebar-link">Clients</a></li>
+      <li><a href="news.html" class="sidebar-link">News & Media</a></li>
+      <li class="nav-section-title">Website</li>
+      <li><a href="categories.html" class="sidebar-link">Categories</a></li>
+      <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="#" class="btn-sidebar-logout">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="topbar-toggle-sidebar" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="topbar-page-title">Certifications & Accreditations</h1>
+      </div>
+      <div class="topbar-actions">
+        <button id="btn-add-cert" class="btn-admin btn-admin-primary">+ Add Certificate</button>
+        <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="admin-card">
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Thumbnail</th>
+                <th>Certificate Name</th>
+                <th>Issuing Organization</th>
+                <th>Certificate No.</th>
+                <th>Valid Until</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="cert-table-body">
+              <tr><td colspan="8" style="text-align:center; padding:30px;">Loading certificates...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Certificate Modal -->
+  <div id="cert-modal" style="display:none; position:fixed; inset:0; background:rgba(7,21,34,0.8); z-index:999; align-items:center; justify-content:center; padding:20px;">
+    <div style="background:#FFF; border-radius:8px; max-width:580px; width:100%; padding:30px;">
+      <h2 id="cert-modal-title" style="font-size:1.3rem; margin-bottom:20px;">Add Certification</h2>
+      <form id="cert-form">
+        <input type="hidden" id="cert-id">
+        <div class="admin-form-group">
+          <label>Certificate Name</label>
+          <input type="text" id="cert-name" class="admin-input" required placeholder="e.g. ISO 9001:2015 Quality Management">
+        </div>
+        <div class="admin-form-group">
+          <label>Issuing Body / Organization</label>
+          <input type="text" id="cert-org" class="admin-input" required placeholder="e.g. Bureau Veritas Certification">
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="admin-form-group">
+            <label>Certificate Number</label>
+            <input type="text" id="cert-num" class="admin-input" placeholder="IN-BV-QMS-90214">
+          </div>
+          <div class="admin-form-group">
+            <label>Expiry Date</label>
+            <input type="date" id="cert-expiry" class="admin-input">
+          </div>
+        </div>
+        <div class="admin-form-group">
+          <label>Image URL</label>
+          <input type="text" id="cert-img" class="admin-input" required placeholder="https://images.unsplash.com/...">
+        </div>
+        <div class="admin-form-group">
+          <label>Document / PDF Filename</label>
+          <input type="text" id="cert-doc" class="admin-input" placeholder="ISO-9001-2015-Winsteel.pdf">
+        </div>
+        <div class="admin-form-group">
+          <label>Status</label>
+          <select id="cert-status" class="admin-select">
+            <option value="Active">Active</option>
+            <option value="Expired">Expired</option>
+          </select>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:20px;">
+          <button type="button" id="close-cert-modal" class="btn-admin btn-admin-outline">Cancel</button>
+          <button type="submit" class="btn-admin btn-admin-primary">Save Certificate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const data = await AdminApp.getWorkingData();
+      const tbody = document.getElementById('cert-table-body');
+      const modal = document.getElementById('cert-modal');
+      const form = document.getElementById('cert-form');
+
+      function render() {
+        if (!data || !data.certificates || !data.certificates.length) {
+          tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:30px; color:#64748B;">No certificates found.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = data.certificates.map(c => `
+          <tr>
+            <td><code>${c.id}</code></td>
+            <td><img src="${c.image}" alt="${c.certificateName}" class="table-img"></td>
+            <td><strong>${c.certificateName}</strong></td>
+            <td>${c.issuingOrganization}</td>
+            <td><code style="font-size:0.8rem;">${c.certificateNumber || 'N/A'}</code></td>
+            <td>${c.expiryDate || 'Perpetual'}</td>
+            <td><span class="badge-status ${c.status.toLowerCase()}">${c.status}</span></td>
+            <td>
+              <div style="display:flex; gap:6px;">
+                <button class="btn-admin btn-admin-outline" style="padding:4px 8px; font-size:0.75rem;" onclick="editCert('${c.id}')">Edit</button>
+                <button class="btn-admin btn-admin-danger" style="padding:4px 8px; font-size:0.75rem;" onclick="deleteCert('${c.id}')">Delete</button>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      window.editCert = function(id) {
+        const c = data.certificates.find(item => item.id === id);
+        if (!c) return;
+        document.getElementById('cert-modal-title').textContent = 'Edit Certification';
+        document.getElementById('cert-id').value = c.id;
+        document.getElementById('cert-name').value = c.certificateName;
+        document.getElementById('cert-org').value = c.issuingOrganization;
+        document.getElementById('cert-num').value = c.certificateNumber || '';
+        document.getElementById('cert-expiry').value = c.expiryDate || '';
+        document.getElementById('cert-img').value = c.image;
+        document.getElementById('cert-doc').value = c.document || '';
+        document.getElementById('cert-status').value = c.status || 'Active';
+        modal.style.display = 'flex';
+      };
+
+      window.deleteCert = function(id) {
+        if (confirm(`Delete certificate: ${id}?`)) {
+          data.certificates = data.certificates.filter(item => item.id !== id);
+          AdminApp.saveWorkingData(data);
+          render();
+        }
+      };
+
+      document.getElementById('btn-add-cert').addEventListener('click', () => {
+        document.getElementById('cert-modal-title').textContent = 'Add Certification';
+        form.reset();
+        document.getElementById('cert-id').value = `cert-${(data.certificates || []).length + 1}`;
+        modal.style.display = 'flex';
+      });
+
+      document.getElementById('close-cert-modal').addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const id = document.getElementById('cert-id').value.trim();
+        const certificateName = document.getElementById('cert-name').value.trim();
+        const issuingOrganization = document.getElementById('cert-org').value.trim();
+        const certificateNumber = document.getElementById('cert-num').value.trim();
+        const expiryDate = document.getElementById('cert-expiry').value;
+        const image = document.getElementById('cert-img').value.trim();
+        const documentName = document.getElementById('cert-doc').value.trim();
+        const status = document.getElementById('cert-status').value;
+
+        const obj = { id, certificateName, issuingOrganization, certificateNumber, expiryDate, image, document: documentName, status };
+        const idx = (data.certificates || []).findIndex(c => c.id === id);
+        if (idx !== -1) {
+          data.certificates[idx] = obj;
+        } else {
+          if (!data.certificates) data.certificates = [];
+          data.certificates.push(obj);
+        }
+
+        AdminApp.saveWorkingData(data);
+        modal.style.display = 'none';
+        render();
+      });
+
+      render();
+    });
+  </script>
+</body>
+</html>

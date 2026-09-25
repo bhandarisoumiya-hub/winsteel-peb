@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Product | Winsteel Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/logo/winsteel-logo.png" alt="Winsteel Logo" class="sidebar-logo">
+      <div class="sidebar-title-group">
+        <span class="sidebar-title">Winsteel</span>
+        <span class="sidebar-subtitle">Admin Panel</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li>
+        <a href="dashboard.html" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-section-title">Content</li>
+      <li>
+        <a href="products.html" class="sidebar-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <span>Products</span>
+        </a>
+      </li>
+      <li><a href="projects.html" class="sidebar-link">Projects</a></li>
+      <li><a href="facilities.html" class="sidebar-link">Facilities</a></li>
+      <li><a href="strengths.html" class="sidebar-link">Strengths</a></li>
+      <li><a href="certificates.html" class="sidebar-link">Certificates</a></li>
+      <li><a href="clients.html" class="sidebar-link">Clients</a></li>
+      <li><a href="news.html" class="sidebar-link">News & Media</a></li>
+      <li class="nav-section-title">Website</li>
+      <li><a href="categories.html" class="sidebar-link">Categories</a></li>
+      <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="#" class="btn-sidebar-logout">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <a href="products.html" class="btn-admin btn-admin-outline" style="margin-right:12px;">← Back</a>
+        <h1 class="topbar-page-title" id="edit-page-title">Add / Edit Product</h1>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="admin-card" style="padding: 32px; max-width: 900px;">
+        <form id="product-edit-form">
+          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
+            <div class="admin-form-group">
+              <label for="prod-id">Product ID</label>
+              <input type="text" id="prod-id" class="admin-input" required>
+            </div>
+            <div class="admin-form-group">
+              <label for="prod-title">Product Title</label>
+              <input type="text" id="prod-title" class="admin-input" required placeholder="e.g. Segmental Launching Gantry">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="admin-form-group">
+              <label for="prod-slug">URL Slug</label>
+              <input type="text" id="prod-slug" class="admin-input" placeholder="segmental-launching-gantry">
+            </div>
+            <div class="admin-form-group">
+              <label for="prod-category">Category</label>
+              <select id="prod-category" class="admin-select" required></select>
+            </div>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="prod-shortDesc">Short Description (for Cards & Previews)</label>
+            <textarea id="prod-shortDesc" class="admin-textarea" style="min-height:70px;" required></textarea>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="prod-desc">Full Detailed Description</label>
+            <textarea id="prod-desc" class="admin-textarea" style="min-height:140px;" required></textarea>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="prod-image">Cover Image URL (Direct link or upload path)</label>
+            <input type="text" id="prod-image" class="admin-input" required placeholder="https://images.unsplash.com/...">
+          </div>
+
+          <div class="admin-form-group">
+            <label for="prod-features">Key Engineering Features (One per line)</label>
+            <textarea id="prod-features" class="admin-textarea" placeholder="Feature 1&#10;Feature 2&#10;Feature 3"></textarea>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="prod-specs">Specifications Matrix (JSON format key-value pairs)</label>
+            <textarea id="prod-specs" class="admin-textarea" style="font-family:monospace; font-size:0.85rem;" placeholder='{ "Capacity": "1,800 MT", "Span": "60m" }'></textarea>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items:center;">
+            <div class="admin-form-group">
+              <label for="prod-status">Status</label>
+              <select id="prod-status" class="admin-select">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+            <div class="admin-form-group">
+              <label for="prod-displayOrder">Display Order</label>
+              <input type="number" id="prod-displayOrder" class="admin-input" value="1">
+            </div>
+            <div class="admin-form-group" style="margin-top:16px;">
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+                <input type="checkbox" id="prod-featured" style="width:18px; height:18px;">
+                <span>Featured Product</span>
+              </label>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--admin-border);">
+            <button type="submit" class="btn-admin btn-admin-primary">Save Product</button>
+            <a href="products.html" class="btn-admin btn-admin-outline">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

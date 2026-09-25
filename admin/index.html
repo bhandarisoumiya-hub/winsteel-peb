@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal Login | Winsteel Engineering Works</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <style>
+    body {
+      background-color: var(--admin-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .login-box {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 44px 40px;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+    }
+    .login-brand {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .login-brand img {
+      height: 60px;
+      margin: 0 auto 12px;
+    }
+    .demo-credentials {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-size: 0.85rem;
+      color: #1E40AF;
+      margin-bottom: 24px;
+    }
+    .demo-credentials code {
+      font-weight: 700;
+      background: #DBEAFE;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <div class="login-brand">
+      <img src="../assets/logo/winsteel-logo.png" alt="Winsteel Logo">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-size:1.4rem; color:#071522;">Management Portal</h2>
+      <p style="color:#64748B; font-size:0.875rem;">Sign in to manage products, projects & content</p>
+    </div>
+
+    <div class="demo-credentials">
+      <strong>Demo Credentials:</strong><br>
+      Username: <code>admin</code> &nbsp;|&nbsp; Password: <code>winsteel2026</code>
+    </div>
+
+    <form id="admin-login-form">
+      <div class="admin-form-group">
+        <label for="username">Username or Corporate Email</label>
+        <input type="text" id="username" class="admin-input" placeholder="admin" required autofocus value="admin">
+      </div>
+
+      <div class="admin-form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="admin-input" placeholder="••••••••" required value="winsteel2026">
+      </div>
+
+      <div id="login-error" style="display:none; color:#DC2626; font-size:0.85rem; margin-bottom:14px; font-weight:600;">
+        Invalid credentials. Please use the demo login provided above.
+      </div>
+
+      <button type="submit" class="btn-admin btn-admin-primary" style="width:100%; justify-content:center; padding:12px;">
+        Sign In to Dashboard
+      </button>
+    </form>
+
+    <div style="text-align:center; margin-top:24px; font-size:0.8rem; color:#94A3B8;">
+      <a href="../index.html" style="color:#0067B1; text-decoration:none; font-weight:600;">← Return to Winsteel Public Website</a>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+  <script>
+    document.getElementById('admin-login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value.trim();
+      const errEl = document.getElementById('login-error');
+
+      if (AdminApp.login(u, p)) {
+        window.location.href = 'dashboard.html';
+      } else {
+        errEl.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

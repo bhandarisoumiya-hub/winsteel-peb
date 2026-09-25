@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Project | Winsteel Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/logo/winsteel-logo.png" alt="Winsteel Logo" class="sidebar-logo">
+      <div class="sidebar-title-group">
+        <span class="sidebar-title">Winsteel</span>
+        <span class="sidebar-subtitle">Admin Panel</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li>
+        <a href="dashboard.html" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-section-title">Content</li>
+      <li><a href="products.html" class="sidebar-link">Products</a></li>
+      <li><a href="projects.html" class="sidebar-link active">Projects</a></li>
+      <li><a href="facilities.html" class="sidebar-link">Facilities</a></li>
+      <li><a href="strengths.html" class="sidebar-link">Strengths</a></li>
+      <li><a href="certificates.html" class="sidebar-link">Certificates</a></li>
+      <li><a href="clients.html" class="sidebar-link">Clients</a></li>
+      <li><a href="news.html" class="sidebar-link">News & Media</a></li>
+      <li class="nav-section-title">Website</li>
+      <li><a href="categories.html" class="sidebar-link">Categories</a></li>
+      <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="#" class="btn-sidebar-logout">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <a href="projects.html" class="btn-admin btn-admin-outline" style="margin-right:12px;">← Back</a>
+        <h1 class="topbar-page-title" id="edit-project-page-title">Add / Edit Project</h1>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="admin-card" style="padding: 32px; max-width: 900px;">
+        <form id="project-edit-form">
+          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
+            <div class="admin-form-group">
+              <label for="proj-id">Project ID</label>
+              <input type="text" id="proj-id" class="admin-input" required>
+            </div>
+            <div class="admin-form-group">
+              <label for="proj-title">Project Title</label>
+              <input type="text" id="proj-title" class="admin-input" required placeholder="e.g. Mumbai Trans Harbour Link">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="admin-form-group">
+              <label for="proj-slug">URL Slug</label>
+              <input type="text" id="proj-slug" class="admin-input" placeholder="mumbai-trans-harbour-link">
+            </div>
+            <div class="admin-form-group">
+              <label for="proj-category">Category</label>
+              <select id="proj-category" class="admin-select" required></select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+            <div class="admin-form-group">
+              <label for="proj-location">Location</label>
+              <input type="text" id="proj-location" class="admin-input" required placeholder="City, State, Country">
+            </div>
+            <div class="admin-form-group">
+              <label for="proj-year">Completion Year</label>
+              <input type="text" id="proj-year" class="admin-input" required placeholder="2024">
+            </div>
+            <div class="admin-form-group">
+              <label for="proj-client">Client / EPC Partner</label>
+              <input type="text" id="proj-client" class="admin-input" required placeholder="e.g. L&T Construction">
+            </div>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="proj-shortDesc">Short Summary (for Cards)</label>
+            <textarea id="proj-shortDesc" class="admin-textarea" style="min-height:70px;" required></textarea>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="proj-desc">Detailed Case Study Description</label>
+            <textarea id="proj-desc" class="admin-textarea" style="min-height:130px;" required></textarea>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="proj-coverImage">Cover Image URL</label>
+            <input type="text" id="proj-coverImage" class="admin-input" required placeholder="https://images.unsplash.com/...">
+          </div>
+
+          <div class="admin-form-group">
+            <label for="proj-scope">Scope of Work</label>
+            <textarea id="proj-scope" class="admin-textarea" style="min-height:80px;" placeholder="Turnkey detail engineering, fabrication, trial assembly..."></textarea>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="proj-materials">Materials & Specifications</label>
+            <textarea id="proj-materials" class="admin-textarea" style="min-height:70px;" placeholder="Structural steel tonnage, grade, hydraulic systems..."></textarea>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items:center;">
+            <div class="admin-form-group">
+              <label for="proj-status">Status</label>
+              <select id="proj-status" class="admin-select">
+                <option value="Completed">Completed</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+            <div class="admin-form-group">
+              <label for="proj-displayOrder">Display Order</label>
+              <input type="number" id="proj-displayOrder" class="admin-input" value="1">
+            </div>
+            <div class="admin-form-group" style="margin-top:16px;">
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+                <input type="checkbox" id="proj-featured" style="width:18px; height:18px;">
+                <span>Featured Project</span>
+              </label>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--admin-border);">
+            <button type="submit" class="btn-admin btn-admin-primary">Save Project</button>
+            <a href="projects.html" class="btn-admin btn-admin-outline">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>

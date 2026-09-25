@@ -1,0 +1,22 @@
+{
+  "name": "winsteel-engineering-works",
+  "version": "1.0.0",
+  "description": "Winsteel Engineering Works Pvt. Ltd. - Corporate Website & Admin Portal",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "start": "npx serve -l 3000 .",
+    "build:data": "node scripts/build-data.js",
+    "validate": "node scripts/validate-data.js"
+  },
+  "keywords": [
+    "winsteel",
+    "engineering",
+    "steel-fabrication",
+    "launching-gantries",
+    "formworks",
+    "infrastructure"
+  ],
+  "author": "Winsteel Engineering Works Pvt. Ltd.",
+  "license": "ISC"
+}
