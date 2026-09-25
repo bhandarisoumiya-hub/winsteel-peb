@@ -48,15 +48,21 @@ const AdminApp = (function () {
       }
     }
 
-    try {
-      const res = await fetch('../database/db.json');
-      const data = await res.json();
-      localStorage.setItem(DATA_CACHE_KEY, JSON.stringify(data));
-      return data;
-    } catch (err) {
-      console.error('Error fetching base db.json', err);
-      return null;
+    const paths = ['../database/db.json', '/database/db.json', '../data/winsteel.json', '/data/winsteel.json'];
+    for (const p of paths) {
+      try {
+        const res = await fetch(p);
+        if (res.ok) {
+          const data = await res.json();
+          localStorage.setItem(DATA_CACHE_KEY, JSON.stringify(data));
+          return data;
+        }
+      } catch (err) {
+        // try next path
+      }
     }
+    console.error('Error fetching base db.json from any known path');
+    return null;
   }
 
   // Save Working Data

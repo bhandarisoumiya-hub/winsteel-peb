@@ -23,23 +23,21 @@ const WinsteelData = (function () {
       }
     }
 
-    // Try database/db.json first
-    try {
-      const res = await fetch('database/db.json');
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-      cachedData = await res.json();
-      return cachedData;
-    } catch (err) {
-      console.warn('Could not load database/db.json, trying data/winsteel.json...', err);
+    // Try database/db.json first (support absolute and relative URL paths)
+    const jsonPaths = ['/database/db.json', 'database/db.json', '/data/winsteel.json', 'data/winsteel.json'];
+    for (const jsonPath of jsonPaths) {
       try {
-        const fallbackRes = await fetch('data/winsteel.json');
-        cachedData = await fallbackRes.json();
-        return cachedData;
-      } catch (fallbackErr) {
-        console.error('CRITICAL: Failed to load Winsteel JSON data!', fallbackErr);
-        return null;
+        const res = await fetch(jsonPath);
+        if (res.ok) {
+          cachedData = await res.json();
+          return cachedData;
+        }
+      } catch (e) {
+        // try next path
       }
     }
+    console.error('CRITICAL: Failed to load Winsteel JSON data from any known path!');
+    return null;
   }
 
   // Getters

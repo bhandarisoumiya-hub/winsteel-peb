@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "npx serve -l 3000 .",
     "start": "npx serve -l 3000 .",
+    "build": "node scripts/build-data.js",
     "build:data": "node scripts/build-data.js",
     "validate": "node scripts/validate-data.js"
   },
