@@ -142,8 +142,8 @@ async function initProductEdit() {
     reader.onload = (e) => {
       const img = new Image();
       img.onload = () => {
-        // Optimize to max 1200px width/height and 0.82 JPEG quality
-        const maxDim = 1200;
+        // Optimize to max 800px width/height and 0.75 JPEG quality for fast storage
+        const maxDim = 800;
         let width = img.width;
         let height = img.height;
         if (width > maxDim || height > maxDim) {
@@ -161,7 +161,7 @@ async function initProductEdit() {
         const ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0, width, height);
 
-        const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.75);
         showImagePreview(dataUrl);
       };
       img.src = e.target.result;
@@ -230,6 +230,40 @@ async function initProductEdit() {
     document.getElementById('prod-id').value = `prod-${nextNum}`;
   }
 
+  // Specifications Rows Manager (No JSON typing needed)
+  const specsContainer = document.getElementById('specs-container');
+  const btnAddSpec = document.getElementById('btn-add-spec');
+
+  function addSpecRow(key = '', val = '') {
+    if (!specsContainer) return;
+    const row = document.createElement('div');
+    row.className = 'spec-row';
+    row.style.cssText = 'display:grid; grid-template-columns: 1fr 1.6fr 38px; gap: 10px; align-items:center;';
+    row.innerHTML = `
+      <input type="text" class="admin-input spec-key" placeholder="Feature (e.g. Tunnel Diameter / Span)" value="${key.replace(/"/g, '&quot;')}" style="font-size:0.9rem; padding:10px 12px;">
+      <input type="text" class="admin-input spec-val" placeholder="Value (e.g. 4.0m to 14.5m / 60m)" value="${val.replace(/"/g, '&quot;')}" style="font-size:0.9rem; padding:10px 12px;">
+      <button type="button" class="btn-remove-spec" style="background:#FEE2E2; color:#DC2626; border:1px solid #FECACA; border-radius:6px; height:38px; width:38px; cursor:pointer; font-weight:bold; font-size:18px; line-height:1; display:flex; align-items:center; justify-content:center;" title="Remove this spec">&times;</button>
+    `;
+    row.querySelector('.btn-remove-spec').onclick = () => row.remove();
+    specsContainer.appendChild(row);
+  }
+
+  if (btnAddSpec) {
+    btnAddSpec.onclick = () => addSpecRow('', '');
+  }
+
+  // Populate Specs: if editing, load existing specs; if new product, show 2 blank rows ready to fill
+  if (specsContainer) {
+    specsContainer.innerHTML = '';
+    const existingSpecs = currentProduct && currentProduct.specifications ? Object.entries(currentProduct.specifications) : [];
+    if (existingSpecs.length) {
+      existingSpecs.forEach(([k, v]) => addSpecRow(k, v));
+    } else {
+      addSpecRow('', '');
+      addSpecRow('', '');
+    }
+  }
+
   // Form Submit
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -256,6 +290,18 @@ async function initProductEdit() {
       slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     }
 
+    // Collect specifications from dynamic rows
+    const specifications = {};
+    if (specsContainer) {
+      specsContainer.querySelectorAll('.spec-row').forEach(row => {
+        const k = row.querySelector('.spec-key')?.value.trim();
+        const v = row.querySelector('.spec-val')?.value.trim();
+        if (k && v) {
+          specifications[k] = v;
+        }
+      });
+    }
+
     const updatedObj = {
       id,
       title,
@@ -266,10 +312,10 @@ async function initProductEdit() {
       image,
       gallery: currentProduct && currentProduct.gallery ? currentProduct.gallery : [image],
       features: currentProduct && currentProduct.features ? currentProduct.features : [],
-      specifications: currentProduct && currentProduct.specifications ? currentProduct.specifications : {},
-      status: currentProduct && currentProduct.status ? currentProduct.status : 'Active',
-      featured: currentProduct && typeof currentProduct.featured !== 'undefined' ? currentProduct.featured : false,
-      displayOrder: currentProduct && currentProduct.displayOrder ? currentProduct.displayOrder : 1
+      specifications: specifications,
+      status: 'Active',
+      featured: true,
+      displayOrder: 1
     };
 
     if (isEditing) {
@@ -279,7 +325,7 @@ async function initProductEdit() {
       }
     } else {
       if (!data.products) data.products = [];
-      data.products.push(updatedObj);
+      data.products.unshift(updatedObj);
     }
 
     AdminApp.saveWorkingData(data);

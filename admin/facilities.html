@@ -20,11 +20,31 @@
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+      <li>
+        <a href="dashboard.html" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+      </li>
       <li class="nav-section-title">Content</li>
-      <li><a href="products.html" class="sidebar-link">Products</a></li>
-      <li><a href="projects.html" class="sidebar-link">Projects</a></li>
-      <li><a href="facilities.html" class="sidebar-link active">Facilities</a></li>
+      <li>
+        <a href="products.html" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <span>Products</span>
+        </a>
+      </li>
+      <li>
+        <a href="projects.html" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span>Projects</span>
+        </a>
+      </li>
+      <li>
+        <a href="facilities.html" class="sidebar-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v14M21 7v14M6 11h4M6 15h4M14 11h4M14 15h4M9 3l3 4 3-4"/></svg>
+          <span>Facilities</span>
+        </a>
+      </li>
       <li><a href="strengths.html" class="sidebar-link">Strengths</a></li>
       <li><a href="certificates.html" class="sidebar-link">Certificates</a></li>
       <li><a href="clients.html" class="sidebar-link">Clients</a></li>
@@ -51,6 +71,8 @@
 
       <div class="topbar-actions">
         <button id="btn-add-facility" class="btn-admin btn-admin-primary">+ Add Facility</button>
+        <a href="../facilities.html" target="_blank" class="btn-admin btn-admin-outline">View Facilities ↗</a>
+        <a href="../index.html" target="_blank" class="btn-admin btn-admin-outline">View Website ↗</a>
         <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
       </div>
     </header>
@@ -61,12 +83,12 @@
           <table class="admin-table">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Image</th>
+                <th style="width: 80px;">Image</th>
                 <th>Facility Bay / Unit</th>
                 <th>Capacity</th>
                 <th>Covered Area</th>
-                <th>Actions</th>
+                <th>Key Equipment</th>
+                <th style="width: 130px; text-align: center;">Actions</th>
               </tr>
             </thead>
             <tbody id="admin-facilities-table-body">
@@ -79,45 +101,78 @@
   </main>
 
   <!-- Facility Modal -->
-  <div id="facility-modal" style="display:none; position:fixed; inset:0; background:rgba(7,21,34,0.8); z-index:999; align-items:center; justify-content:center; padding:20px;">
-    <div style="background:#FFF; border-radius:8px; max-width:640px; width:100%; padding:30px; max-height:90vh; overflow-y:auto;">
-      <h2 id="fac-modal-title" style="font-size:1.3rem; margin-bottom:20px; color:#071522;">Add Facility</h2>
+  <div id="facility-modal" style="display:none; position:fixed; inset:0; background:rgba(7,21,34,0.75); z-index:999; align-items:center; justify-content:center; padding:20px;">
+    <div style="background:#FFF; border-radius:12px; max-width:640px; width:100%; padding:30px; max-height:92vh; overflow-y:auto; box-shadow:0 20px 25px -5px rgba(0,0,0,0.3);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid #E2E8F0;">
+        <h2 id="fac-modal-title" style="font-size:1.25rem; font-weight:700; color:#071522; margin:0;">Add Manufacturing Facility</h2>
+        <button type="button" id="close-fac-modal-x" style="background:none; border:none; font-size:22px; cursor:pointer; color:#64748B; line-height:1;">&times;</button>
+      </div>
+
       <form id="facility-form">
         <input type="hidden" id="fac-id">
+        <input type="hidden" id="fac-image">
+
         <div class="admin-form-group">
-          <label>Facility Name</label>
-          <input type="text" id="fac-title" class="admin-input" required placeholder="e.g. Heavy Fabrication Bay 1">
+          <label for="fac-title" style="font-weight:600; color:#0F172A; margin-bottom:6px; display:block;">Facility Bay / Unit Name *</label>
+          <input type="text" id="fac-title" class="admin-input" required placeholder="e.g. Mega Heavy Fabrication Bay 1 & 2">
         </div>
+
+        <!-- Image (File Upload) -->
         <div class="admin-form-group">
-          <label>Description</label>
-          <textarea id="fac-desc" class="admin-textarea" style="min-height:80px;" required></textarea>
+          <label style="font-weight:600; color:#0F172A; margin-bottom:6px; display:block;">Facility Image *</label>
+          
+          <!-- Image Live Preview Box -->
+          <div id="image-preview-container" style="display:none; margin-bottom:12px;">
+            <div style="position:relative; display:inline-block;">
+              <img id="image-preview" src="" alt="Facility Preview" style="max-height:180px; max-width:100%; border-radius:8px; object-fit:cover; border:1px solid #CBD5E1; display:block; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+              <button type="button" id="btn-remove-image" style="position:absolute; top:8px; right:8px; background:rgba(220,38,38,0.92); color:#fff; border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; font-weight:bold; font-size:16px; line-height:1; display:flex; align-items:center; justify-content:center;" title="Remove image">&times;</button>
+            </div>
+            <div style="margin-top:10px;">
+              <button type="button" class="btn-admin btn-admin-outline" id="btn-change-image" style="padding:6px 14px; font-size:0.85rem;">
+                📁 Change Image
+              </button>
+            </div>
+          </div>
+
+          <!-- Upload Dropzone -->
+          <div id="upload-dropzone" style="border: 2px dashed #0067B1; border-radius: 8px; padding: 24px 16px; text-align: center; background: #F8FAFC; cursor: pointer; transition: all 0.2s;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0067B1" stroke-width="2" style="margin: 0 auto 10px; display:block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+            <div style="font-weight: 700; color: #0F172A; font-size: 0.95rem; margin-bottom: 4px;">Click to select an image from your computer / phone</div>
+            <div style="font-size: 0.8rem; color: #64748B;">Supports JPG, PNG, WEBP (automatically optimized)</div>
+          </div>
+          <input type="file" id="fac-image-file" accept="image/*" style="display: none;">
         </div>
+
         <div class="admin-form-group">
-          <label>Image URL</label>
-          <input type="text" id="fac-image" class="admin-input" required placeholder="https://images.unsplash.com/...">
+          <label for="fac-desc" style="font-weight:600; color:#0F172A; margin-bottom:6px; display:block;">Description *</label>
+          <textarea id="fac-desc" class="admin-textarea" style="min-height:80px;" required placeholder="Details about this manufacturing bay or unit..."></textarea>
         </div>
+
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
           <div class="admin-form-group">
-            <label>Capacity</label>
+            <label for="fac-capacity" style="font-weight:600; color:#0F172A; margin-bottom:6px; display:block;">Capacity</label>
             <input type="text" id="fac-capacity" class="admin-input" placeholder="e.g. 2,500 MT / month">
           </div>
           <div class="admin-form-group">
-            <label>Covered Area</label>
+            <label for="fac-area" style="font-weight:600; color:#0F172A; margin-bottom:6px; display:block;">Covered Area</label>
             <input type="text" id="fac-area" class="admin-input" placeholder="e.g. 120,000 Sq. Ft.">
           </div>
         </div>
+
         <div class="admin-form-group">
-          <label>Key Equipment</label>
-          <input type="text" id="fac-equipment" class="admin-input" placeholder="e.g. Demag Cranes, Messer CNC Oxy-Fuel">
+          <label for="fac-equipment" style="font-weight:600; color:#0F172A; margin-bottom:6px; display:block;">Key Equipment</label>
+          <input type="text" id="fac-equipment" class="admin-input" placeholder="e.g. 4 x 60T Demag EOT Cranes, Submerged Arc Welding booms">
         </div>
+
         <div class="admin-form-group">
-          <label>Status</label>
+          <label for="fac-status" style="font-weight:600; color:#0F172A; margin-bottom:6px; display:block;">Status</label>
           <select id="fac-status" class="admin-select">
             <option value="Active">Active</option>
             <option value="Inactive">Inactive</option>
           </select>
         </div>
-        <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:20px;">
+
+        <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:24px; padding-top:16px; border-top:1px solid #E2E8F0;">
           <button type="button" id="close-fac-modal" class="btn-admin btn-admin-outline">Cancel</button>
           <button type="submit" class="btn-admin btn-admin-primary">Save Facility</button>
         </div>

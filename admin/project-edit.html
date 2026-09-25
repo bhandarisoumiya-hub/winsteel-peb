@@ -27,8 +27,18 @@
         </a>
       </li>
       <li class="nav-section-title">Content</li>
-      <li><a href="products.html" class="sidebar-link">Products</a></li>
-      <li><a href="projects.html" class="sidebar-link active">Projects</a></li>
+      <li>
+        <a href="products.html" class="sidebar-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <span>Products</span>
+        </a>
+      </li>
+      <li>
+        <a href="projects.html" class="sidebar-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span>Projects</span>
+        </a>
+      </li>
       <li><a href="facilities.html" class="sidebar-link">Facilities</a></li>
       <li><a href="strengths.html" class="sidebar-link">Strengths</a></li>
       <li><a href="certificates.html" class="sidebar-link">Certificates</a></li>
@@ -52,99 +62,101 @@
         <h1 class="topbar-page-title" id="edit-project-page-title">Add / Edit Project</h1>
       </div>
       <div class="topbar-actions">
+        <a href="../projects.html" target="_blank" class="btn-admin btn-admin-outline">View Projects ↗</a>
+        <a href="../index.html" target="_blank" class="btn-admin btn-admin-outline">View Website ↗</a>
         <button class="btn-admin btn-admin-accent" data-action="export-json">Export db.json</button>
       </div>
     </header>
 
     <div class="admin-content">
-      <div class="admin-card" style="padding: 32px; max-width: 900px;">
+      <div class="admin-card" style="padding: 32px; max-width: 800px; margin: 0 auto;">
         <form id="project-edit-form">
-          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
-            <div class="admin-form-group">
-              <label for="proj-id">Project ID</label>
-              <input type="text" id="proj-id" class="admin-input" required>
-            </div>
-            <div class="admin-form-group">
-              <label for="proj-title">Project Title</label>
-              <input type="text" id="proj-title" class="admin-input" required placeholder="e.g. Mumbai Trans Harbour Link">
-            </div>
-          </div>
+          <!-- Hidden Auto-Generated Fields -->
+          <input type="hidden" id="proj-id">
+          <input type="hidden" id="proj-slug">
+          <input type="hidden" id="proj-image">
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div class="admin-form-group">
-              <label for="proj-slug">URL Slug</label>
-              <input type="text" id="proj-slug" class="admin-input" placeholder="mumbai-trans-harbour-link">
-            </div>
-            <div class="admin-form-group">
-              <label for="proj-category">Category</label>
-              <select id="proj-category" class="admin-select" required></select>
-            </div>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
-            <div class="admin-form-group">
-              <label for="proj-location">Location</label>
-              <input type="text" id="proj-location" class="admin-input" required placeholder="City, State, Country">
-            </div>
-            <div class="admin-form-group">
-              <label for="proj-year">Completion Year</label>
-              <input type="text" id="proj-year" class="admin-input" required placeholder="2024">
-            </div>
-            <div class="admin-form-group">
-              <label for="proj-client">Client / EPC Partner</label>
-              <input type="text" id="proj-client" class="admin-input" required placeholder="e.g. L&T Construction">
-            </div>
-          </div>
-
+          <!-- 1. Project Title -->
           <div class="admin-form-group">
-            <label for="proj-shortDesc">Short Summary (for Cards)</label>
-            <textarea id="proj-shortDesc" class="admin-textarea" style="min-height:70px;" required></textarea>
+            <label for="proj-title" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Project Title *</label>
+            <input type="text" id="proj-title" class="admin-input" required placeholder="e.g. Mumbai Trans Harbour Link (Atal Setu)" style="font-size:1rem; padding:12px 14px;">
           </div>
 
+          <!-- 2. Category -->
           <div class="admin-form-group">
-            <label for="proj-desc">Detailed Case Study Description</label>
-            <textarea id="proj-desc" class="admin-textarea" style="min-height:130px;" required></textarea>
+            <label for="proj-category" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Category *</label>
+            <select id="proj-category" class="admin-select" required style="font-size:0.95rem; padding:11px 14px;"></select>
           </div>
 
+          <!-- 3. Image (File Upload) -->
           <div class="admin-form-group">
-            <label for="proj-coverImage">Cover Image URL</label>
-            <input type="text" id="proj-coverImage" class="admin-input" required placeholder="https://images.unsplash.com/...">
+            <label style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Project Image *</label>
+            
+            <!-- Image Live Preview Box -->
+            <div id="image-preview-container" style="display:none; margin-bottom:12px;">
+              <div style="position:relative; display:inline-block;">
+                <img id="image-preview" src="" alt="Project Preview" style="max-height:220px; max-width:100%; border-radius:8px; object-fit:cover; border:1px solid #CBD5E1; display:block; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                <button type="button" id="btn-remove-image" style="position:absolute; top:8px; right:8px; background:rgba(220,38,38,0.92); color:#fff; border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; font-weight:bold; font-size:16px; line-height:1; display:flex; align-items:center; justify-content:center;" title="Remove image">&times;</button>
+              </div>
+              <div style="margin-top:10px;">
+                <button type="button" class="btn-admin btn-admin-outline" id="btn-change-image" style="padding:6px 14px; font-size:0.85rem;">
+                  📁 Change Image
+                </button>
+              </div>
+            </div>
+
+            <!-- Upload Dropzone -->
+            <div id="upload-dropzone" style="border: 2px dashed #0067B1; border-radius: 8px; padding: 32px 20px; text-align: center; background: #F8FAFC; cursor: pointer; transition: all 0.2s;">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0067B1" stroke-width="2" style="margin: 0 auto 12px; display:block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              <div style="font-weight: 700; color: #0F172A; font-size: 1rem; margin-bottom: 6px;">Click to select an image from your computer / phone</div>
+              <div style="font-size: 0.825rem; color: #64748B;">Supports JPG, PNG, WEBP (automatically optimized)</div>
+            </div>
+            <input type="file" id="proj-image-file" accept="image/*" style="display: none;">
           </div>
 
-          <div class="admin-form-group">
-            <label for="proj-scope">Scope of Work</label>
-            <textarea id="proj-scope" class="admin-textarea" style="min-height:80px;" placeholder="Turnkey detail engineering, fabrication, trial assembly..."></textarea>
-          </div>
-
-          <div class="admin-form-group">
-            <label for="proj-materials">Materials & Specifications</label>
-            <textarea id="proj-materials" class="admin-textarea" style="min-height:70px;" placeholder="Structural steel tonnage, grade, hydraulic systems..."></textarea>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items:center;">
+          <!-- 4. Client, Location & Completion Year -->
+          <div style="display: grid; grid-template-columns: 1.2fr 1fr 0.8fr; gap: 16px;">
             <div class="admin-form-group">
-              <label for="proj-status">Status</label>
-              <select id="proj-status" class="admin-select">
-                <option value="Completed">Completed</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Inactive">Inactive</option>
-              </select>
+              <label for="proj-client" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Client / Partner</label>
+              <input type="text" id="proj-client" class="admin-input" placeholder="e.g. L&T Construction / NHSRCL" style="font-size:0.95rem; padding:11px 14px;">
             </div>
             <div class="admin-form-group">
-              <label for="proj-displayOrder">Display Order</label>
-              <input type="number" id="proj-displayOrder" class="admin-input" value="1">
+              <label for="proj-location" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Location</label>
+              <input type="text" id="proj-location" class="admin-input" placeholder="e.g. Mumbai, India" style="font-size:0.95rem; padding:11px 14px;">
             </div>
-            <div class="admin-form-group" style="margin-top:16px;">
-              <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
-                <input type="checkbox" id="proj-featured" style="width:18px; height:18px;">
-                <span>Featured Project</span>
-              </label>
+            <div class="admin-form-group">
+              <label for="proj-year" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Year</label>
+              <input type="text" id="proj-year" class="admin-input" placeholder="e.g. 2024" style="font-size:0.95rem; padding:11px 14px;">
             </div>
           </div>
 
-          <div style="display: flex; gap: 14px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--admin-border);">
-            <button type="submit" class="btn-admin btn-admin-primary">Save Project</button>
-            <a href="projects.html" class="btn-admin btn-admin-outline">Cancel</a>
+          <!-- 5. Short Description -->
+          <div class="admin-form-group">
+            <label for="proj-shortDesc" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Short Description * <span style="font-weight:400; color:#64748B; font-size:0.85rem;">(Summary for project cards & listings)</span></label>
+            <textarea id="proj-shortDesc" class="admin-textarea" style="min-height:85px; font-size:0.95rem; line-height:1.6;" required placeholder="Brief 1-2 sentence summary of this landmark project..."></textarea>
+          </div>
+
+          <!-- 6. Full Detailed Description -->
+          <div class="admin-form-group">
+            <label for="proj-desc" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Full Detailed Description *</label>
+            <textarea id="proj-desc" class="admin-textarea" style="min-height:150px; font-size:0.95rem; line-height:1.6;" required placeholder="Detailed information about project execution, engineering challenges, materials, and achievements..."></textarea>
+          </div>
+
+          <!-- 7. Optional Details (Scope & Materials) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;">
+            <div class="admin-form-group">
+              <label for="proj-scope" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Scope of Work <span style="font-weight:400; color:#64748B; font-size:0.8rem;">(Optional)</span></label>
+              <textarea id="proj-scope" class="admin-textarea" style="min-height:80px; font-size:0.9rem;" placeholder="e.g. Turnkey engineering design, fabrication, trial assembly..."></textarea>
+            </div>
+            <div class="admin-form-group">
+              <label for="proj-materials" style="font-weight:600; color:#0F172A; margin-bottom:8px; display:block;">Materials / Specs <span style="font-weight:400; color:#64748B; font-size:0.8rem;">(Optional)</span></label>
+              <textarea id="proj-materials" class="admin-textarea" style="min-height:80px; font-size:0.9rem;" placeholder="e.g. High-tensile structural steel, Grade 10.9 fasteners, hydraulic systems..."></textarea>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--admin-border);">
+            <button type="submit" class="btn-admin btn-admin-primary" style="padding:10px 24px; font-size:0.95rem;">Save Project</button>
+            <a href="projects.html" class="btn-admin btn-admin-outline" style="padding:10px 20px; font-size:0.95rem;">Cancel</a>
           </div>
         </form>
       </div>

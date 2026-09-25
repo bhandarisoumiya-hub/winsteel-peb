@@ -119,6 +119,27 @@
             <textarea id="prod-desc" class="admin-textarea" style="min-height:160px; font-size:0.95rem; line-height:1.6;" required placeholder="Detailed information about design, applications, capacities, and engineering details..."></textarea>
           </div>
 
+          <!-- 6. Card Specifications Highlights -->
+          <div class="admin-form-group" style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:20px; margin-top:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+              <div>
+                <label style="font-weight:700; color:#071522; font-size:1rem; margin-bottom:2px; display:block;">
+                  Card Specifications Highlights <span style="font-weight:400; color:#0067B1; font-size:0.85rem;">(Product Card par dikhne wale details)</span>
+                </label>
+                <span style="font-size:0.825rem; color:#64748B;">
+                  Jaise: <code>Tunnel Diameter</code> : <code>4.0m to 14.5m</code> ya <code>Capacity</code> : <code>1,800 MT</code>
+                </span>
+              </div>
+              <button type="button" id="btn-add-spec" class="btn-admin btn-admin-outline" style="padding:6px 14px; font-size:0.825rem; white-space:nowrap;">
+                + Add Spec Row
+              </button>
+            </div>
+
+            <div id="specs-container" style="display:flex; flex-direction:column; gap:10px;">
+              <!-- Dynamic Key-Value Rows -->
+            </div>
+          </div>
+
           <div style="display: flex; gap: 14px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--admin-border);">
             <button type="submit" class="btn-admin btn-admin-primary" style="padding:10px 24px; font-size:0.95rem;">Save Product</button>
             <a href="products.html" class="btn-admin btn-admin-outline" style="padding:10px 20px; font-size:0.95rem;">Cancel</a>

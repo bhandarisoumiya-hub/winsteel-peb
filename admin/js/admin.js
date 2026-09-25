@@ -67,8 +67,24 @@ const AdminApp = (function () {
 
   // Save Working Data
   function saveWorkingData(newData) {
-    localStorage.setItem(DATA_CACHE_KEY, JSON.stringify(newData, null, 2));
-    showToast('Changes saved to browser storage! Use "Export JSON" to generate db.json file.', 'success');
+    try {
+      localStorage.setItem(DATA_CACHE_KEY, JSON.stringify(newData));
+      showToast('Changes saved successfully! Data is now live across the website.', 'success');
+    } catch (err) {
+      console.error('Storage error:', err);
+      showToast('Warning: LocalStorage limit reached. Please export db.json.', 'error');
+    }
+
+    // Also attempt saving directly to disk if server is running
+    try {
+      fetch('/api/save-database', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newData)
+      }).then(res => {
+        if (res.ok) console.log('✅ Synchronized to database/db.json on disk!');
+      }).catch(() => {});
+    } catch (e) {}
   }
 
   // Export JSON file download

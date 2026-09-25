@@ -123,9 +123,9 @@ function renderProductCardHtml(p) {
         <div class="product-footer">
           <a href="product-details.html?id=${p.id}" class="product-link">
             <span>Engineering Specs</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="contact.html?enquiry=${encodeURIComponent(p.title)}" class="btn btn-outline-blue btn-sm" style="padding:6px 14px;">Quote</a>
+          <a href="contact.html?enquiry=${encodeURIComponent(p.title)}" class="btn btn-outline-blue btn-sm" style="padding:4px 12px; font-size:0.775rem;">Quote</a>
         </div>
       </div>
     </article>

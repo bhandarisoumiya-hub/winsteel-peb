@@ -7,21 +7,21 @@ const WinsteelData = (function () {
   let cachedData = null;
   const LOCAL_STORAGE_KEY = 'winsteel_db_data';
 
-  // Primary loader: checks local storage for admin edits, then database/db.json, then data/winsteel.json
+  // Primary loader: checks local storage for admin edits, then cachedData, then database/db.json
   async function loadData() {
-    if (cachedData) return cachedData;
-
-    // Check localStorage (allows admin preview of changes without backend)
+    // 1. Always check localStorage first so updates in Admin appear immediately without stale cache
     const localSaved = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (localSaved) {
       try {
         cachedData = JSON.parse(localSaved);
-        console.log('⚡ Loaded data from local workspace cache');
         return cachedData;
       } catch (e) {
         console.warn('Invalid local storage data, fetching from server JSON', e);
       }
     }
+
+    // 2. Return cached memory data if already fetched
+    if (cachedData) return cachedData;
 
     // Try database/db.json first (support absolute and relative URL paths)
     const jsonPaths = ['/database/db.json', 'database/db.json', '/data/winsteel.json', 'data/winsteel.json'];
