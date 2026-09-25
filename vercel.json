@@ -4,13 +4,6 @@
   "trailingSlash": false,
   "buildCommand": "node scripts/build-data.js",
   "outputDirectory": ".",
-  "redirects": [
-    {
-      "source": "/admin",
-      "destination": "/admin/",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
