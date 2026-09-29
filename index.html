@@ -40,15 +40,8 @@
       <nav aria-label="Main Navigation">
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">About Us ▾</a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-item"><a href="about.html">Company Profile</a></li>
-              <li class="dropdown-item"><a href="our-history.html">Our History</a></li>
-              <li class="dropdown-item"><a href="core-values.html">Core Values</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="pre-engineered-building.html" class="nav-link">Products</a></li>
           <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
           <li class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></li>
           <li class="nav-item"><a href="strengths.html" class="nav-link">Strengths</a></li>
@@ -107,7 +100,7 @@
           </div>
 
           <div class="hero-buttons reveal is-visible delay-300">
-            <a href="products.html" class="btn btn-primary btn-lg">
+            <a href="pre-engineered-building.html" class="btn btn-primary btn-lg">
               <span>Explore PEB Solutions</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -298,7 +291,7 @@
       </div>
 
       <div style="text-align: center; margin-top: 48px;" class="reveal">
-        <a href="products.html" class="btn btn-primary btn-lg">
+        <a href="pre-engineered-building.html" class="btn btn-primary btn-lg">
           <span>View All PEB Products & Systems</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -471,14 +464,14 @@
         </div>
 
         <div>
-          <h3 class="footer-heading">Products</h3>
+          <h3 class="footer-heading">Pre-Engineered Systems</h3>
           <ul class="footer-links">
+            <li class="footer-link-item"><a href="pre-engineered-building.html" style="color:var(--color-yellow); font-weight:700;">★ Pre-Engineered Buildings (PEB)</a></li>
+            <li class="footer-link-item"><a href="products.html?category=Industrial%20Sheds%20%26%20Warehouses">Industrial Sheds & Warehouses</a></li>
+            <li class="footer-link-item"><a href="products.html?category=Multi-Storey%20Steel%20Buildings">Multi-Storey Steel Buildings</a></li>
             <li class="footer-link-item"><a href="products.html?category=Launching+Gantries">Launching Gantries</a></li>
             <li class="footer-link-item"><a href="products.html?category=Movable+Scaffolding+Systems">Movable Scaffolding (MSS)</a></li>
             <li class="footer-link-item"><a href="products.html?category=Tunnel+Formworks">Tunnel Formworks</a></li>
-            <li class="footer-link-item"><a href="products.html?category=Formworks+and+Moulds">Formworks & Moulds</a></li>
-            <li class="footer-link-item"><a href="products.html?category=Ports+and+Jetties">Ports & Jetties Moulds</a></li>
-            <li class="footer-link-item"><a href="products.html?category=Custom+Made+Moulds">Custom Made Moulds</a></li>
           </ul>
         </div>
 
@@ -534,6 +527,8 @@
         if (!displayProds.length) displayProds = allProds;
         displayProds = displayProds.slice(0, 6);
         prodsContainer.innerHTML = displayProds.map(p => {
+          const isPebFlagship = p.id === 'prod-peb-1' || p.category === 'Pre-Engineered Buildings (PEB)';
+          const detailLink = isPebFlagship ? 'pre-engineered-building.html' : `product-details.html?id=${p.id}`;
           const specs = (p.specifications && Object.keys(p.specifications).length)
             ? Object.entries(p.specifications).slice(0, 2)
             : [];
@@ -542,9 +537,10 @@
             <div class="product-img-box">
               <img src="${p.image}" alt="${p.title}" class="product-img" loading="lazy">
               <span class="product-category-tag">${p.category}</span>
+              ${isPebFlagship ? '<span style="position:absolute; bottom:12px; left:12px; background:var(--color-yellow); color:var(--color-dark-navy); font-weight:800; font-size:0.75rem; padding:4px 10px; border-radius:3px; box-shadow:0 2px 6px rgba(0,0,0,0.3);">★ Flagship Solution</span>' : ''}
             </div>
             <div class="product-body">
-              <h3 class="product-title"><a href="product-details.html?id=${p.id}">${p.title}</a></h3>
+              <h3 class="product-title"><a href="${detailLink}">${p.title}</a></h3>
               <p class="product-desc">${p.shortDescription || ''}</p>
               ${specs.length ? `
                 <div class="product-specs-list">
@@ -557,8 +553,8 @@
                 </div>
               ` : ''}
               <div class="product-footer">
-                <a href="product-details.html?id=${p.id}" class="product-link">
-                  <span>View Specifications</span>
+                <a href="${detailLink}" class="product-link">
+                  <span>${isPebFlagship ? 'Explore PEB Solution' : 'View Specifications'}</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="contact.html?enquiry=${encodeURIComponent(p.title)}" class="btn btn-outline-blue btn-sm" style="padding:4px 10px; font-size:0.75rem;">Quote</a>

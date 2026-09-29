@@ -96,16 +96,19 @@ async function initProductsCatalog() {
 }
 
 function renderProductCardHtml(p) {
+  const isPebFlagship = p.id === 'prod-peb-1' || p.category === 'Pre-Engineered Buildings (PEB)';
+  const detailLink = isPebFlagship ? 'pre-engineered-building.html' : `product-details.html?id=${p.id}`;
   const specs = p.specifications ? Object.entries(p.specifications).slice(0, 2) : [];
   return `
-    <article class="product-card reveal is-visible">
+    <article class="product-card reveal is-visible ${isPebFlagship ? 'peb-featured-card' : ''}">
       <div class="product-img-box">
         <img src="${p.image}" alt="${p.title}" class="product-img" loading="lazy">
         <span class="product-category-tag">${p.category}</span>
+        ${isPebFlagship ? '<span style="position:absolute; bottom:12px; left:12px; background:var(--color-yellow); color:var(--color-dark-navy); font-weight:800; font-size:0.75rem; padding:4px 10px; border-radius:3px; box-shadow:0 2px 6px rgba(0,0,0,0.3);">★ Flagship Solution</span>' : ''}
       </div>
       <div class="product-body">
         <h3 class="product-title">
-          <a href="product-details.html?id=${p.id}">${p.title}</a>
+          <a href="${detailLink}">${p.title}</a>
         </h3>
         <p class="product-desc">${p.shortDescription}</p>
         
@@ -121,8 +124,8 @@ function renderProductCardHtml(p) {
         ` : ''}
 
         <div class="product-footer">
-          <a href="product-details.html?id=${p.id}" class="product-link">
-            <span>Engineering Specs</span>
+          <a href="${detailLink}" class="product-link">
+            <span>${isPebFlagship ? 'Full PEB Solution & Specs' : 'Engineering Specs'}</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="contact.html?enquiry=${encodeURIComponent(p.title)}" class="btn btn-outline-blue btn-sm" style="padding:4px 12px; font-size:0.775rem;">Quote</a>
@@ -161,8 +164,24 @@ async function initProductDetail() {
   const galleryImages = (product.gallery && product.gallery.length) ? product.gallery : [product.image];
   const specs = product.specifications ? Object.entries(product.specifications) : [];
   const features = product.features || [];
+  const isPeb = product.id.startsWith('prod-peb') || product.category.includes('PEB');
+
+  const pebBannerHtml = isPeb ? `
+    <div style="background: linear-gradient(135deg, #071522 0%, #004B87 100%); border-radius: 8px; padding: 22px 28px; margin-bottom: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-left: 4px solid var(--color-yellow); box-shadow: 0 4px 14px rgba(0,0,0,0.15);">
+      <div>
+        <span style="color: var(--color-yellow); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">★ Complete Turnkey Solution Guide</span>
+        <h4 style="color: #FFF; font-size: 1.2rem; margin: 0 0 4px 0; font-family: var(--font-heading);">Explore the Dedicated Pre-Engineered Buildings Showcase</h4>
+        <p style="color: #CBD5E1; margin: 0; font-size: 0.9rem;">View interactive structural components breakdown, RCC vs PEB comparison matrix, and project size estimator.</p>
+      </div>
+      <a href="pre-engineered-building.html" class="btn btn-accent btn-sm" style="white-space: nowrap;">
+        <span>Open Full PEB Solution Page</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  ` : '';
 
   container.innerHTML = `
+    ${pebBannerHtml}
     <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; margin-bottom: 64px;" class="product-detail-main">
       <!-- Media Gallery -->
       <div>
