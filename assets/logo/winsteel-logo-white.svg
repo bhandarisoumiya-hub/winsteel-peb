@@ -1,36 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
-  <!-- Background transparent -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 80 460 360" width="100%" height="100%" overflow="visible" style="overflow: visible;">
+  <!-- Precision Vector Logo for Winsteel - Wide Safety ViewBox & Overflow Visible to Prevent Any Clipping -->
   <defs>
-    <linearGradient id="wingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="blueWingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="100%" stop-color="#0080FF" />
+      <stop offset="100%" stop-color="#0284C7" />
     </linearGradient>
+    <linearGradient id="goldCrestGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD54F" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
   </defs>
 
-  <!-- Luminous Cyan/Blue W wings -->
-  <polygon points="150,140 215,190 200,215 130,165" fill="url(#wingGrad)" />
-  <polygon points="350,140 285,190 300,215 370,165" fill="url(#wingGrad)" />
+  <g filter="url(#softGlow)">
+    <!-- Outer Wings of W (Luminous Cyan-Blue) -->
+    <polygon points="152,142 208,188 192,212 134,166" fill="url(#blueWingGrad)" />
+    <polygon points="348,142 292,188 308,212 366,166" fill="url(#blueWingGrad)" />
 
-  <!-- Yellow Chevrons / Crest -->
-  <!-- Top chevron -->
-  <polygon points="250,110 295,155 275,175 250,150 225,175 205,155" fill="#FFC400" />
-  <!-- Middle chevron -->
-  <polygon points="250,160 305,215 285,235 250,200 215,235 195,215" fill="#FFC400" />
-  <!-- Bottom triangle accent -->
-  <polygon points="250,208 268,226 232,226" fill="#FFC400" />
+    <!-- Top Chevron (Gold) -->
+    <polygon points="250,114 294,156 274,174 250,152 226,174 206,156" fill="url(#goldCrestGrad)" />
 
-  <!-- Registered Mark (White) -->
-  <circle cx="455" cy="205" r="16" fill="none" stroke="#FFFFFF" stroke-width="3" />
-  <text x="455" y="211" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">R</text>
+    <!-- Bottom Chevron (Gold) -->
+    <polygon points="250,166 304,218 284,236 250,204 216,236 196,218" fill="url(#goldCrestGrad)" />
+    <polygon points="250,210 266,226 234,226" fill="url(#goldCrestGrad)" />
 
-  <!-- Brand Typography -->
-  <!-- Winsteel (Pure White for Dark Backgrounds) -->
-  <text x="250" y="320" font-family="'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif" font-size="88" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">Winsteel</text>
+    <!-- Registered Mark (R) Positioned next to 'l' -->
+    <circle cx="418" cy="245" r="13" fill="none" stroke="#FFFFFF" stroke-width="2.2" />
+    <text x="418" y="249.5" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">R</text>
 
-  <!-- Engineering Works Pvt. Ltd. (Luminous Off-White) -->
-  <text x="250" y="360" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="23.5" font-weight="700" fill="#E2E8F0" text-anchor="middle" letter-spacing="0.5">Engineering Works Pvt. Ltd.</text>
+    <!-- Main Wordmark "Winsteel" in Crisp Pure White -->
+    <text x="250" y="322" font-family="'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="74" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.5">Winsteel</text>
 
-  <!-- Tagline Badge -->
-  <rect x="95" y="380" width="310" height="36" rx="4" fill="#FFC400" />
-  <text x="250" y="405" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="800" font-style="italic" fill="#071522" text-anchor="middle" letter-spacing="0.5">Forming The Future</text>
+    <!-- Sub-brand "Engineering Works Pvt. Ltd." -->
+    <text x="250" y="358" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#E2E8F0" text-anchor="middle" letter-spacing="0.4">Engineering Works Pvt. Ltd.</text>
+
+    <!-- Tagline Badge "Forming The Future" -->
+    <rect x="110" y="378" width="280" height="34" rx="5" fill="url(#goldCrestGrad)" />
+    <text x="250" y="401.5" font-family="'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="900" font-style="italic" fill="#0A192F" text-anchor="middle" letter-spacing="0.3">Forming The Future</text>
+  </g>
 </svg>

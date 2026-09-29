@@ -1861,22 +1861,19 @@ img {
 }
 
 /* ============================================================
-/* ============================================================
-   MODERN AESTHETIC EXECUTIVE FOOTER
+   MODERN EXECUTIVE AESTHETIC FOOTER
    ============================================================ */
 .site-footer {
-  background-color: #07131F;
+  background-color: #0B111A;
   background-image: 
-    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    radial-gradient(circle at 10% 15%, rgba(0, 103, 177, 0.25) 0%, transparent 50%),
-    radial-gradient(circle at 90% 85%, rgba(255, 196, 0, 0.07) 0%, transparent 45%),
-    linear-gradient(180deg, #091A2B 0%, #050E17 100%);
-  background-size: 28px 28px, 100% 100%, 100% 100%, 100% 100%;
+    radial-gradient(circle at 12% 0%, rgba(0, 103, 177, 0.22) 0%, transparent 55%),
+    radial-gradient(circle at 88% 100%, rgba(255, 196, 0, 0.06) 0%, transparent 45%),
+    linear-gradient(180deg, #0D1622 0%, #070D14 100%);
   color: #94A3B8;
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.35);
 }
 
 /* Glowing Top Accent Strip */
@@ -1886,21 +1883,144 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(0, 103, 177, 0.2) 0%, #0067B1 20%, #38BDF8 50%, #FFC400 80%, rgba(0, 103, 177, 0.2) 100%);
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #0067B1 25%, #38BDF8 50%, #FFC400 75%, transparent 100%);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
   z-index: 2;
 }
 
 .footer-top {
-  padding-top: 96px;
-  padding-bottom: 68px;
+  padding-top: 72px;
+  padding-bottom: 60px;
 }
 
+/* ============================================================
+   PRE-FOOTER ENGINEERING ACTION BANNER
+   ============================================================ */
+.footer-cta-card {
+  margin-bottom: 56px;
+  padding: 32px 36px;
+  background: linear-gradient(135deg, rgba(0, 103, 177, 0.18) 0%, rgba(15, 23, 42, 0.85) 50%, rgba(255, 196, 0, 0.08) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-cta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.6), transparent);
+}
+
+.footer-cta-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FFC400;
+  background: rgba(255, 196, 0, 0.12);
+  border: 1px solid rgba(255, 196, 0, 0.25);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-cta-title {
+  font-family: var(--font-heading);
+  font-size: 1.42rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.footer-cta-sub {
+  color: #94A3B8;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 580px;
+}
+
+.footer-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.footer-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #FFC400 0%, #FF9800 100%);
+  color: #071522 !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  box-shadow: 0 4px 16px rgba(255, 196, 0, 0.3);
+  transition: all 0.22s ease;
+}
+
+.footer-cta-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 196, 0, 0.45);
+  background: #FFC400;
+  color: #000000 !important;
+}
+
+.footer-cta-btn-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 11px 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-decoration: none !important;
+  transition: all 0.22s ease;
+}
+
+.footer-cta-btn-phone:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #38BDF8;
+  color: #38BDF8 !important;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   MAIN FOOTER GRID
+   ============================================================ */
 .footer-grid {
   display: grid;
-  grid-template-columns: 2.2fr 1fr 1fr 1.6fr;
-  gap: 52px;
+  grid-template-columns: 2.1fr 1.05fr 1.15fr 1.7fr;
+  gap: 48px;
 }
 
 .footer-brand {
@@ -1910,43 +2030,79 @@ img {
 
 /* Modern Transparent Footer Logo */
 .footer-logo {
-  height: 84px;
+  height: 90px;
   width: auto;
-  max-width: 280px;
+  max-width: 290px;
   background: transparent;
   padding: 0;
-  border-radius: 0;
+  border: none;
   box-shadow: none;
   display: block;
   align-self: flex-start;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   object-fit: contain;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
+  overflow: visible;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 .footer-logo:hover {
   transform: translateY(-2px) scale(1.02);
-  filter: drop-shadow(0 6px 18px rgba(56, 189, 248, 0.3));
+  filter: drop-shadow(0 8px 24px rgba(56, 189, 248, 0.35));
 }
 
 .footer-desc {
   color: #94A3B8;
-  font-size: 0.94rem;
-  line-height: 1.7;
-  margin-bottom: 22px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 20px;
   max-width: 380px;
+}
+
+/* Trust Badges in Footer Brand */
+.footer-trust-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.footer-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.77rem;
+  font-weight: 600;
+  color: #CBD5E1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 5px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
+}
+
+.footer-chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+}
+
+.footer-chip.gold {
+  color: #FFD54F;
+  border-color: rgba(255, 196, 0, 0.25);
+  background: rgba(255, 196, 0, 0.07);
 }
 
 /* Headings */
 .footer-heading {
   font-family: var(--font-heading);
-  font-size: 1.02rem;
+  font-size: 0.94rem;
   font-weight: 700;
   color: #FFFFFF;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1956,9 +2112,9 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 32px;
-  height: 3px;
-  background: linear-gradient(90deg, #FFC400 0%, #0067B1 100%);
+  width: 26px;
+  height: 2.5px;
+  background: linear-gradient(90deg, #FFC400, #0067B1);
   border-radius: 2px;
 }
 
@@ -1967,12 +2123,14 @@ img {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-link-item a {
   color: #94A3B8;
-  font-size: 0.93rem;
+  font-size: 0.91rem;
   font-weight: 450;
   display: inline-flex;
   align-items: center;
@@ -1981,67 +2139,138 @@ img {
   text-decoration: none;
 }
 
-.footer-link-item a:hover {
-  color: #FFFFFF;
-  transform: translateX(5px);
-  color: #38BDF8;
+.footer-link-item a::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #475569;
+  transition: all 0.2s ease;
 }
 
-/* Contact Coordinates Column */
+.footer-link-item a:hover {
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+.footer-link-item a:hover::before {
+  background: #FFC400;
+  transform: scale(1.6);
+}
+
+.footer-badge-featured {
+  display: inline-block;
+  font-size: 0.70rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #FFC400, #FF9800);
+  color: #071522;
+  margin-left: 6px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Plant Coordinates / Contact Card */
+.footer-contact-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.footer-contact-card:hover {
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
 .footer-contact-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  color: #CBD5E1;
-  font-size: 0.92rem;
-  line-height: 1.55;
+  color: #94A3B8;
+  font-size: 0.89rem;
+  line-height: 1.5;
 }
 
-.footer-contact-item svg {
+.footer-contact-icon {
   flex-shrink: 0;
-  color: #FFC400;
-  background: rgba(255, 196, 0, 0.12);
-  border: 1px solid rgba(255, 196, 0, 0.25);
-  padding: 5px;
+  width: 34px;
+  height: 34px;
   border-radius: 8px;
-  width: 30px;
-  height: 30px;
+  background: rgba(0, 103, 177, 0.16);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #38BDF8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 2px;
+  transition: all 0.2s ease;
 }
 
-.footer-contact-item a {
+.footer-contact-item:hover .footer-contact-icon {
+  background: #0067B1;
+  color: #FFFFFF;
+  border-color: #38BDF8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 103, 177, 0.4);
+}
+
+.footer-contact-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748B;
+  margin-bottom: 2px;
+}
+
+.footer-contact-val {
+  color: #E2E8F0;
+  font-weight: 500;
+}
+
+.footer-contact-val a {
   color: #FFFFFF;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.footer-contact-item a:hover {
-  color: #38BDF8;
+.footer-contact-val a:hover {
+  color: #FFC400;
 }
 
 /* Ensure inline styled paragraphs & spans in all page footers match cleanly */
 .site-footer p {
-  color: #CBD5E1 !important;
-  line-height: 1.6;
+  color: #94A3B8;
+  line-height: 1.65;
 }
 
 .site-footer p a {
-  color: #38BDF8 !important;
+  color: #38BDF8;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .site-footer p a:hover {
-  color: #FFC400 !important;
+  color: #FFC400;
   text-decoration: underline;
 }
 
@@ -2050,7 +2279,6 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 22px;
 }
 
 .social-icon-btn {
@@ -2059,9 +2287,9 @@ img {
   justify-content: center;
   width: 38px;
   height: 38px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
   color: #CBD5E1;
   transition: all 0.22s ease;
   backdrop-filter: blur(8px);
@@ -2075,12 +2303,14 @@ img {
   box-shadow: 0 6px 20px rgba(0, 103, 177, 0.45);
 }
 
-/* Footer Bottom */
+/* ============================================================
+   FOOTER BOTTOM BAR
+   ============================================================ */
 .footer-bottom {
-  background-color: #040A12;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 24px 0;
-  font-size: 0.88rem;
+  background-color: #060B11;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 22px 0;
+  font-size: 0.86rem;
   color: #64748B;
 }
 
@@ -2093,86 +2323,41 @@ img {
   color: #64748B;
 }
 
-.footer-bottom-container div {
-  color: #64748B;
+.footer-bottom-badges {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.80rem;
+  color: #94A3B8;
+}
+
+.footer-bottom-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #94A3B8;
+}
+
+.footer-bottom-badge .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFC400;
+  display: inline-block;
 }
 
 .footer-bottom-links {
   display: flex;
-  gap: 24px;
+  gap: 20px;
 }
 
 .footer-bottom-links a {
   color: #64748B;
   text-decoration: none;
+  font-size: 0.84rem;
   transition: color 0.2s ease;
 }
 
 .footer-bottom-links a:hover {
   color: #38BDF8;
-}
-
-/* Trust Badges in Footer Brand */
-.footer-trust-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.footer-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.76rem;
-  font-weight: 600;
-  color: #E2E8F0;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 4px 10px;
-  border-radius: 20px;
-  letter-spacing: 0.02em;
-}
-
-.footer-chip.gold {
-  color: #FFD54F;
-  border-color: rgba(255, 196, 0, 0.3);
-  background: rgba(255, 196, 0, 0.08);
-}
-
-.footer-badge-featured {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: linear-gradient(135deg, #FFC400, #FF9800);
-  color: #071522;
-  margin-left: 6px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.footer-map-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #38BDF8 !important;
-  background: rgba(0, 103, 177, 0.2);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  padding: 5px 12px;
-  border-radius: 6px;
-  margin-top: 6px;
-  transition: all 0.2s ease;
-  text-decoration: none !important;
-}
-
-.footer-map-btn:hover {
-  background: #0067B1;
-  color: #FFFFFF !important;
-  border-color: #38BDF8;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 103, 177, 0.4);
 }
