@@ -6,15 +6,30 @@
 const WinsteelData = (function () {
   let cachedData = null;
   const LOCAL_STORAGE_KEY = 'winsteel_db_data';
+  const DATA_VERSION_KEY = 'winsteel_data_version';
+  const CURRENT_VERSION = 'v1.3_specs_update';
 
   // Primary loader: checks local storage for admin edits, then cachedData, then database/db.json
   async function loadData() {
-    // 1. Always check localStorage first so updates in Admin appear immediately without stale cache
+    // Invalidate stale cache if version changed
+    const savedVersion = localStorage.getItem(DATA_VERSION_KEY);
+    if (savedVersion !== CURRENT_VERSION) {
+      localStorage.removeItem(LOCAL_STORAGE_KEY);
+      localStorage.setItem(DATA_VERSION_KEY, CURRENT_VERSION);
+      cachedData = null;
+    }
+
+    // Check localStorage
     const localSaved = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (localSaved) {
       try {
         cachedData = JSON.parse(localSaved);
-        return cachedData;
+        if (cachedData && cachedData.products && cachedData.products.some(p => p.id === 'prod-peb-1')) {
+          return cachedData;
+        } else {
+          localStorage.removeItem(LOCAL_STORAGE_KEY);
+          cachedData = null;
+        }
       } catch (e) {
         console.warn('Invalid local storage data, fetching from server JSON', e);
       }

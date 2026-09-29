@@ -67,8 +67,8 @@
         "Energy-efficient insulated sandwich panel roofing, continuous ridge ventilators, and polycarbonate skylights"
       ],
       "specifications": {
-        "Max Clear Span": "Up to 90 Meters (Zero internal columns)",
-        "Steel Standards": "IS 2062 E350 / E450 & ASTM A572 Grade 50",
+        "Max Clear Span": "Up to 90m (Zero Columns)",
+        "Steel Standards": "IS 2062 & ASTM A572",
         "Secondary Framing": "Galvanized cold-formed Z & C purlins (275 GSM coating)",
         "Roofing System": "Standing Seam 360° double-lock leakproof Galvalume AZ150",
         "Design Compliance": "IS 800:2007, MBMA 2012, AISC 360, IS 875 (Part 3)",
@@ -98,8 +98,8 @@
         "Engineered dock-leveler pits and wide canopy projections for 24/7 all-weather logistics"
       ],
       "specifications": {
-        "Bay Spacing": "6m to 9m standard (customizable up to 12m)",
-        "Clear Height": "6m to 18m eave height",
+        "Bay Spacing": "6m to 12m standard",
+        "Clear Height": "Up to 18m eave height",
         "Floor Area": "5,000 to 1,00,000+ sq. meters",
         "Crane Capacity": "Up to 80 MT crane runways",
         "Wall Cladding": "Color Coated Galvalume / PUF insulated sandwich panels",
@@ -129,8 +129,8 @@
         "Service penetrations pre-engineered into castellated beams for seamless HVAC routing"
       ],
       "specifications": {
-        "Number of Storeys": "G+2 up to G+15 storeys",
-        "Structural System": "Rigid Moment Resisting Frame / Braced Frame System",
+        "Storeys": "G+2 up to G+15 Storeys",
+        "Structural System": "Rigid Moment Frame",
         "Floor Deck": "Galvanized Profiled Metal Deck (1.0mm/1.2mm)",
         "Foundation Load": "~30% dead weight reduction vs reinforced concrete",
         "Design Standards": "IS 800:2007, AISC 341 (Seismic Design Manual)",
