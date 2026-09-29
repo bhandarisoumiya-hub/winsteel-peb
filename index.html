@@ -29,8 +29,8 @@
 </head>
 <body>
 
-  <!-- Top Sticky Header -->
-  <header class="site-header" id="site-header">
+  <!-- Top Sticky Header (Joint with Hero Banner) -->
+  <header class="site-header header-transparent" id="site-header">
     <div class="container header-container">
       <a href="index.html" class="brand-logo-link" aria-label="Winsteel Home">
         <img src="assets/logo/winsteel-logo.png" alt="Winsteel Engineering Works Logo" class="brand-logo-img">
@@ -66,98 +66,106 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Sunset Industrial PEB Panorama) -->
   <section class="hero-section">
-    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=85" alt="Winsteel Pre-Engineered Steel Buildings and Infrastructure" class="hero-background-img" fetchpriority="high">
     <div class="hero-overlay"></div>
     <div class="hero-grid-pattern"></div>
+    
+    <!-- Top-Right Architectural Golden Curved Arcs -->
+    <svg class="hero-decorative-arcs" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 500,0 A 460,460 0 0,0 40,500" stroke="#FFC400" stroke-width="2.5" opacity="0.6"/>
+      <path d="M 500,70 A 390,390 0 0,0 110,500" stroke="#FFC400" stroke-width="1.8" opacity="0.45"/>
+      <path d="M 500,140 A 320,320 0 0,0 180,500" stroke="#FFC400" stroke-width="1.2" stroke-dasharray="8 6" opacity="0.35"/>
+    </svg>
 
     <div class="container hero-main-container">
-      <div class="hero-grid-layout">
+      <div class="hero-content-wrap">
         
-        <!-- Left Content Column -->
-        <div class="hero-content">
-          <div class="hero-badge reveal is-visible">
-            <span class="hero-badge-dot"></span>
-            <span>Pre-Engineered Buildings (PEB) & Heavy Steel Structures</span>
-          </div>
-
-          <h1 class="hero-title reveal is-visible delay-100">
-            Engineering Strength.<br>
-            <span class="text-accent gradient-peb">Forming The Future of PEB.</span>
-          </h1>
-
-          <p class="hero-lead reveal is-visible delay-200">
-            India's premier turnkey manufacturer of Pre-Engineered Steel Buildings (PEB), heavy industrial sheds, multi-storey commercial steel complexes, and clear-span logistics warehouses — built with high-tensile steel for 40% faster erection and lifetime structural resilience.
-          </p>
-
-          <!-- PEB Technical Feature Tags -->
-          <div class="hero-feature-tags reveal is-visible delay-200">
-            <div class="hero-tag"><span class="check">✓</span> Up to 90m Clear-Span</div>
-            <div class="hero-tag"><span class="check">✓</span> 100% Custom Engineered</div>
-            <div class="hero-tag"><span class="check">✓</span> High-Yield IS 2062 & ASTM Steel</div>
-            <div class="hero-tag"><span class="check">✓</span> 35+ Years PEB Mastery</div>
-          </div>
-
-          <div class="hero-buttons reveal is-visible delay-300">
-            <a href="pre-engineered-building.html" class="btn btn-primary btn-lg">
-              <span>Explore PEB Solutions</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="contact.html?enquiry=PEB+Project+Estimate" class="btn btn-accent btn-lg">
-              <span>Get PEB Estimate</span>
-            </a>
-            <a href="projects.html" class="btn btn-outline-light btn-lg">
-              <span>Landmark Projects</span>
-            </a>
-          </div>
+        <!-- Category Eyebrow with Yellow Dash -->
+        <div class="hero-eyebrow reveal is-visible">
+          <span class="eyebrow-dash"></span>
+          <span>PRE-ENGINEERED BUILDINGS &amp; HEAVY STEEL SYSTEMS</span>
         </div>
 
-        <!-- Right Visual Showcase Column -->
-        <div class="hero-visual-wrapper reveal is-visible delay-200">
-          
-          <!-- Floating Glass Card Top-Left -->
-          <div class="hero-glass-card card-top-left">
-            <div class="glass-card-header">
-              <div class="glass-icon-circle">🏗️</div>
-              <div>
-                <div class="glass-card-title">Turnkey PEB Execution</div>
-                <div class="glass-card-subtitle">Design • 3D CAD/FEA • Erection</div>
-              </div>
+        <!-- Main Heading with Golden Highlight -->
+        <h1 class="hero-title reveal is-visible delay-100">
+          Engineered for<br>
+          <span class="hero-highlight">a Stronger</span> Tomorrow
+        </h1>
+
+        <!-- Subtitle Lead -->
+        <p class="hero-lead reveal is-visible delay-200">
+          India's premier turnkey manufacturer of Pre-Engineered Steel Buildings (PEB), heavy industrial sheds, and clear-span logistics warehouses — manufactured to ISO 9001:2015 and ISO 3834-2 certified tolerances for monumental projects.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-action-row reveal is-visible delay-300">
+          <a href="pre-engineered-building.html" class="btn-hero-explore">
+            <span>Explore Our Products</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="contact.html?enquiry=PEB+Project+Estimate" class="btn-hero-secondary">
+            <span>Get PEB Estimate</span>
+          </a>
+        </div>
+
+        <!-- 4 Trust Features Row -->
+        <div class="hero-trust-bar reveal is-visible delay-300">
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
             </div>
-            <span class="glass-card-badge">Certified ISO 9001:2015</span>
-          </div>
-
-          <!-- Main Visual Card -->
-          <div class="hero-visual-card">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85" alt="Winsteel PEB Warehouse & Structural Framework" class="hero-visual-img">
-            <div class="hero-visual-overlay"></div>
-
-            <!-- Blueprint Corner Crosshairs -->
-            <span class="blueprint-crosshair top-left">+ SPEC: E350/E450</span>
-            <span class="blueprint-crosshair top-right">+ LEVEL: 01</span>
-            <span class="blueprint-crosshair bottom-left">+ CAD: 3D MODEL</span>
-            <span class="blueprint-crosshair bottom-right">+ TOLERANCE: ±1mm</span>
-          </div>
-
-          <!-- Floating Glass Card Bottom-Right -->
-          <div class="hero-glass-card card-bottom-right">
-            <div class="glass-card-header">
-              <div class="glass-icon-circle">⚡</div>
-              <div>
-                <div class="glass-card-title">90m Max Clear-Span</div>
-                <div class="glass-card-subtitle">Zero interior columns for maximum usable volume</div>
-              </div>
+            <div class="hero-trust-text">
+              <span class="hero-trust-title">High Durability</span>
+              <span class="hero-trust-desc">Up to 90m Clear-Span</span>
             </div>
-            <span class="glass-card-badge">High Wind & Seismic Rated</span>
           </div>
 
+          <div class="hero-trust-divider"></div>
+
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <div class="hero-trust-text">
+              <span class="hero-trust-title">Precision Engineering</span>
+              <span class="hero-trust-desc">Automated CNC Lines</span>
+            </div>
+          </div>
+
+          <div class="hero-trust-divider"></div>
+
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="hero-trust-text">
+              <span class="hero-trust-title">Custom Solutions</span>
+              <span class="hero-trust-desc">100% 3D Tekla BIM</span>
+            </div>
+          </div>
+
+          <div class="hero-trust-divider"></div>
+
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="hero-trust-text">
+              <span class="hero-trust-title">Sustainable Future</span>
+              <span class="hero-trust-desc">IS 2062 Green Steel</span>
+            </div>
+          </div>
         </div>
 
       </div>
+    </div>
+  </section>
 
-      <!-- Full-Width Hero Stats Strip -->
-      <div class="hero-stats-strip reveal is-visible delay-300">
+  <!-- Full-Width Hero Stats Section -->
+  <section class="hero-stats-section">
+    <div class="container">
+      <div class="hero-stats-strip reveal is-visible">
         
         <div class="hero-stat-box">
           <div class="hero-stat-icon">
@@ -168,7 +176,7 @@
               <span data-counter-target="500">0</span>
               <span class="stat-suffix">+</span>
             </div>
-            <span class="stat-label">PEB & Heavy Structures Delivered</span>
+            <span class="stat-label">PEB &amp; Heavy Structures Delivered</span>
           </div>
         </div>
 
@@ -212,7 +220,6 @@
         </div>
 
       </div>
-
     </div>
   </section>
 

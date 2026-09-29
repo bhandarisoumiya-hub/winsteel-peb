@@ -58,23 +58,38 @@
   }
 
   /* Hero Layout */
-  .hero-grid-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .hero-section {
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 30px);
+    padding-bottom: 40px;
   }
 
-  .hero-visual-card {
-    height: 400px;
+  .hero-overlay {
+    background: linear-gradient(
+      180deg, 
+      rgba(255, 255, 255, 0.96) 0%, 
+      rgba(255, 255, 255, 0.90) 65%, 
+      rgba(255, 255, 255, 0.75) 100%
+    );
   }
 
-  .hero-glass-card.card-top-left {
-    top: 14px;
-    left: 14px;
+  .hero-decorative-arcs {
+    width: 260px;
+    height: 260px;
+    opacity: 0.5;
   }
 
-  .hero-glass-card.card-bottom-right {
-    bottom: 14px;
-    right: 14px;
+  .hero-trust-bar {
+    gap: 16px;
+  }
+
+  .hero-trust-divider {
+    display: none;
+  }
+
+  .hero-trust-item {
+    flex: 1 1 calc(50% - 16px);
+    min-width: 140px;
   }
 
   .hero-stats-strip {
