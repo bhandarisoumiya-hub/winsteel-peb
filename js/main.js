@@ -153,7 +153,7 @@ function initQuoteForm() {
           statusEl.innerHTML = `
             <strong>Thank you, ${escapeHtml(name)}!</strong><br>
             Your inquiry regarding "<em>${escapeHtml(subject)}</em>" has been compiled.<br>
-            <span style="font-size:0.85rem; color:#4B5563;">(Static website notice: You can also direct this message straight to our technical desk at <a href="mailto:contact@winsteel.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ', ' + phone + ')\n\n' + message)}" style="text-decoration:underline; font-weight:700;">contact@winsteel.com</a>)</span>
+            <span style="font-size:0.85rem; color:#4B5563;">(Static website notice: You can also direct this message straight to our technical desk at <a href="mailto:info@winsteelpeb.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ', ' + phone + ')\n\n' + message)}" style="text-decoration:underline; font-weight:700;">info@winsteelpeb.com</a>)</span>
           `;
           statusEl.style.display = 'block';
         }
@@ -189,7 +189,7 @@ async function populateGlobalSettings() {
 // Security string escaper helper
 function escapeHtml(str) {
   if (!str) return '';
-  return str.replace(/[&<>'"]/g, 
+  return str.replace(/[&<>'"]/g,
     tag => ({
       '&': '&amp;',
       '<': '&lt;',
