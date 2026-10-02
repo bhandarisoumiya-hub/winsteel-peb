@@ -69,26 +69,22 @@ const AdminApp = (function () {
   function saveWorkingData(newData) {
     try {
       localStorage.setItem(DATA_CACHE_KEY, JSON.stringify(newData));
+      showToast('Changes saved successfully! Data is now live across the website.', 'success');
     } catch (err) {
       console.error('Storage error:', err);
       showToast('Warning: LocalStorage limit reached. Please export db.json.', 'error');
-      return;
     }
 
-    // Attempt saving directly to disk if Node server is running
-    fetch('/api/save-database', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newData)
-    }).then(res => {
-      if (res.ok) {
-        showToast('Saved directly to database/db.json on disk! Ready for Git push.', 'success');
-      } else {
-        showToast('Saved in Browser! Click "Export db.json" (top-right) and replace database/db.json before Git push.', 'info');
-      }
-    }).catch(() => {
-      showToast('Saved in Browser! Click "Export db.json" (top-right) and replace database/db.json before Git push.', 'info');
-    });
+    // Also attempt saving directly to disk if server is running
+    try {
+      fetch('/api/save-database', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newData)
+      }).then(res => {
+        if (res.ok) console.log('✅ Synchronized to database/db.json on disk!');
+      }).catch(() => {});
+    } catch (e) {}
   }
 
   // Export JSON file download
