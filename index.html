@@ -788,10 +788,11 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/data.js"></script>
-  <script src="js/slider.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/main.js"></script>
+  <script>try{localStorage.removeItem('winsteel_db_data');}catch(e){}</script>
+  <script src="js/data.js?v=2.1"></script>
+  <script src="js/slider.js?v=2.1"></script>
+  <script src="js/animations.js?v=2.1"></script>
+  <script src="js/main.js?v=2.1"></script>
   <script>
     // Home-specific dynamic data population
     document.addEventListener('DOMContentLoaded', async () => {
