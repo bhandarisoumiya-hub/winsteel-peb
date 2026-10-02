@@ -35,12 +35,21 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
+          "value": "no-cache, no-store, must-revalidate, max-age=0"
         }
       ]
     },
     {
-      "source": "/(assets|css|js|uploads)/(.*)",
+      "source": "/(css|js)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, must-revalidate, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/(assets|uploads)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

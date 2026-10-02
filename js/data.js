@@ -7,42 +7,44 @@ const WinsteelData = (function () {
   let cachedData = null;
   const LOCAL_STORAGE_KEY = 'winsteel_db_data';
   const DATA_VERSION_KEY = 'winsteel_data_version';
-  const CURRENT_VERSION = 'v1.5_facilities_update';
+  const CURRENT_VERSION = 'v1.6_realtime_sync';
 
-  // Primary loader: checks local storage for admin edits, then cachedData, then database/db.json
+  // Primary loader: ensures public pages always fetch latest live data from server
   async function loadData() {
-    // Invalidate stale cache if version changed
-    const savedVersion = localStorage.getItem(DATA_VERSION_KEY);
-    if (savedVersion !== CURRENT_VERSION) {
-      localStorage.removeItem(LOCAL_STORAGE_KEY);
-      localStorage.setItem(DATA_VERSION_KEY, CURRENT_VERSION);
-      cachedData = null;
-    }
+    const isAdmin = window.location.pathname.includes('/admin');
 
-    // Check localStorage
-    const localSaved = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if (localSaved) {
+    // For public website visitors: wipe any stale localStorage cache so newly uploaded data displays immediately
+    if (!isAdmin) {
       try {
-        cachedData = JSON.parse(localSaved);
-        if (cachedData && cachedData.products && cachedData.products.some(p => p.id === 'prod-peb-1')) {
-          return cachedData;
-        } else {
-          localStorage.removeItem(LOCAL_STORAGE_KEY);
-          cachedData = null;
+        localStorage.removeItem(LOCAL_STORAGE_KEY);
+      } catch (e) {}
+    } else {
+      // In admin panel: check localStorage for working drafts
+      const localSaved = localStorage.getItem(LOCAL_STORAGE_KEY);
+      if (localSaved) {
+        try {
+          return JSON.parse(localSaved);
+        } catch (e) {
+          console.warn('Invalid local storage data, fetching from server JSON', e);
         }
-      } catch (e) {
-        console.warn('Invalid local storage data, fetching from server JSON', e);
       }
     }
 
-    // 2. Return cached memory data if already fetched
+    // Return cached in-memory data if already fetched during this page session
     if (cachedData) return cachedData;
 
-    // Try database/db.json first (support absolute and relative URL paths)
-    const jsonPaths = ['/database/db.json', 'database/db.json', '/data/winsteel.json', 'data/winsteel.json'];
+    // Fetch live JSON from server with timestamp query to bypass any CDN or browser cache
+    const cacheBuster = '?t=' + Date.now();
+    const jsonPaths = [
+      '/database/db.json' + cacheBuster,
+      'database/db.json' + cacheBuster,
+      '/data/winsteel.json' + cacheBuster,
+      'data/winsteel.json' + cacheBuster
+    ];
+
     for (const jsonPath of jsonPaths) {
       try {
-        const res = await fetch(jsonPath);
+        const res = await fetch(jsonPath, { cache: 'no-store' });
         if (res.ok) {
           cachedData = await res.json();
           return cachedData;
