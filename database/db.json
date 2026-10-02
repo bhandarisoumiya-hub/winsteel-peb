@@ -699,8 +699,8 @@
   "strengths": [
     {
       "id": "str-1",
-      "title": "Engineering Precision & Design Mastery",
-      "description": "Our in-house design engineering cell employs advanced 3D FEA (Finite Element Analysis) simulation and kinematic modelling to optimize weight, stiffness, and fatigue life of heavy structures.",
+      "title": "PEB Engineering & Design",
+      "description": "Our engineering process considers building dimensions, structural loads, site conditions, building usage, openings and project specifications to develop an appropriate structural system. Structural analysis, 3D modelling and detailed engineering can be incorporated according to project requirements.",
       "icon": "drafting-compass",
       "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
       "displayOrder": 1,
@@ -708,17 +708,17 @@
     },
     {
       "id": "str-2",
-      "title": "Rigorous Quality Assurance",
-      "description": "Accredited under ISO 9001:2015 and ISO 3834-2, we maintain uncompromised metallurgical standards, 100% traceability on all raw plates, and stringent multi-method NDT inspection.",
-      "icon": "shield-check",
+      "title": "Detailed Structural Detailing",
+      "description": "Accurate detailing connects the engineering design with the manufacturing process. Our detailing covers primary frames, secondary members, connections and component requirements, providing the manufacturing information required for fabrication and site assembly.",
+      "icon": "layers",
       "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
       "displayOrder": 2,
       "status": "Active"
     },
     {
       "id": "str-3",
-      "title": "Advanced Heavy Fabrication Muscle",
-      "description": "With over 200,000 sq. ft. of covered manufacturing bays, 120-tonne tandem crane capacity, and high-definition automated cutting, we can build monumental structures under one roof.",
+      "title": "In-House Fabrication & Manufacturing",
+      "description": "WINSTEEL manufactures PEB structural components within its established manufacturing setup. Processes can include material preparation, CNC cutting and profiling, drilling, welding, assembly, surface preparation and protective coating, according to project specifications.",
       "icon": "cog",
       "image": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
       "displayOrder": 3,
@@ -726,17 +726,17 @@
     },
     {
       "id": "str-4",
-      "title": "Veteran Engineering Team",
-      "description": "Guided by seasoned technocrats with over 35 years in structural bridge engineering, our 250+ workforce brings deep domain expertise to every fabrication challenge.",
-      "icon": "users",
+      "title": "Quality Control & Inspection",
+      "description": "Quality control is maintained across applicable stages of PEB production, from material identification and fabrication through dimensional inspection and final checks. Where specified, material traceability, welding controls and NDT can be incorporated according to project requirements and applicable standards.",
+      "icon": "shield-check",
       "image": "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=800&q=80",
       "displayOrder": 4,
       "status": "Active"
     },
     {
       "id": "str-5",
-      "title": "Unrivaled Delivery Timelines",
-      "description": "Our integrated operations—from raw material stocking to in-house machining and coating—eliminate sub-contractor delays, ensuring on-time delivery on mission-critical infrastructure deadlines.",
+      "title": "Integrated Project Execution",
+      "description": "PEB projects involve coordinated engineering, detailing, manufacturing, logistics and erection. WINSTEEL can support these stages as part of the agreed project scope, helping maintain continuity from approved design through manufactured components and site erection.",
       "icon": "clock",
       "image": "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80",
       "displayOrder": 5,
@@ -744,9 +744,9 @@
     },
     {
       "id": "str-6",
-      "title": "Safety First Culture (Zero Harm)",
-      "description": "Strict compliance with ISO 45001:2018 safety standards ensures an accident-free environment across our manufacturing plants, testing bays, and site commissioning locations.",
-      "icon": "hard-hat",
+      "title": "Project-Specific PEB Solutions",
+      "description": "PEB systems can be engineered for different requirements and applications, including industrial buildings, manufacturing facilities, warehouses, logistics facilities, storage buildings and workshops. Building configuration, roofing, cladding, openings and other requirements can be adapted to the individual project.",
+      "icon": "building",
       "image": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80",
       "displayOrder": 6,
       "status": "Active"
