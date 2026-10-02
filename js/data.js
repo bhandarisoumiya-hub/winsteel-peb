@@ -7,7 +7,7 @@ const WinsteelData = (function () {
   let cachedData = null;
   const LOCAL_STORAGE_KEY = 'winsteel_db_data';
   const DATA_VERSION_KEY = 'winsteel_data_version';
-  const CURRENT_VERSION = 'v1.4_surat_address';
+  const CURRENT_VERSION = 'v1.5_facilities_update';
 
   // Primary loader: checks local storage for admin edits, then cachedData, then database/db.json
   async function loadData() {
