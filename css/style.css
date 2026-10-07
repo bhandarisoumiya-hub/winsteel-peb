@@ -293,7 +293,7 @@ img {
 }
 
 .brand-logo-img {
-  height: 52px;
+  height: 90px;
   width: auto;
   object-fit: contain;
   transition: transform var(--transition-fast);
