@@ -7,7 +7,7 @@ const WinsteelData = (function () {
   let cachedData = null;
   const LOCAL_STORAGE_KEY = 'winsteel_db_data';
   const DATA_VERSION_KEY = 'winsteel_data_version';
-  const CURRENT_VERSION = 'v2.2_clear_span_warehouse_img';
+  const CURRENT_VERSION = 'v2.4_industrial_buildings_img';
 
   // Primary loader: checks local storage for admin edits, then cachedData, then data/winsteel.json
   async function loadData() {

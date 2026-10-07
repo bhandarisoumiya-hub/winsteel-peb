@@ -272,7 +272,7 @@
       container.innerHTML = facilities.map((fac, idx) => `
         <article class="facility-card reveal is-visible">
           <div class="facility-media">
-            <img src="${fac.image}" alt="${fac.title}" class="facility-img" loading="lazy">
+            <img src="${fac.image}" alt="${fac.title}" class="facility-img" loading="lazy" onerror="if(!this.dataset.tried){this.dataset.tried='1'; this.src=encodeURI('${fac.image}');}">
           </div>
           <div class="facility-content">
             <div class="eyebrow">${fac.eyebrow || `MANUFACTURING FACILITY 0${idx + 1}`}</div>

@@ -65,12 +65,10 @@
   }
 
   .hero-overlay {
-    background: linear-gradient(
-      180deg, 
-      rgba(255, 255, 255, 0.96) 0%, 
-      rgba(255, 255, 255, 0.90) 65%, 
-      rgba(255, 255, 255, 0.75) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.96) 0%,
+        rgba(255, 255, 255, 0.90) 65%,
+        rgba(255, 255, 255, 0.75) 100%);
   }
 
   .hero-decorative-arcs {
@@ -132,6 +130,7 @@
     grid-template-columns: repeat(4, 1fr);
     row-gap: 32px;
   }
+
   .timeline-process::before {
     display: none;
   }
@@ -263,7 +262,7 @@
     width: 220px;
     height: 140px;
     right: -4px;
-    bottom: -8px;
+    bottom: -15px;
   }
 
   .about-exp-badge {
@@ -360,9 +359,11 @@
   h1 {
     font-size: 2rem;
   }
+
   h2 {
     font-size: 1.7rem;
   }
+
   .btn-lg {
     padding: 12px 24px;
     font-size: 0.95rem;
