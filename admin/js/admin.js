@@ -48,7 +48,7 @@ const AdminApp = (function () {
       }
     }
 
-    const paths = ['../database/db.json', '/database/db.json', '../data/winsteel.json', '/data/winsteel.json'];
+    const paths = ['../data/winsteel.json', '/data/winsteel.json', '../database/db.json', '/database/db.json'];
     for (const p of paths) {
       try {
         const res = await fetch(p);

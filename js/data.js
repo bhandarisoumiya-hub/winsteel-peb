@@ -7,9 +7,9 @@ const WinsteelData = (function () {
   let cachedData = null;
   const LOCAL_STORAGE_KEY = 'winsteel_db_data';
   const DATA_VERSION_KEY = 'winsteel_data_version';
-  const CURRENT_VERSION = 'v1.7_multilevel_plant_img';
+  const CURRENT_VERSION = 'v2.0_single_json_source';
 
-  // Primary loader: checks local storage for admin edits, then cachedData, then database/db.json
+  // Primary loader: checks local storage for admin edits, then cachedData, then data/winsteel.json
   async function loadData() {
     // Invalidate stale cache if version changed
     const savedVersion = localStorage.getItem(DATA_VERSION_KEY);
@@ -38,8 +38,8 @@ const WinsteelData = (function () {
     // 2. Return cached memory data if already fetched
     if (cachedData) return cachedData;
 
-    // Try database/db.json first (support absolute and relative URL paths)
-    const jsonPaths = ['/database/db.json', 'database/db.json', '/data/winsteel.json', 'data/winsteel.json'];
+    // Primary source: data/winsteel.json (with fallback to database/db.json)
+    const jsonPaths = ['/data/winsteel.json', 'data/winsteel.json', '/database/db.json', 'database/db.json'];
     for (const jsonPath of jsonPaths) {
       try {
         const res = await fetch(jsonPath);
