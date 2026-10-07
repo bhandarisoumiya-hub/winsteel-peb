@@ -43,9 +43,9 @@ const pebProducts = [
     "category": "Pre-Engineered Buildings (PEB)",
     "shortDescription": "Complete design, 3D structural engineering, precision fabrication and rapid erection of custom Pre-Engineered Steel Buildings.",
     "description": "Winsteel Engineering Works is an industry-leading manufacturer of turnkey Pre-Engineered Buildings (PEB). We design, engineer, fabricate and erect state-of-the-art PEB structures for heavy manufacturing plants, logistics hubs, automotive complexes, and commercial facilities. Utilizing high-tensile steel (IS 2062 / ASTM A572 Grade 50), automated submerged arc welding, and precision CNC cold-formed C/Z purlins, our PEB structures provide up to 90m clear-span column-free space, 40% faster erection than conventional concrete, and superior seismic and wind resistance.",
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85",
+    "image": "assets/images/Turnkey Pre-Engineered Steel Buildings (PEB).png",
     "gallery": [
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85",
+      "assets/images/Turnkey Pre-Engineered Steel Buildings (PEB).png",
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
       "https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=85"
     ],
@@ -75,10 +75,10 @@ const pebProducts = [
     "category": "Industrial Sheds & Warehouses",
     "shortDescription": "Heavy-duty industrial sheds, clear-span distribution centers, and high-bay logistics warehouses built for heavy operations.",
     "description": "Winsteel fabricates high-volume, clear-span industrial sheds and automated logistics warehouses engineered for maximum volumetric storage and seamless internal material flow. Designed to support heavy overhead EOT cranes, automated storage and retrieval systems (ASRS), mezzanine floors, and multi-bay dock levelers, our warehouses are built to withstand rigorous industrial operational cycles.",
-    "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
+    "image": "assets/images/Clear-Span Warehouse Logistics Hub.png",
     "gallery": [
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85"
+      "assets/images/Clear-Span Warehouse Logistics Hub.png",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"
     ],
     "features": [
       "High-bay vertical clearances up to 18 meters for high-density multi-tier racking",
