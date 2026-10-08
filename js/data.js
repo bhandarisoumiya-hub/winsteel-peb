@@ -7,7 +7,7 @@ const WinsteelData = (function () {
   let cachedData = null;
   const LOCAL_STORAGE_KEY = 'winsteel_db_data';
   const DATA_VERSION_KEY = 'winsteel_data_version';
-  const CURRENT_VERSION = 'v2.6_news3_image_update';
+  const CURRENT_VERSION = 'v3.0_peb_news4_update';
 
   // Primary loader: checks local storage for admin edits, then cachedData, then data/winsteel.json
   async function loadData() {
@@ -24,7 +24,12 @@ const WinsteelData = (function () {
     if (localSaved) {
       try {
         cachedData = JSON.parse(localSaved);
-        if (cachedData && cachedData.products && cachedData.products.some(p => p.id === 'prod-peb-1')) {
+        const hasPebProducts = cachedData && cachedData.products && cachedData.products.some(p => p.id === 'prod-peb-1');
+        const hasOldNews1 = cachedData && cachedData.news && cachedData.news.some(n => n.id === 'news-1' && (n.title.includes('1,800 MT') || !n.content.includes('Pre-Engineered Building')));
+        const hasOldNews2 = cachedData && cachedData.news && cachedData.news.some(n => n.id === 'news-2' && (n.title.includes('Sachin GIDC') || !n.content.includes('Conventional Steel')));
+        const hasOldNews3 = cachedData && cachedData.news && cachedData.news.some(n => n.id === 'news-3' && (n.title.includes('Underwater') || !n.content.includes('PEB Design and Fabrication')));
+        const hasOldNews4 = cachedData && cachedData.news && cachedData.news.some(n => n.id === 'news-4' && (n.title.includes('Welding Accreditations') || !n.content.includes('Designing a PEB')));
+        if (hasPebProducts && !hasOldNews1 && !hasOldNews2 && !hasOldNews3 && !hasOldNews4) {
           return cachedData;
         } else {
           localStorage.removeItem(LOCAL_STORAGE_KEY);

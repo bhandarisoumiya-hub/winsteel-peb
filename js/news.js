@@ -93,8 +93,8 @@ async function initNewsDetail() {
         ${item.shortDescription}
       </div>
 
-      <div style="font-size: 1.05rem; line-height: 1.85; color: #334155; margin-bottom: 48px;">
-        <p>${item.content}</p>
+      <div class="news-article-content">
+        ${item.content && item.content.trim().startsWith('<') ? item.content : `<p>${item.content}</p>`}
       </div>
 
       <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E2E8F0; padding-top: 24px;">

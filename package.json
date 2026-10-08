@@ -9,7 +9,8 @@
     "serve": "npx serve -l 3000 .",
     "build": "node scripts/build-data.js",
     "build:data": "node scripts/build-data.js",
-    "validate": "node scripts/validate-data.js"
+    "validate": "node scripts/validate-data.js",
+    "clean:assets": "node scripts/cleanup-unused-assets.js"
   },
   "keywords": [
     "winsteel",

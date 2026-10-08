@@ -44,9 +44,11 @@ function initMobileNav() {
 
   hamburgerBtn.addEventListener('click', toggleNav);
 
-  // Close when clicking any nav link
+  // Active box feedback & close when clicking any nav link
   navMenu.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', function () {
+      navMenu.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
       if (navMenu.classList.contains('open')) {
         toggleNav();
       }

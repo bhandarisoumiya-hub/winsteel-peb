@@ -10,6 +10,18 @@
   }
 }
 
+/* Laptops & Intermediate Desktops */
+@media (max-width: 1280px) and (min-width: 1025px) {
+  .nav-menu {
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 6px 10px;
+    font-size: 0.875rem;
+  }
+}
+
 /* Tablets & Small Desktops (1024px and below) */
 @media (max-width: 1024px) {
   :root {
@@ -32,7 +44,11 @@
     transition: right var(--transition-base);
     z-index: 1015;
     overflow-y: auto;
-    gap: 18px;
+    gap: 10px;
+    border: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .nav-menu.open {
@@ -44,9 +60,12 @@
   }
 
   .nav-link {
-    font-size: 1.15rem;
-    display: block;
-    padding: 10px 0;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    padding: 11px 16px;
+    border-radius: 8px;
+    width: 100%;
   }
 
   .hamburger-btn {
