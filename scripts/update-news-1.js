@@ -11,9 +11,9 @@ if (newsIndex === -1) {
   process.exit(1);
 }
 
-const newsContentHtml = `<p>A Pre-Engineered Building (PEB) is an engineered steel building system in which the structural components are designed according to project requirements and manufactured in a controlled production environment before being transported to the site for assembly and erection. PEB systems are commonly used for industrial buildings, warehouses, manufacturing facilities, workshops, logistics facilities and other applications where large, functional steel structures are required.</p>
+const newsContentHtml = `<p>A Pre-Engineered Building (PEB) is an engineered steel building system in which the structural components are designed according to project requirements and manufactured in a controlled production environment before being transported to the site for assembly and installation. PEB systems are commonly used for industrial buildings, warehouses, manufacturing facilities, workshops, logistics facilities and other applications where large, functional steel structures are required.</p>
 
-<p>The defining feature of a PEB is the coordination between structural engineering, detailing, fabrication, manufacturing and site erection. Rather than treating each structural component as an isolated element, the building is developed as an integrated system in which the primary frame, secondary framing, connections and building envelope work together.</p>
+<p>The defining feature of a PEB is the coordination between structural engineering, detailing, fabrication, manufacturing and site installation. Rather than treating each structural component as an isolated element, the building is developed as an integrated system in which the primary frame, secondary framing, connections and building envelope work together.</p>
 
 <h3>Primary Framing</h3>
 <p>Primary framing forms the principal load-bearing system of a PEB. It generally consists of columns and rafters that transfer loads from the building structure to the foundations.</p>
@@ -35,13 +35,13 @@ const newsContentHtml = `<p>A Pre-Engineered Building (PEB) is an engineered ste
 <p>PEB design starts with the technical requirements of the building. These may include dimensions, structural loads, clear-span requirements, equipment loads, crane requirements, site conditions, openings, cladding systems and future expansion provisions.</p>
 <p>Once the structural system has been established, detailed engineering information is developed for manufacturing. 3D structural detailing can be used to coordinate members, connections, dimensions and interfaces before fabrication begins.</p>
 
-<h3>Manufacturing and Erection</h3>
+<h3>Manufacturing and installation</h3>
 <p>The engineered components are manufactured according to approved drawings and fabrication information. Activities can include material preparation, cutting, drilling, fit-up, welding, assembly and inspection.</p>
-<p>After fabrication and quality checks, components are transported to site for erection. The erection process involves assembling the manufactured components in the planned sequence and establishing the structural frame according to the approved engineering information.</p>
+<p>After fabrication and quality checks, components are transported to site for installation. The installation process involves assembling the manufactured components in the planned sequence and establishing the structural frame according to the approved engineering information.</p>
 
 <h3>Why PEB Engineering Matters</h3>
-<p>A PEB should not be considered simply as a prefabricated steel shed. It is an engineered structural system in which design, manufacturing and erection need to remain coordinated throughout the project.</p>
-<p>WINSTEEL approaches PEB projects through an integrated workflow covering structural engineering, 3D detailing, fabrication, manufacturing, quality inspection, supply and erection according to the agreed project scope.</p>
+<p>A PEB should not be considered simply as a prefabricated steel shed. It is an engineered structural system in which design, manufacturing and installation need to remain coordinated throughout the project.</p>
+<p>WINSTEEL approaches PEB projects through an integrated workflow covering structural engineering, 3D detailing, fabrication, manufacturing, quality inspection, supply and installation according to the agreed project scope.</p>
 
 <div class="collab-callout">
   <h4>International Technical Collaboration</h4>
@@ -56,7 +56,7 @@ data.news[newsIndex] = {
   date: "2026-08-14",
   author: "Winsteel PEB Engineering Division",
   image: "assets/images/Turnkey Pre-Engineered Steel Buildings (PEB).png",
-  shortDescription: "A Pre-Engineered Building (PEB) is an engineered steel building system designed to project requirements and manufactured under controlled production environments before site erection.",
+  shortDescription: "A Pre-Engineered Building (PEB) is an engineered steel building system designed to project requirements and manufactured under controlled production environments before site installation.",
   content: newsContentHtml,
   status: "Published",
   featured: true

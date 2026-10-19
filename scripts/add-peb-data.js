@@ -41,8 +41,8 @@ const pebProducts = [
     "title": "Turnkey Pre-Engineered Steel Buildings (PEB)",
     "slug": "turnkey-pre-engineered-buildings",
     "category": "Pre-Engineered Buildings (PEB)",
-    "shortDescription": "Complete design, 3D structural engineering, precision fabrication and rapid erection of custom Pre-Engineered Steel Buildings.",
-    "description": "Winsteel Engineering Works is an industry-leading manufacturer of turnkey Pre-Engineered Buildings (PEB). We design, engineer, fabricate and erect state-of-the-art PEB structures for heavy manufacturing plants, logistics hubs, automotive complexes, and commercial facilities. Utilizing high-tensile steel (IS 2062 / ASTM A572 Grade 50), automated submerged arc welding, and precision CNC cold-formed C/Z purlins, our PEB structures provide up to 90m clear-span column-free space, 40% faster erection than conventional concrete, and superior seismic and wind resistance.",
+    "shortDescription": "Complete design, 3D structural engineering, precision fabrication and rapid installation of custom Pre-Engineered Steel Buildings.",
+    "description": "Winsteel Engineering Works is an industry-leading manufacturer of turnkey Pre-Engineered Buildings (PEB). We design, engineer, fabricate and erect state-of-the-art PEB structures for heavy manufacturing plants, logistics hubs, automotive complexes, and commercial facilities. Utilizing high-tensile steel (IS 2062 / ASTM A572 Grade 50), automated submerged arc welding, and precision CNC cold-formed C/Z purlins, our PEB structures provide up to 90m clear-span column-free space, 40% faster installation than conventional concrete, and superior seismic and wind resistance.",
     "image": "assets/images/Turnkey Pre-Engineered Steel Buildings (PEB).png",
     "gallery": [
       "assets/images/Turnkey Pre-Engineered Steel Buildings (PEB).png",
@@ -62,7 +62,7 @@ const pebProducts = [
       "Secondary Framing": "Galvanized cold-formed Z & C purlins (275 GSM coating)",
       "Roofing System": "Standing Seam 360° double-lock leakproof Galvalume AZ150",
       "Design Compliance": "IS 800:2007, MBMA 2012, AISC 360, IS 875 (Part 3)",
-      "Erection Speed": "Up to 40% faster turnaround compared to conventional RCC"
+      "installation Speed": "Up to 40% faster turnaround compared to conventional RCC"
     },
     "status": "Active",
     "featured": true,
@@ -151,14 +151,14 @@ const pebProjects = [
     "location": "Chakan Industrial Corridor, Pune, India",
     "year": "2024",
     "client": "National Logistics Parks Ltd / Global E-Commerce Major",
-    "shortDescription": "Turnkey engineering, automated CNC fabrication, and high-speed erection of a 65,000 sq. mtr. clear-span Pre-Engineered steel warehouse.",
+    "shortDescription": "Turnkey engineering, automated CNC fabrication, and high-speed installation of a 65,000 sq. mtr. clear-span Pre-Engineered steel warehouse.",
     "description": "Winsteel executed the complete turnkey Pre-Engineered Building (PEB) contract for one of Western India's largest automated fulfillment centers. Featuring 72-meter clear spans without intermediate columns, heavy 35-tonne mezzanine sorting floors, 48 automated dock-leveler bays, and standing-seam leakproof roofing with integrated skylights. The entire 4,800 MT structural steel superstructure was delivered and erected in record 5.5 months.",
     "coverImage": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85",
     "gallery": [
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85",
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"
     ],
-    "scopeOfWork": "Architectural concept planning, 3D TEKLA detailing, automated CNC H-beam line fabrication, PUF insulation cladding, and fast-track site erection.",
+    "scopeOfWork": "Architectural concept planning, 3D TEKLA detailing, automated CNC H-beam line fabrication, PUF insulation cladding, and fast-track site installation.",
     "materials": "4,800 MT High-Yield E350/E450 Steel, 275 GSM Galvalume Roofing, High-Strength 10.9 Grade Bolts.",
     "status": "Completed",
     "featured": true,
@@ -179,7 +179,7 @@ const pebProjects = [
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
       "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
     ],
-    "scopeOfWork": "Structural dynamic analysis, fabrication of built-up I-sections and crane runway beams, fireproof intumescent coating, turnkey erection.",
+    "scopeOfWork": "Structural dynamic analysis, fabrication of built-up I-sections and crane runway beams, fireproof intumescent coating, turnkey installation.",
     "materials": "3,100 MT Built-up High-Tensile Steel, 0.55mm Bare Galvalume Standing Seam Sheets, Polycarbonate Daylighting Strips.",
     "status": "Completed",
     "featured": true,
