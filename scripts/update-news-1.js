@@ -31,6 +31,22 @@ const newsContentHtml = `<p>A Pre-Engineered Building (PEB) is an engineered ste
 <p>Connections provide the interfaces between structural members and are designed to transfer the forces generated within the structure. Their design and detailing are important to both structural performance and fabrication.</p>
 <p>Connection details are incorporated into the engineering and detailing process so that the required components can be accurately manufactured and assembled at site.</p>
 
+<h4>Knee Connection</h4>
+<p>A knee connection is located at the junction between a column and a rafter in a typical portal-frame PEB. This junction is a critical part of the main structural frame because it transfers forces between the roof member and the column.</p>
+<p>In a moment-resisting portal frame, the knee connection is designed to transfer bending moment, shear force and, where applicable, axial force. Its configuration may include end plates, bolts, welds and stiffeners, depending on the structural design.</p>
+<p>The connection must be detailed to suit the geometry of the connected members and the forces determined through structural analysis. Proper detailing also supports accurate fabrication and assembly at the construction site.</p>
+
+<h4>Haunch Connection</h4>
+<p>A haunch is a locally deepened or reinforced region near the column–rafter junction in many PEB portal frames. It is commonly formed by increasing the depth of the rafter towards the knee, often using a tapered or triangular steel section.</p>
+<p>The haunch helps accommodate the higher bending demands that commonly occur near the knee of a portal frame. By providing additional structural depth in this region, the design can distribute material according to the bending demands along the frame.</p>
+<p>Haunch geometry, plate thickness, stiffeners, welds and bolted interfaces must be designed for the applicable forces and stability requirements. The haunch is closely associated with the knee connection, but the terms are not interchangeable: the knee identifies the frame junction, while the haunch refers to the strengthened or deepened structural region.</p>
+
+<h4>Shear Connection</h4>
+<p>A shear connection is designed primarily to transfer shear force between connected structural members. In steel buildings, such connections may be used where a secondary beam, support member or other component transfers its vertical or in-plane load to a supporting member.</p>
+<p>Depending on the application, a shear connection may use a shear plate, fin plate, cleat, end plate, bolts or welds. The specific arrangement depends on the connected members, loading conditions and required connection behaviour.</p>
+<p>The design must consider relevant factors such as bolt strength, weld capacity, plate strength, bearing, tear-out and the behaviour of the connected steel members. Where required, additional checks address eccentricity, stability and other applicable limit states.</p>
+<p>A shear connection should not automatically be assumed to resist significant bending moment. Its intended structural behaviour must be established by the connection design and reflected in the overall structural analysis.</p>
+
 <h3>Engineering and Detailing</h3>
 <p>PEB design starts with the technical requirements of the building. These may include dimensions, structural loads, clear-span requirements, equipment loads, crane requirements, site conditions, openings, cladding systems and future expansion provisions.</p>
 <p>Once the structural system has been established, detailed engineering information is developed for manufacturing. 3D structural detailing can be used to coordinate members, connections, dimensions and interfaces before fabrication begins.</p>
