@@ -27,7 +27,7 @@ async function initNewsListing() {
   container.innerHTML = newsList.map(n => `
     <article class="news-card reveal is-visible">
       <div class="news-img-box">
-        <img src="${encodeURI(n.image)}" alt="${n.title}" class="news-img" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='${n.image}';}">
+        <img src="${encodeURI(n.image)}" alt="${n.title}" class="news-img" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80';}">
       </div>
       <div class="news-body">
         <div class="news-meta">
@@ -86,7 +86,7 @@ async function initNewsDetail() {
       </div>
 
       <div style="height: 440px; border-radius: 8px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-        <img src="${encodeURI(item.image)}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover;" onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='${item.image}';}">
+        <img src="${encodeURI(item.image)}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover;" onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80';}">
       </div>
 
       <div style="font-size: 1.2rem; line-height: 1.8; color: #1E293B; margin-bottom: 32px; font-weight: 500;">

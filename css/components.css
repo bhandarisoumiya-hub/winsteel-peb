@@ -1263,6 +1263,17 @@
   font-weight: 600;
 }
 
+.news-article-content ul {
+  margin: 1rem 0 1.6rem 1.4rem;
+  padding-left: 0.5rem;
+  color: #334155;
+}
+
+.news-article-content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+}
+
 .news-article-content .collab-callout {
   margin-top: 36px;
   padding: 24px 28px;
