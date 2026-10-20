@@ -586,7 +586,28 @@
     },
     {
       "id": "fac-2",
-      "eyebrow": "MANUFACTURING FACILITY 02",
+      "eyebrow": "FACILITY 02 - PRIMO MACHINE",
+      "title": "PRIMO Machine",
+      "description": "The PRIMO machine supports precision processing of steel components for fabrication. It helps prepare components to specified dimensions and requirements for PEB manufacturing.",
+      "image": "",
+      "capacity": "PRIMO Machine",
+      "specLabel1": "MACHINE TYPE",
+      "area": "Steel component processing for PEB fabrication",
+      "specLabel2": "APPLICATION",
+      "equipment": "Precision processing and component preparation",
+      "equipmentLabel": "KEY CAPABILITIES",
+      "features": [
+        "Supports steel component processing",
+        "Helps achieve specified dimensions",
+        "Suitable for PEB fabrication requirements",
+        "Supports consistent manufacturing operations"
+      ],
+      "displayOrder": 2,
+      "status": "Active"
+    },
+    {
+      "id": "fac-3",
+      "eyebrow": "FACILITY 03 - HYDRAULIC FORMING & BENDING",
       "title": "Hydraulic Forming & Plate Bending",
       "description": "Our forming infrastructure is equipped to handle demanding steel shaping requirements, including large components used in specialised engineering and formwork applications.",
       "image": "assets/images/Precision Sheet Metal Bending Workshop.png",
@@ -603,12 +624,12 @@
         "Complex pier and pier-cap mould fabrication",
         "Controlled forming for repeatable geometry"
       ],
-      "displayOrder": 2,
+      "displayOrder": 3,
       "status": "Active"
     },
     {
-      "id": "fac-3",
-      "eyebrow": "FACILITY 03 - MATERIAL HANDLING",
+      "id": "fac-4",
+      "eyebrow": "FACILITY 04 - MATERIAL HANDLING",
       "title": "High-Capacity Material Handling Infrastructure",
       "description": "Efficient movement of heavy steel components is critical to maintaining production flow. Our manufacturing premises are supported by an extensive network of overhead cranes for lifting, positioning and transferring fabrication components.",
       "image": "assets/images/Overhead Crane Lifting Steel Bundles.png",
@@ -625,12 +646,34 @@
         "Efficient loading and positioning operations",
         "Infrastructure designed for large-scale fabrication"
       ],
-      "displayOrder": 3,
+      "displayOrder": 4,
       "status": "Active"
     },
     {
-      "id": "fac-4",
-      "eyebrow": "FACILITY 04 - FABRICATION & WELDING",
+      "id": "fac-5",
+      "eyebrow": "FACILITY 05 - SHEET METAL SHEARING",
+      "title": "High-Capacity Sheet Metal Shearing",
+      "description": "Accurate sheet metal cutting is essential for preparing steel components to the required dimensions. Our shearing machine supports PEB manufacturing and structural fabrication, with a cutting capacity of up to 12 mm thickness and a maximum cutting width of 3.2 metres.",
+      "image": "",
+      "capacity": "Up to 12 mm",
+      "specLabel1": "CUTTING THICKNESS",
+      "area": "3.2 metres",
+      "specLabel2": "MAXIMUM CUTTING WIDTH",
+      "equipment": "Sheet metal cutting for PEB and structural fabrication.",
+      "equipmentLabel": "MACHINE CAPABILITY",
+      "features": [
+        "Cutting capacity up to 12 mm thickness",
+        "Maximum cutting width of 3.2 metres",
+        "Sheet metal preparation to specified dimensions",
+        "Supports PEB component manufacturing",
+        "Suitable for project-specific fabrication requirements"
+      ],
+      "displayOrder": 5,
+      "status": "Active"
+    },
+    {
+      "id": "fac-6",
+      "eyebrow": "FACILITY 06 - FABRICATION & WELDING",
       "title": "Qualified Welding & Heavy Fabrication",
       "description": "Our welding operations combine established welding processes with skilled fabrication teams to deliver structurally reliable and consistent welded assemblies.",
       "image": "assets/images/Industrial Steel Fabrication Welding Scene.png",
@@ -647,12 +690,12 @@
         "Consistent weld quality across production",
         "Fabrication processes designed for productivity and reliability"
       ],
-      "displayOrder": 4,
+      "displayOrder": 6,
       "status": "Active"
     },
     {
-      "id": "fac-5",
-      "eyebrow": "FACILITY 05 - AUTOMATED STEEL GIRDER PRODUCTION",
+      "id": "fac-7",
+      "eyebrow": "FACILITY 07 - AUTOMATED STEEL GIRDER PRODUCTION",
       "title": "Automated H-Beam & Steel Girder Manufacturing",
       "description": "Our automated steel girder facility integrates controlled fit-up and welding operations to streamline the production of structural steel girders. Sensor-assisted automation supports repeatable fabrication and efficient production.",
       "image": "assets/images/Automated Steel Beam Welding Line.png",
@@ -669,12 +712,12 @@
         "Consistent production quality",
         "Designed for high-volume structural steel requirements"
       ],
-      "displayOrder": 5,
+      "displayOrder": 7,
       "status": "Active"
     },
     {
-      "id": "fac-6",
-      "eyebrow": "FACILITY 06 - INTEGRATED MANUFACTURING INFRASTRUCTURE",
+      "id": "fac-8",
+      "eyebrow": "FACILITY 08 - INTEGRATED MANUFACTURING INFRASTRUCTURE",
       "title": "Six Premises. One Integrated Manufacturing Network.",
       "description": "Our manufacturing operations are distributed across five premises, providing substantial production and storage space for large-scale engineering requirements. With approximately 324,000 sq. ft. of total plot area and 237,000 sq. ft. of covered area, the infrastructure is designed to support fabrication, material handling, processing and assembly activities under one coordinated manufacturing ecosystem.",
       "image": "assets/images/Winsteel Integrated Manufacturing Network new image.png",
@@ -691,7 +734,7 @@
         "Integrated material movement infrastructure",
         "Scalable environment for heavy engineering projects"
       ],
-      "displayOrder": 6,
+      "displayOrder": 8,
       "status": "Active"
     }
   ],
@@ -748,6 +791,15 @@
       "icon": "building",
       "image": "assets/images/Modern Steel Warehouse Complex new.png",
       "displayOrder": 6,
+      "status": "Active"
+    },
+    {
+      "id": "str-7",
+      "title": "Quality Inspection & Rectification",
+      "description": "Fabricated components undergo inspection and quality checks to verify dimensions, workmanship and compliance with project specifications. Any identified deviations are assessed and rectified as required, followed by re-inspection to confirm that the components meet the specified quality requirements before dispatch.",
+      "icon": "shield-check",
+      "image": "",
+      "displayOrder": 7,
       "status": "Active"
     }
   ],

@@ -544,6 +544,46 @@
   object-fit: cover;
 }
 
+.facility-img-blank {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #091726 0%, #162638 100%);
+  border: 2px dashed rgba(255, 255, 255, 0.18);
+  padding: 30px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.facility-img-blank-icon {
+  width: 52px;
+  height: 52px;
+  stroke: #64748B;
+  margin-bottom: 14px;
+  opacity: 0.8;
+}
+
+.facility-img-blank-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #E2E8F0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.facility-img-blank-subtitle {
+  font-size: 0.82rem;
+  color: #94A3B8;
+  max-width: 260px;
+  line-height: 1.4;
+}
+
 .facility-content {
   padding: 40px;
   display: flex;
@@ -657,6 +697,221 @@
   font-size: 0.925rem;
   color: var(--color-text-muted);
   line-height: 1.65;
+}
+
+/* Strengths Deep Dive & Showcase Sections */
+.strength-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.strength-showcase-grid.reverse {
+  grid-template-columns: 1fr 1.05fr;
+}
+
+.strength-showcase-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.strength-showcase-title {
+  color: var(--color-dark-navy);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.strength-showcase-desc {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.strength-showcase-media {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+}
+
+.strength-showcase-img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  max-height: 460px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  display: block;
+}
+
+/* Image Placeholder Space */
+.strength-img-placeholder {
+  width: 100%;
+  min-height: 380px;
+  background: linear-gradient(135deg, #071522 0%, #0d2238 60%, #122c47 100%);
+  border: 2px dashed rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 28px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transition: all var(--transition-base);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.strength-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.strength-img-placeholder:hover {
+  border-color: var(--color-yellow);
+  box-shadow: var(--shadow-xl), 0 0 25px rgba(255, 196, 0, 0.15);
+}
+
+.strength-placeholder-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(0, 103, 177, 0.18);
+  border: 1px solid rgba(0, 103, 177, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-yellow);
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--transition-base);
+}
+
+.strength-img-placeholder:hover .strength-placeholder-icon-wrap {
+  transform: scale(1.08);
+}
+
+.strength-placeholder-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  background: rgba(255, 196, 0, 0.12);
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 196, 0, 0.3);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.strength-placeholder-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.strength-placeholder-subtitle {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  max-width: 320px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.strength-placeholder-code-tag {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: #38BDF8;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 4px 12px;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Inspection Process Features Grid */
+.inspection-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.inspection-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: var(--color-light-grey);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-primary-blue);
+  transition: all var(--transition-fast);
+}
+
+.inspection-feature-item:hover {
+  background-color: #EEF4F9;
+  border-left-color: var(--color-yellow);
+  transform: translateX(3px);
+}
+
+.inspection-feature-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(0, 103, 177, 0.1);
+  color: var(--color-primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.inspection-feature-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+  margin-bottom: 3px;
+}
+
+.inspection-feature-desc {
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  margin: 0;
 }
 
 /* 7. OUR PROCESS TIMELINE (Horizontal Desktop, Vertical Mobile) */

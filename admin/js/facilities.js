@@ -124,7 +124,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     tbody.innerHTML = data.facilities.map((fac, idx) => `
       <tr>
         <td>
-          <img src="${fac.image}" alt="${fac.title}" style="width:64px; height:48px; object-fit:cover; border-radius:6px; border:1px solid #E2E8F0; display:block;">
+          ${fac.image ? `
+            <img src="${fac.image}" alt="${fac.title}" style="width:64px; height:48px; object-fit:cover; border-radius:6px; border:1px solid #E2E8F0; display:block;">
+          ` : `
+            <div style="width:64px; height:48px; border-radius:6px; border:1px dashed #CBD5E1; background:#F8FAFC; display:flex; align-items:center; justify-content:center; color:#94A3B8; font-size:0.68rem; text-align:center; font-weight:600;">No Image</div>
+          `}
         </td>
         <td>
           <strong style="color:#0F172A; font-size:0.95rem; display:block;">${fac.title}</strong>
@@ -214,18 +218,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       const equipment = document.getElementById('fac-equipment').value.trim();
       const status = document.getElementById('fac-status').value;
 
-      if (!image) {
-        alert('Please upload an image for this facility.');
-        return;
-      }
-
       const existingFac = data.facilities.find(f => String(f.id) === String(id));
+      const finalImage = image || (existingFac ? existingFac.image || '' : '');
 
       const obj = {
         id,
         title,
         description,
-        image,
+        image: finalImage,
         capacity: capacity || 'N/A',
         area: area || 'N/A',
         equipment: equipment || 'N/A',

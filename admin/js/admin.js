@@ -39,6 +39,14 @@ const AdminApp = (function () {
 
   // Fetch or Load Working Data
   async function getWorkingData() {
+    const DATA_VERSION_KEY = 'winsteel_data_version';
+    const CURRENT_VERSION = 'v3.2_primo_facility';
+    const savedVersion = localStorage.getItem(DATA_VERSION_KEY);
+    if (savedVersion !== CURRENT_VERSION) {
+      localStorage.removeItem(DATA_CACHE_KEY);
+      localStorage.setItem(DATA_VERSION_KEY, CURRENT_VERSION);
+    }
+
     const local = localStorage.getItem(DATA_CACHE_KEY);
     if (local) {
       try {

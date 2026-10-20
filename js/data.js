@@ -7,7 +7,7 @@ const WinsteelData = (function () {
   let cachedData = null;
   const LOCAL_STORAGE_KEY = 'winsteel_db_data';
   const DATA_VERSION_KEY = 'winsteel_data_version';
-  const CURRENT_VERSION = 'v3.0_peb_news4_update';
+  const CURRENT_VERSION = 'v3.3_quality_rectification';
 
   // Primary loader: checks local storage for admin edits, then cachedData, then data/winsteel.json
   async function loadData() {

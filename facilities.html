@@ -272,7 +272,19 @@
       container.innerHTML = facilities.map((fac, idx) => `
         <article class="facility-card reveal is-visible">
           <div class="facility-media">
-            <img src="${fac.image}" alt="${fac.title}" class="facility-img" loading="lazy" onerror="if(!this.dataset.tried){this.dataset.tried='1'; this.src=encodeURI('${fac.image}');}">
+            ${fac.image && fac.image.trim() !== '' ? `
+              <img src="${fac.image}" alt="${fac.title}" class="facility-img" loading="lazy" onerror="if(!this.dataset.tried){this.dataset.tried='1'; this.src=encodeURI('${fac.image}');}">
+            ` : `
+              <div class="facility-img-blank">
+                <svg class="facility-img-blank-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <div class="facility-img-blank-title">Image Space (Add Later)</div>
+                <div class="facility-img-blank-subtitle">Add image path in data/winsteel.json</div>
+              </div>
+            `}
           </div>
           <div class="facility-content">
             <div class="eyebrow">${fac.eyebrow || `MANUFACTURING FACILITY 0${idx + 1}`}</div>

@@ -70,15 +70,14 @@
     </div>
   </section>
 
-  <!-- Quality Assurance Deep Dive -->
+  <!-- Quality Assurance Deep Dive 01: Engineering Strength -->
   <section class="section-py blueprint-grid-light" style="border-top: 1px solid var(--color-border-light);">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
-        <div>
+      <div class="strength-showcase-grid">
+        <div class="strength-showcase-content">
           <div class="eyebrow">Zero Defect Protocol</div>
-          <h2 style="color: #071522; margin-bottom: 20px;">Engineering Strength Built on Precision, Capability and
-            Experience</h2>
-          <p style="color: #475569; font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px;">
+          <h2 class="strength-showcase-title">Engineering Strength Built on Precision, Capability and Experience</h2>
+          <p class="strength-showcase-desc">
             Winsteel Engineering Works combines advanced manufacturing infrastructure, experienced engineering expertise
             and strong fabrication capabilities to deliver reliable solutions for complex and large-scale engineering
             requirements. Our strengths include precision CNC cutting, heavy forming and bending, high-capacity material
@@ -87,9 +86,87 @@
             with a focus on quality, precision, productivity, safety and dependable project execution.
           </p>
         </div>
-        <div>
-          <img src="./assets/images/Precision Steel Beam Inspection.png" alt="Testing Lab"
-            style="border-radius: 8px; box-shadow: var(--shadow-xl); width: 100%; height: 380px; object-fit: cover;">
+        <div class="strength-showcase-media">
+          <img src="./assets/images/Precision Steel Beam Inspection.png" alt="Testing Lab" class="strength-showcase-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Assurance Deep Dive 02: Quality Inspection & Rectification -->
+  <section class="section-py" style="background-color: #FFFFFF; border-top: 1px solid var(--color-border-light);">
+    <div class="container">
+      <div class="strength-showcase-grid reverse">
+        <div class="strength-showcase-media" id="inspection-media-slot">
+          <!-- ============================================================
+               IMAGE SPACE / PLACEHOLDER:
+               To add your image later:
+               Option 1: In data/winsteel.json or database/db.json, add your image path to "str-7": "image": "assets/images/your-image.jpg"
+               Option 2: Replace this placeholder directly with:
+                         <img src="assets/images/your-image.jpg" alt="Quality Inspection & Rectification" class="strength-showcase-img">
+               ============================================================ -->
+          <div class="strength-img-placeholder" id="inspection-placeholder">
+            <div class="strength-placeholder-icon-wrap">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+            <div class="strength-placeholder-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+              Image Space (Add Later)
+            </div>
+            <h3 class="strength-placeholder-title">Quality Inspection &amp; Rectification</h3>
+            <p class="strength-placeholder-subtitle">High-resolution inspection &amp; fabrication photo space reserved for this capability.</p>
+            <span class="strength-placeholder-code-tag">assets/images/your-image.jpg &bull; 800 &times; 520 px</span>
+          </div>
+        </div>
+        <div class="strength-showcase-content">
+          <div class="eyebrow">Quality Assurance &amp; Compliance</div>
+          <h2 class="strength-showcase-title">Quality Inspection &amp; Rectification</h2>
+          <p class="strength-showcase-desc">
+            Fabricated components undergo inspection and quality checks to verify dimensions, workmanship and compliance with project specifications. Any identified deviations are assessed and rectified as required, followed by re-inspection to confirm that the components meet the specified quality requirements before dispatch.
+          </p>
+
+          <div class="inspection-features-grid">
+            <div class="inspection-feature-item">
+              <div class="inspection-feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <strong class="inspection-feature-title">Dimensional &amp; Workmanship Checks</strong>
+                <p class="inspection-feature-desc">Laser and calibrated dimensional checks against approved shop drawings.</p>
+              </div>
+            </div>
+            <div class="inspection-feature-item">
+              <div class="inspection-feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <div>
+                <strong class="inspection-feature-title">Compliance Verification</strong>
+                <p class="inspection-feature-desc">Weld seam profiling, surface treatment and strict code compliance.</p>
+              </div>
+            </div>
+            <div class="inspection-feature-item">
+              <div class="inspection-feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              </div>
+              <div>
+                <strong class="inspection-feature-title">Assessed &amp; Rectified</strong>
+                <p class="inspection-feature-desc">Immediate root-cause assessment and engineering rectification of deviations.</p>
+              </div>
+            </div>
+            <div class="inspection-feature-item">
+              <div class="inspection-feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <strong class="inspection-feature-title">Pre-Dispatch Re-Inspection</strong>
+                <p class="inspection-feature-desc">Mandatory sign-off and re-inspection prior to dispatch to site.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -147,7 +224,9 @@
       if (!container || typeof WinsteelData === 'undefined') return;
 
       const strengths = await WinsteelData.getStrengths();
-      container.innerHTML = strengths.map(s => `
+      // Render the 6 core pillars in the top grid
+      const gridStrengths = strengths.filter(s => s.id !== 'str-7');
+      container.innerHTML = gridStrengths.map(s => `
         <article class="strength-card reveal is-visible">
           <div class="strength-icon-box">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -156,6 +235,17 @@
           <p class="strength-desc">${s.description}</p>
         </article>
       `).join('');
+
+      // Auto-load image if provided in data for str-7
+      const inspectionItem = strengths.find(s => s.id === 'str-7');
+      if (inspectionItem && inspectionItem.image && inspectionItem.image.trim() !== '') {
+        const slot = document.getElementById('inspection-media-slot');
+        if (slot) {
+          slot.innerHTML = `
+            <img src="${inspectionItem.image}" alt="${inspectionItem.title}" class="strength-showcase-img" loading="lazy" onerror="if(!this.dataset.tried){this.dataset.tried='1'; this.src=encodeURI('${inspectionItem.image}');}">
+          `;
+        }
+      }
     });
   </script>
 </body>

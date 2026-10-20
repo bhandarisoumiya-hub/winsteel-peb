@@ -139,6 +139,17 @@
     min-height: 280px;
   }
 
+  /* Strengths Showcase Grid */
+  .strength-showcase-grid,
+  .strength-showcase-grid.reverse {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .strength-showcase-grid.reverse .strength-showcase-media {
+    order: 0;
+  }
+
   /* Contact */
   .contact-layout {
     grid-template-columns: 1fr;
@@ -224,6 +235,20 @@
   .news-grid,
   .certificates-grid {
     grid-template-columns: 1fr;
+  }
+
+  .strength-showcase-title {
+    font-size: 1.65rem;
+  }
+
+  .inspection-features-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .strength-img-placeholder {
+    min-height: 320px;
+    padding: 30px 20px;
   }
 
   .peb-filter-pills {
