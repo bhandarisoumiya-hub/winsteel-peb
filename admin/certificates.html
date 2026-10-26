@@ -143,7 +143,7 @@
         tbody.innerHTML = data.certificates.map(c => `
           <tr>
             <td><code>${c.id}</code></td>
-            <td><img src="${c.image}" alt="${c.certificateName}" class="table-img"></td>
+            <td><img src="${c.image || 'assets/logo/winsteel-logo.png'}" alt="${c.certificateName}" class="table-img"></td>
             <td><strong>${c.certificateName}</strong></td>
             <td>${c.issuingOrganization}</td>
             <td><code style="font-size:0.8rem;">${c.certificateNumber || 'N/A'}</code></td>

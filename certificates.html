@@ -55,29 +55,76 @@
     </div>
   </section>
 
-  <!-- Certificates Grid -->
-  <section class="section-py">
+  <!-- Certificates Simple PDF Grid -->
+  <section class="section-py" style="background: #F8FAFC; min-height: 50vh;">
     <div class="container">
-      <div class="certificates-grid" id="certificates-grid-container">
-        <div style="grid-column: 1 / -1; text-align: center; padding: 40px 0;">
-          <p>Loading quality accreditations...</p>
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 40px;">
+        <span style="background: #E0F2FE; color: #0067B1; font-weight: 600; padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 12px;">Official Quality Documents</span>
+        <h2 style="font-size: 2rem; color: #071522; margin-bottom: 12px;">Company Quality Certificates</h2>
+        <p style="color: #64748B; font-size: 1rem; line-height: 1.6;">Click on any certificate to view or download the official PDF document in a new tab.</p>
+      </div>
+
+      <div class="certificates-wrapper">
+        <div class="pdf-certs-grid" id="certificates-grid-container">
+          <a href="assets/Pdf/ISO%20Certificate%20Winsteel%20Engineering%20Works%20Pvt%20Ltd.pdf" target="_blank" rel="noopener noreferrer" class="pdf-cert-card reveal is-visible">
+            <div class="pdf-cert-header">
+              <div class="pdf-cert-icon-wrapper" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <span class="pdf-badge">PDF DOCUMENT</span>
+            </div>
+            <h3 class="pdf-cert-title">ISO Certificate</h3>
+            <p class="pdf-cert-org">Winsteel Engineering Works Pvt. Ltd. • Quality Management System</p>
+            <div class="pdf-cert-footer">
+              <span class="pdf-cert-meta">ISO Certified Record</span>
+              <span class="pdf-cert-action">
+                <span>Open PDF</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="assets/Pdf/ZED%20Gold%20Certificate%20-%20Winsteel.pdf" target="_blank" rel="noopener noreferrer" class="pdf-cert-card reveal is-visible">
+            <div class="pdf-cert-header">
+              <div class="pdf-cert-icon-wrapper" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <span class="pdf-badge">PDF DOCUMENT</span>
+            </div>
+            <h3 class="pdf-cert-title">ZED Gold Certificate</h3>
+            <p class="pdf-cert-org">Ministry of MSME, Govt. of India • Zero Defect Zero Effect</p>
+            <div class="pdf-cert-footer">
+              <span class="pdf-cert-meta">ZED Gold Certified Record</span>
+              <span class="pdf-cert-action">
+                <span>Open PDF</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Shared Modal for Certificates Preview -->
-  <div class="modal-backdrop">
-    <div class="modal-box">
-      <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
-      <div style="padding: 24px 28px; border-bottom: 1px solid #E2E8F0;">
-        <h3 class="modal-title" style="color: #071522; font-size: 1.25rem;">Certificate Details</h3>
-      </div>
-      <div class="modal-body-content" style="padding: 24px 28px;">
-        <!-- Filled dynamically -->
-      </div>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -130,45 +177,50 @@
       const container = document.getElementById('certificates-grid-container');
       if (!container || typeof WinsteelData === 'undefined') return;
 
-      const certs = await WinsteelData.getCertificates();
-      container.innerHTML = certs.map(c => `
-        <article class="cert-card reveal is-visible" onclick="showCertModal('${c.id}')">
-          <div class="cert-thumb-box">
-            <img src="${c.image}" alt="${c.certificateName}" class="cert-thumb" loading="lazy">
-            <div style="position:absolute; bottom:10px; right:10px; background:rgba(7,21,34,0.85); color:#FFF; font-size:0.75rem; padding:3px 8px; border-radius:4px;">
-              🔍 Click to Inspect
-            </div>
-          </div>
-          <div class="cert-body">
-            <h4>${c.certificateName}</h4>
-            <div class="cert-org">${c.issuingOrganization}</div>
-            <div class="cert-meta">
-              <span><strong>Certificate No:</strong> ${c.certificateNumber || 'Verified'}</span><br>
-              <span><strong>Validity:</strong> ${c.expiryDate ? 'Until ' + c.expiryDate : 'Active & Certified'}</span>
-            </div>
-          </div>
-        </article>
-      `).join('');
+      try {
+        const certs = await WinsteelData.getCertificates();
+        if (certs && certs.length > 0) {
+          container.innerHTML = certs.map((c, index) => {
+            const rawDoc = c.pdfUrl || c.document || '';
+            const pdfDoc = encodeURI(rawDoc);
+            const certTitle = c.certificateName || `Certificate 0${index + 1}`;
+            const org = c.issuingOrganization ? `${c.issuingOrganization} • Official Verified Copy` : (c.subtitle || 'Official Verified Copy');
+            const certNo = c.certificateNumber ? (c.certificateNumber.toLowerCase().includes('cert') ? c.certificateNumber : `Certificate: ${c.certificateNumber}`) : 'Official Record';
 
-      window.showCertModal = function(id) {
-        const item = certs.find(c => c.id === id);
-        if (!item) return;
-
-        const html = `
-          <div style="text-align: center;">
-            <div style="max-height: 420px; overflow: hidden; border-radius: 6px; margin-bottom: 20px; background: #071522;">
-              <img src="${item.image}" alt="${item.certificateName}" style="width: 100%; height: 100%; object-fit: contain;">
-            </div>
-            <div style="text-align: left; background: #F8FAFC; padding: 18px; border-radius: 6px; border-left: 4px solid #0067B1;">
-              <p style="margin-bottom:6px;"><strong>Issuing Body:</strong> ${item.issuingOrganization}</p>
-              <p style="margin-bottom:6px;"><strong>Registration Number:</strong> ${item.certificateNumber || 'N/A'}</p>
-              <p style="margin-bottom:6px;"><strong>Audit Standard:</strong> Conforms strictly with ISO/EN international directives.</p>
-              <p style="margin-bottom:0;"><strong>Document Reference:</strong> ${item.document || 'Certified Official Record'}</p>
-            </div>
-          </div>
-        `;
-        window.openWinsteelModal(item.certificateName, html);
-      };
+            return `
+              <a href="${pdfDoc}" target="_blank" rel="noopener noreferrer" class="pdf-cert-card reveal is-visible">
+                <div class="pdf-cert-header">
+                  <div class="pdf-cert-icon-wrapper" aria-hidden="true">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                  </div>
+                  <span class="pdf-badge">PDF DOCUMENT</span>
+                </div>
+                <h3 class="pdf-cert-title">${certTitle}</h3>
+                <p class="pdf-cert-org">${org}</p>
+                <div class="pdf-cert-footer">
+                  <span class="pdf-cert-meta">${certNo}</span>
+                  <span class="pdf-cert-action">
+                    <span>Open PDF</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            `;
+          }).join('');
+        }
+      } catch (err) {
+        console.warn('Could not load dynamic certificates, keeping fallback', err);
+      }
     });
   </script>
 </body>

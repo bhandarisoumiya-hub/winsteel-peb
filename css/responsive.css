@@ -233,7 +233,8 @@
   .projects-grid,
   .strengths-grid,
   .news-grid,
-  .certificates-grid {
+  .certificates-grid,
+  .pdf-certs-grid {
     grid-template-columns: 1fr;
   }
 
