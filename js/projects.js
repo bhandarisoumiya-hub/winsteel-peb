@@ -169,7 +169,7 @@ async function initProjectDetail() {
     <!-- Content Breakdown: Overview, Scope, Fabrication & Quality -->
     <div class="project-detail-body">
       <div class="pd-sections">
-        <section class="pd-section">
+        <section class="pd-section" data-step="01">
           <div class="pd-section-head">
             <span class="pd-section-num">01</span>
             <h2 class="pd-section-title">Engineering Execution Overview</h2>
@@ -178,7 +178,7 @@ async function initProjectDetail() {
         </section>
 
         ${project.scopeOfWork ? `
-        <section class="pd-section pd-section-boxed">
+        <section class="pd-section pd-section-boxed" data-step="02">
           <div class="pd-section-head">
             <span class="pd-section-num">02</span>
             <h3 class="pd-section-title">Scope of Engineering &amp; Fabrication</h3>
@@ -188,7 +188,7 @@ async function initProjectDetail() {
         ` : ''}
 
         ${project.materials ? `
-        <section class="pd-section">
+        <section class="pd-section" data-step="03">
           <div class="pd-section-head">
             <span class="pd-section-num">03</span>
             <h3 class="pd-section-title">Fabrication &amp; Quality</h3>
