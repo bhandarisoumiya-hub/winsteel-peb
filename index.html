@@ -896,7 +896,7 @@
             <div class="project-overlay">
               <div class="project-meta-top">
                 <span class="project-category-badge">${pr.category}</span>
-                <span class="project-year-badge">${pr.year}</span>
+                ${pr.year ? `<span class="project-year-badge">${pr.year}</span>` : ''}
               </div>
               <div class="project-client-name">Client: ${pr.client}</div>
               <h3 class="project-card-title"><a href="project-details.html?id=${pr.id}">${pr.title}</a></h3>

@@ -74,7 +74,7 @@ function renderProjectCardHtml(p) {
       <div class="project-overlay">
         <div class="project-meta-top">
           <span class="project-category-badge">${p.category}</span>
-          <span class="project-year-badge">${p.year}</span>
+          ${p.year ? `<span class="project-year-badge">${p.year}</span>` : ''}
         </div>
         <div class="project-client-name">Client: ${p.client}</div>
         <h3 class="project-card-title">
@@ -99,7 +99,11 @@ async function initProjectDetail() {
   if (!container) return;
 
   const urlParams = new URLSearchParams(window.location.search);
-  const projId = urlParams.get('id') || 'proj-1';
+  let projId = urlParams.get('id');
+  if (!projId) {
+    const all = await WinsteelData.getProjects();
+    projId = all.length ? all[0].id : '';
+  }
 
   const project = await WinsteelData.getProjectById(projId);
 
@@ -128,7 +132,7 @@ async function initProjectDetail() {
       <div style="position: absolute; inset:0; background: linear-gradient(180deg, rgba(7,21,34,0.3) 0%, rgba(7,21,34,0.92) 85%); display: flex; flex-direction: column; justify-content: flex-end; padding: 48px 40px; color: #FFF;">
         <div style="display: flex; gap: 12px; margin-bottom: 12px;">
           <span class="project-category-badge" style="font-size:0.85rem;">${project.category}</span>
-          <span class="project-year-badge">${project.year}</span>
+          ${project.year ? `<span class="project-year-badge">${project.year}</span>` : ''}
         </div>
         <h1 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 12px; color: #FFF;">
           ${project.title}
@@ -150,10 +154,12 @@ async function initProjectDetail() {
         <span style="font-size:0.75rem; text-transform:uppercase; color:#64748B; font-weight:700; display:block; margin-bottom:6px;">Sector / Domain</span>
         <strong style="font-size:1.1rem; color:#0F172A;">${project.category}</strong>
       </div>
+      ${project.year ? `
       <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 24px; border-radius: 8px; border-top: 3px solid #0067B1;">
         <span style="font-size:0.75rem; text-transform:uppercase; color:#64748B; font-weight:700; display:block; margin-bottom:6px;">Delivery Year</span>
         <strong style="font-size:1.1rem; color:#0F172A;">${project.year}</strong>
       </div>
+      ` : ''}
       <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 24px; border-radius: 8px; border-top: 3px solid #10B981;">
         <span style="font-size:0.75rem; text-transform:uppercase; color:#64748B; font-weight:700; display:block; margin-bottom:6px;">Execution Status</span>
         <strong style="font-size:1.1rem; color:#0F172A;">${project.status}</strong>
