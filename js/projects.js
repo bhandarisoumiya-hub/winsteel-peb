@@ -166,38 +166,61 @@ async function initProjectDetail() {
       </div>
     </div>
 
-    <!-- Content Breakdown: Overview, Scope, Materials -->
-    <div style="display: grid; grid-template-columns: 1.8fr 1fr; gap: 48px; margin-bottom: 64px;" class="project-detail-body">
-      <div>
-        <h2 style="font-size: 1.85rem; color: #071522; margin-bottom: 18px;">Engineering Execution Overview</h2>
-        <p style="font-size: 1.1rem; line-height: 1.8; color: #334155; margin-bottom: 32px;">
-          ${project.description}
-        </p>
+    <!-- Content Breakdown: Overview, Scope, Fabrication & Quality -->
+    <div class="project-detail-body">
+      <div class="pd-sections">
+        <section class="pd-section">
+          <div class="pd-section-head">
+            <span class="pd-section-num">01</span>
+            <h2 class="pd-section-title">Engineering Execution Overview</h2>
+          </div>
+          <p class="pd-section-text pd-section-lead">${project.description}</p>
+        </section>
 
-        <h3 style="font-size: 1.4rem; color: #004B87; margin-bottom: 14px;">Scope of Engineering & Fabrication</h3>
-        <p style="font-size: 1.05rem; line-height: 1.7; color: #475569; margin-bottom: 32px; background: #F8FAFC; padding: 20px; border-radius: 8px; border-left: 4px solid #004B87;">
-          ${project.scopeOfWork}
-        </p>
+        ${project.scopeOfWork ? `
+        <section class="pd-section pd-section-boxed">
+          <div class="pd-section-head">
+            <span class="pd-section-num">02</span>
+            <h3 class="pd-section-title">Scope of Engineering &amp; Fabrication</h3>
+          </div>
+          <p class="pd-section-text">${project.scopeOfWork}</p>
+        </section>
+        ` : ''}
 
-        <h3 style="font-size: 1.4rem; color: #004B87; margin-bottom: 14px;">Materials & Metallurgy</h3>
-        <p style="font-size: 1.05rem; line-height: 1.7; color: #475569; margin-bottom: 32px;">
-          ${project.materials}
-        </p>
+        ${project.materials ? `
+        <section class="pd-section">
+          <div class="pd-section-head">
+            <span class="pd-section-num">03</span>
+            <h3 class="pd-section-title">Fabrication &amp; Quality</h3>
+          </div>
+          <p class="pd-section-text">${project.materials}</p>
+          <div class="pd-unit-chips">
+            <span class="pd-unit-chip"><strong>Unit 01</strong> Sachin GIDC, Surat</span>
+            <span class="pd-unit-chip"><strong>Unit 02</strong> Bhatpore GIDC, Surat</span>
+            <span class="pd-unit-chip pd-unit-chip-accent">Trial-assembled &amp; inspected before dispatch</span>
+          </div>
+        </section>
+        ` : ''}
       </div>
 
       <!-- Quick Action / Consult Box -->
-      <div>
-        <div style="background: #071522; color: #FFF; border-radius: 8px; padding: 36px 30px; position: sticky; top: 100px;">
+      <aside>
+        <div class="pd-cta-box">
           <div class="eyebrow eyebrow-light">Partner With Winsteel</div>
-          <h3 style="font-size: 1.4rem; margin-bottom: 16px; color: #FFF;">Have a Similar Mega Project?</h3>
-          <p style="font-size: 0.95rem; color: #94A3B8; line-height: 1.7; margin-bottom: 24px;">
-            Consult with our chief technical equipment specialists for preliminary structural sizing, load charts, and custom steel mould engineering.
+          <h3 class="pd-cta-title">Planning a Similar PEB Project?</h3>
+          <p class="pd-cta-text">
+            Share your span, eave height, bay spacing and loading. Our engineers will size the frames and plan fabrication and dispatch from Surat.
           </p>
+          <ul class="pd-cta-list">
+            <li>Primary rigid frames</li>
+            <li>Purlins, girts &amp; secondary framing</li>
+            <li>Roof &amp; wall cladding</li>
+          </ul>
           <a href="contact.html?enquiry=${encodeURIComponent('Project Consultation: ' + project.title)}" class="btn btn-accent btn-lg" style="width: 100%; text-align: center;">
             Contact Project Desk
           </a>
         </div>
-      </div>
+      </aside>
     </div>
 
     <!-- Gallery Grid -->
