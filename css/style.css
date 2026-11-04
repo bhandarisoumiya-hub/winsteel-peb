@@ -2158,29 +2158,72 @@ img {
   text-transform: uppercase;
 }
 
-/* Plant Coordinates / Contact Card */
+/* ============================================================
+   GLOBAL HEADQUARTERS - WORKS & OPERATIONS (FOOTER)
+   Matches executive reference layout: blue dash, gold eyebrow,
+   white heading & stroke icons with gold email accents
+   ============================================================ */
 .footer-contact-card {
-  background: rgba(255, 255, 255, 0.025);
+  background: rgba(6, 17, 30, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 20px 22px;
+  border-radius: 16px;
+  padding: 28px 24px 26px 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  backdrop-filter: blur(10px);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .footer-contact-card:hover {
-  border-color: rgba(56, 189, 248, 0.25);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.footer-hq-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.footer-hq-dash {
+  width: 22px;
+  height: 3px;
+  background: #0088FF;
+  border-radius: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.footer-hq-label {
+  font-family: var(--font-heading);
+  font-size: 0.80rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FFC400;
+  line-height: 1;
+}
+
+.footer-hq-heading {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  position: relative;
 }
 
 .footer-contact-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 22px;
   padding: 0;
   margin: 0;
 }
@@ -2189,58 +2232,385 @@ img {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  color: #94A3B8;
-  font-size: 0.89rem;
   line-height: 1.5;
 }
 
 .footer-contact-icon {
   flex-shrink: 0;
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  background: rgba(0, 103, 177, 0.16);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  color: #38BDF8;
+  width: 24px;
+  height: 24px;
+  color: #FFC400;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 2px;
-  transition: all 0.2s ease;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.footer-contact-item:hover .footer-contact-icon {
-  background: #0067B1;
-  color: #FFFFFF;
-  border-color: #38BDF8;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 103, 177, 0.4);
-}
-
-.footer-contact-label {
+.footer-contact-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #FFC400;
+  color: #FFC400;
   display: block;
+}
+
+.footer-contact-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-contact-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.footer-contact-desc {
+  color: #94A3B8;
+  font-size: 0.915rem;
+  line-height: 1.58;
+}
+
+.footer-contact-desc div {
+  margin-bottom: 3px;
+}
+
+.footer-contact-desc div:last-child {
+  margin-bottom: 0;
+}
+
+.footer-tel-link {
+  color: #FFFFFF !important;
+  font-weight: 600;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.footer-tel-link:hover {
+  color: #FFC400 !important;
+  text-decoration-color: #FFC400 !important;
+}
+
+.footer-contact-note {
+  color: #94A3B8;
+  font-weight: 400;
+}
+
+.footer-mail-gold {
+  color: #FFC400 !important;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-mail-gold:hover {
+  color: #FFE082 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Contact Desk: Call tile ---------- */
+.footer-call-tile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 196, 0, 0.14), rgba(255, 196, 0, 0.04));
+  border: 1px solid rgba(255, 196, 0, 0.28);
+  text-decoration: none !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.footer-call-tile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 196, 0, 0.6);
+  box-shadow: 0 10px 26px rgba(255, 196, 0, 0.14);
+}
+
+.footer-call-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFC400;
+  color: #0B111A;
+  box-shadow: 0 6px 16px rgba(255, 196, 0, 0.3);
+}
+
+.footer-call-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.footer-call-label {
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #CBD5E1;
+}
+
+.footer-call-number {
+  font-family: var(--font-heading);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* ---------- Contact Desk: Email list ---------- */
+.footer-mail-block {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.footer-mail-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFC400;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.footer-mail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-mail-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.footer-mail-tag {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #64748B;
-  margin-bottom: 2px;
+}
+
+.footer-mail-list a {
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Manufacturing Units (compact) ---------- */
+.footer-units {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer-units .footer-hq-eyebrow {
+  margin-bottom: 16px;
+}
+
+.footer-units-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.footer-unit-card {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  padding: 12px;
+  background: rgba(6, 17, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  text-decoration: none !important;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.footer-unit-card:hover {
+  border-color: rgba(255, 196, 0, 0.4);
+  background: rgba(6, 17, 30, 0.85);
+  transform: translateY(-2px);
+}
+
+/* Small map preview: oversized iframe cropped to its centre so Google's controls stay hidden */
+.footer-unit-map {
+  position: relative;
+  flex-shrink: 0;
+  width: 128px;
+  min-height: 96px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1E293B;
+}
+
+.footer-unit-map iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 420px;
+  height: 340px;
+  border: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: grayscale(0.3) brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+.footer-unit-card:hover .footer-unit-map iframe {
+  filter: none;
+}
+
+.footer-unit-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  min-width: 0;
+  padding: 2px 4px 2px 0;
+}
+
+.footer-unit-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-unit-tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0, 136, 255, 0.14);
+  border: 1px solid rgba(0, 136, 255, 0.35);
+  color: #7CC4FF;
+  font-family: var(--font-heading);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-unit-name {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.footer-unit-address {
+  color: #94A3B8;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.footer-unit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #FFC400;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.footer-unit-card:hover .footer-unit-link {
+  color: #FFD54A;
+}
+
+.footer-unit-card:hover .footer-unit-link svg {
+  transform: translate(2px, -2px);
+}
+
+.footer-unit-link svg {
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 900px) {
+  .footer-units-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-unit-map {
+    width: 96px;
+  }
+}
+
+/* Let the footer CTA buttons wrap instead of overflowing on small screens */
+@media (max-width: 768px) {
+  .footer-cta-actions {
+    flex-shrink: 1;
+    width: 100%;
+  }
+}
+
+/* Backward compatibility aliases */
+.footer-contact-label {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+  line-height: 1.35;
+  text-transform: none;
+  letter-spacing: normal;
+  display: block;
 }
 
 .footer-contact-val {
-  color: #E2E8F0;
-  font-weight: 500;
+  color: #94A3B8;
+  font-size: 0.915rem;
+  line-height: 1.58;
+  display: block;
 }
 
 .footer-contact-val a {
   color: #FFFFFF;
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   transition: color 0.2s ease;
 }
 
 .footer-contact-val a:hover {
   color: #FFC400;
+}
+
+.footer-contact-note {
+  color: #94A3B8;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+.footer-contact-val a.footer-contact-mail {
+  color: #FFC400;
+}
+
+.footer-contact-val a.footer-contact-mail:hover {
+  color: #FFFFFF;
 }
 
 /* Ensure inline styled paragraphs & spans in all page footers match cleanly */
@@ -2347,4 +2717,201 @@ img {
 
 .footer-bottom-links a:hover {
   color: #38BDF8;
+}
+/* ============================================================
+   FOOTER – COMPACT SPACING OVERRIDES
+   (prefixed with .site-footer so they win over responsive.css)
+   ============================================================ */
+.site-footer .footer-top {
+  padding-top: 44px;
+  padding-bottom: 32px;
+}
+
+.site-footer .footer-cta-card {
+  margin-bottom: 36px;
+  padding: 22px 28px;
+  gap: 20px;
+}
+
+.site-footer .footer-cta-title {
+  font-size: 1.28rem;
+}
+
+.site-footer .footer-grid {
+  grid-template-columns: 1.45fr 1fr 1.1fr 1.4fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.site-footer .footer-logo {
+  height: 64px;
+  margin-bottom: 14px;
+}
+
+.site-footer .footer-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.site-footer .footer-trust-chips {
+  margin-bottom: 16px;
+}
+
+.site-footer .footer-heading {
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+}
+
+.site-footer .footer-links {
+  gap: 9px;
+}
+
+.site-footer .footer-link-item a {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.site-footer .footer-contact-card {
+  padding: 22px 20px;
+}
+
+.site-footer .footer-hq-heading {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.site-footer .footer-call-tile {
+  padding: 12px 14px;
+}
+
+.site-footer .footer-call-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.site-footer .footer-call-number {
+  font-size: 1.12rem;
+}
+
+.site-footer .footer-mail-block {
+  margin-top: 16px;
+  padding-top: 14px;
+}
+
+.site-footer .footer-mail-head {
+  margin-bottom: 10px;
+}
+
+.site-footer .footer-mail-list {
+  gap: 8px;
+}
+
+.site-footer .footer-units {
+  margin-top: 32px;
+  padding-top: 24px;
+}
+
+.site-footer .footer-units .footer-hq-eyebrow {
+  margin-bottom: 14px;
+}
+
+.site-footer .footer-bottom {
+  padding: 16px 0;
+}
+
+/* Tablet: brand + contact full width, the two link lists side by side */
+@media (max-width: 1024px) {
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 32px;
+  }
+
+  .site-footer .footer-brand,
+  .site-footer .footer-grid > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer .footer-desc {
+    max-width: 640px;
+  }
+
+  /* Contact card: call tile and emails side by side */
+  .site-footer .footer-contact-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    align-items: start;
+  }
+
+  .site-footer .footer-contact-card .footer-hq-eyebrow,
+  .site-footer .footer-contact-card .footer-hq-heading {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer .footer-mail-block {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .site-footer .footer-top {
+    padding-top: 32px;
+    padding-bottom: 24px;
+  }
+
+  .site-footer .footer-cta-card {
+    margin-bottom: 28px;
+    padding: 20px 18px;
+  }
+
+  .site-footer .footer-cta-title {
+    font-size: 1.12rem;
+  }
+
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 18px;
+  }
+
+  .site-footer .footer-logo {
+    height: 54px;
+  }
+
+  .site-footer .footer-heading {
+    font-size: 0.82rem;
+    margin-bottom: 12px;
+  }
+
+  .site-footer .footer-links {
+    gap: 7px;
+  }
+
+  .site-footer .footer-link-item a {
+    font-size: 0.85rem;
+  }
+
+  .site-footer .footer-units {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .site-footer .footer-bottom-container {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer .footer-contact-card {
+    display: flex;
+  }
+
+  .site-footer .footer-mail-block {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  }
 }
