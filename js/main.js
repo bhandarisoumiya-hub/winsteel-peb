@@ -155,7 +155,7 @@ function initQuoteForm() {
           statusEl.innerHTML = `
             <strong>Thank you, ${escapeHtml(name)}!</strong><br>
             Your inquiry regarding "<em>${escapeHtml(subject)}</em>" has been compiled.<br>
-            <span style="font-size:0.85rem; color:#4B5563;">(Static website notice: You can also direct this message straight to our technical desk at <a href="mailto:info@winsteelpeb.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ', ' + phone + ')\n\n' + message)}" style="text-decoration:underline; font-weight:700;">info@winsteelpeb.com</a>)</span>
+            <span style="font-size:0.85rem; color:#4B5563;">(Static website notice: You can also direct this message straight to our technical desk at <a href="mailto:info@winsteelpeb.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ', ' + phone + ')\n\n' + message)}" style="text-decoration:underline; font-weight:700;">info@winsteelpeb.in</a>)</span>
           `;
           statusEl.style.display = 'block';
         }
