@@ -794,6 +794,41 @@
       "status": "Active"
     }
   ],
+  "sops": [
+    {
+      "id": "sop-1",
+      "title": "PEB",
+      "subtitle": "Winsteel Engineering Works Pvt. Ltd. • Pre-Engineered Building Standards",
+      "organization": "Winsteel Engineering Works Pvt. Ltd.",
+      "category": "Official SOP Manual",
+      "fileType": "SOP Document",
+      "fileUrl": "assets/SOP/SOP_FOR_PEB-2026_1.pptx",
+      "displayOrder": 1,
+      "status": "Active"
+    },
+    {
+      "id": "sop-2",
+      "title": "SOP BRIDGE Formwork",
+      "subtitle": "Winsteel Engineering Works Pvt. Ltd. • Bridge Formwork Guidelines",
+      "organization": "Winsteel Engineering Works Pvt. Ltd.",
+      "category": "Official SOP Manual",
+      "fileType": "SOP Document",
+      "fileUrl": "assets/SOP/SOP_FOR_BRIDGE_FORMWORK_1.pptx",
+      "displayOrder": 2,
+      "status": "Active"
+    },
+    {
+      "id": "sop-3",
+      "title": "WINSTEEL LEGACY SINCE 1972",
+      "subtitle": "Winsteel Engineering Works Pvt. Ltd. • Corporate Heritage & Standards",
+      "organization": "Winsteel Engineering Works Pvt. Ltd.",
+      "category": "Official SOP Manual",
+      "fileType": "SOP Document",
+      "fileUrl": "assets/SOP/WINSTEEL_LEGACY-SINCE_1972_1.pptx",
+      "displayOrder": 3,
+      "status": "Active"
+    }
+  ],
   "clients": [
     {
       "id": "cli-1",

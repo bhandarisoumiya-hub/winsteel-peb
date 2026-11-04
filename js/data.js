@@ -7,7 +7,7 @@ const WinsteelData = (function () {
   let cachedData = null;
   const LOCAL_STORAGE_KEY = 'winsteel_db_data';
   const DATA_VERSION_KEY = 'winsteel_data_version';
-  const CURRENT_VERSION = 'v3.9_client_projects';
+  const CURRENT_VERSION = 'v4.0_sops_ui';
 
   // Primary loader: checks local storage for admin edits, then cachedData, then data/winsteel.json
   async function loadData() {
@@ -96,6 +96,11 @@ const WinsteelData = (function () {
     return data && data.certificates ? data.certificates : [];
   }
 
+  async function getSops() {
+    const data = await loadData();
+    return data && data.sops ? data.sops : [];
+  }
+
   async function getClients() {
     const data = await loadData();
     return data && data.clients ? data.clients : [];
@@ -146,6 +151,7 @@ const WinsteelData = (function () {
     getFacilities,
     getStrengths,
     getCertificates,
+    getSops,
     getClients,
     getTestimonials,
     getNews,

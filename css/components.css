@@ -1102,6 +1102,138 @@
   transform: translate(2px, -2px);
 }
 
+/* 8.1 STANDARD OPERATING PROCEDURES (SOPS) GRID & CARDS */
+.sop-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.sop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.sop-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 30px 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+
+.sop-card:hover {
+  transform: translateY(-5px);
+  border-color: #0067B1;
+  box-shadow: 0 16px 32px -4px rgba(0, 103, 177, 0.14), 0 4px 8px -2px rgba(0, 0, 0, 0.05);
+}
+
+.sop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sop-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: #EFF6FF;
+  border: 1px solid #DBEAFE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0067B1;
+  transition: all 0.25s ease;
+}
+
+.sop-card:hover .sop-icon-wrapper {
+  transform: scale(1.08);
+  background: #0067B1;
+  color: #FFFFFF;
+  border-color: #0067B1;
+}
+
+.sop-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #0067B1;
+  background: #E0F2FE;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sop-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #071522;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.sop-card:hover .sop-title {
+  color: #0067B1;
+}
+
+.sop-org {
+  font-size: 0.88rem;
+  color: #64748B;
+  margin-bottom: 22px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.sop-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px dashed #E2E8F0;
+  margin-top: auto;
+}
+
+.sop-meta {
+  font-size: 0.82rem;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.sop-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0067B1;
+  transition: all 0.2s ease;
+}
+
+.sop-card:hover .sop-action {
+  color: #004D85;
+}
+
+.sop-action svg {
+  transition: transform 0.2s ease;
+}
+
+.sop-card:hover .sop-action svg {
+  transform: translate(2px, -2px);
+}
+
 .certificates-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
