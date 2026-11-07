@@ -1659,6 +1659,261 @@ textarea.form-control {
   border: 0;
 }
 
+/* Manufacturing Unit Cards – dark sections (e.g. PEB enquiry block) */
+.dark-units {
+  margin-top: 8px;
+}
+
+.dark-units-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  margin-bottom: 14px;
+}
+
+.dark-units-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(148, 163, 184, 0.35), transparent);
+}
+
+.dark-units-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.dark-unit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 18px;
+  background: linear-gradient(160deg, rgba(0, 103, 177, 0.14) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 14px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.dark-unit::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 40px;
+  background: #FFC400;
+  transition: width 0.4s ease;
+}
+
+.dark-unit:hover,
+.dark-unit:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(255, 196, 0, 0.45);
+  background: linear-gradient(160deg, rgba(0, 103, 177, 0.24) 0%, rgba(255, 255, 255, 0.03) 100%);
+}
+
+.dark-unit:hover::before,
+.dark-unit:focus-visible::before {
+  width: 100%;
+}
+
+.dark-unit-num {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.dark-unit-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #FFC400;
+}
+
+.dark-unit-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: #FFF;
+  margin: 6px 0 6px;
+}
+
+.dark-unit-address {
+  flex: 1;
+  color: #94A3B8;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.dark-unit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.84rem;
+  color: #FFF;
+}
+
+.dark-unit-link svg {
+  color: #FFC400;
+  transition: transform 0.25s ease;
+}
+
+.dark-unit:hover .dark-unit-link svg {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 600px) {
+  .dark-units-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contact Page – Manufacturing Unit Cards (minimal) */
+.contact-units {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-unit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px 22px;
+  background: #FFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-unit::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 3px;
+  width: 48px;
+  background: #FFC400;
+  transition: width 0.4s ease;
+}
+
+.contact-unit:hover,
+.contact-unit:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(0, 103, 177, 0.35);
+  box-shadow: 0 12px 30px rgba(7, 21, 34, 0.08);
+}
+
+.contact-unit:hover::before,
+.contact-unit:focus-visible::before {
+  width: 100%;
+}
+
+.contact-unit-num {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  color: #F1F5F9;
+  pointer-events: none;
+}
+
+.contact-unit-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 103, 177, 0.08);
+  color: var(--color-primary-blue);
+  margin-bottom: 16px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contact-unit:hover .contact-unit-icon {
+  background: var(--color-primary-blue);
+  color: #FFF;
+}
+
+.contact-unit-tag {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary-blue);
+}
+
+.contact-unit-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #071522;
+  margin: 4px 0 8px;
+}
+
+.contact-unit-address {
+  flex: 1;
+  color: #64748B;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.contact-unit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: #071522;
+}
+
+.contact-unit-link svg {
+  color: #FFC400;
+  transition: transform 0.25s ease;
+}
+
+.contact-unit:hover .contact-unit-link svg {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 600px) {
+  .contact-units {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ============================================================
    FAQ ACCORDION COMPONENT
    ============================================================ */
