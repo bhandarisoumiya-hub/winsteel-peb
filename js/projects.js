@@ -48,7 +48,7 @@ async function initProjectsPortfolio() {
     });
 
     if (countBadge) {
-      countBadge.textContent = `${filtered.length} Landmark Projects`;
+      countBadge.textContent = `${filtered.length} Landmark Project${filtered.length === 1 ? "" : "s"}`;
     }
 
     if (!filtered.length) {

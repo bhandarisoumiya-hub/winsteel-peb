@@ -15,10 +15,7 @@
     ],
     "projects": [
       "All",
-      "Infrastructure EPC",
-      "Highways & Bridges",
-      "Railways",
-      "Tunnels & Bridges"
+      "Infrastructure EPC"
     ]
   },
   "settings": {
@@ -394,116 +391,6 @@
   ],
   "projects": [
     {
-      "id": "proj-ncc",
-      "title": "NCC Limited",
-      "slug": "ncc-limited",
-      "category": "Infrastructure EPC",
-      "location": "Hyderabad, Telangana (Client HQ)",
-      "year": "",
-      "client": "NCC Limited",
-      "shortDescription": "Pre-engineered building (PEB) work for the Hyderabad-based infrastructure company founded in 1978 as Nagarjuna Construction Company.",
-      "description": "NCC Limited, the Hyderabad-based infrastructure company founded in 1978 as Nagarjuna Construction Company, is among the clients Winsteel Engineering Works has served with pre-engineered building (PEB) work. A PEB is designed and fabricated in the factory, then bolted together on site, which reduces site welding and keeps erection fast and predictable.",
-      "coverImage": "assets/images/Turnkey Pre-Engineered Steel Buildings (PEB).png",
-      "gallery": [
-        "assets/images/Turnkey Pre-Engineered Steel Buildings (PEB).png",
-        "assets/images/Overhead Crane Lifting Steel Bundles (1).png",
-        "assets/images/Steel Fabrication Quality Inspection .png"
-      ],
-      "scopeOfWork": "Our PEB scope covers the full steel package: primary rigid frames, secondary members such as purlins and girts, and roof and wall sheeting. We engineer, fabricate and supply each building from Surat, sized to the project’s span, height and loading.",
-      "materials": "Every frame is fabricated at our units in Sachin GIDC and Bhatpore GIDC, Surat. We trial-assemble and inspect the steel there, so bolted connections fit correctly when it reaches site.",
-      "status": "Active",
-      "featured": true,
-      "displayOrder": 1
-    },
-    {
-      "id": "proj-isc",
-      "title": "ISC Projects Private Limited",
-      "slug": "isc-projects-limited",
-      "category": "Railways",
-      "location": "Pune, Maharashtra (Client HQ)",
-      "year": "",
-      "client": "ISC Projects Private Limited",
-      "shortDescription": "PEB work for a Pune-registered contractor building railway tracks and sidings, bridges, flyovers and roads.",
-      "description": "ISC Projects Private Limited is a Pune-registered infrastructure contractor, incorporated in 2008, with work across railway tracks and sidings, bridges, flyovers and roads. Winsteel Engineering Works counts ISC Projects among its pre-engineered building (PEB) clients. With a PEB, member sizes and connections are settled before fabrication begins, so the steel arrives on site ready to erect.",
-      "coverImage": "assets/images/Clear-Span Structures.png",
-      "gallery": [
-        "assets/images/Clear-Span Structures.png",
-        "assets/images/Precision Steel Beam Inspection.png",
-        "assets/images/PRIMO CNC Steel Fabrication Line.png"
-      ],
-      "scopeOfWork": "Our PEB work is built around the project’s layout, clear spans and site conditions. We engineer, fabricate and supply the primary frames, purlins, girts and roof and wall cladding as one coordinated package from Surat.",
-      "materials": "All PEB steel is produced at our manufacturing units in Sachin GIDC and Bhatpore GIDC, Surat. Each package is trial-assembled and quality-inspected before dispatch, giving the erection team a clean, verified fit on site.",
-      "status": "Active",
-      "featured": true,
-      "displayOrder": 2
-    },
-    {
-      "id": "proj-gril",
-      "title": "G R Infraprojects Limited (GRIL)",
-      "slug": "gr-infraprojects-limited",
-      "category": "Highways & Bridges",
-      "location": "Udaipur, Rajasthan (Client HQ)",
-      "year": "",
-      "client": "G R Infraprojects Limited (GRIL)",
-      "shortDescription": "PEB steel packages for an Udaipur-headquartered EPC company working across highways, bridges, railways, metros and tunnels.",
-      "description": "G R Infraprojects Limited (GRIL) is an infrastructure EPC company with its head office in Udaipur. Established in 1995 as G. R. Agarwal Builders and Developers Limited, it works across highways, bridges, airports, railways, metros, tunnels and power transmission. Winsteel Engineering Works counts GRIL among its pre-engineered building (PEB) clients. On EPC programmes, PEB helps keep steel supply and erection planned around the main construction schedule.",
-      "coverImage": "assets/images/Modern Steel Warehouse Complex new.png",
-      "gallery": [
-        "assets/images/Modern Steel Warehouse Complex new.png",
-        "assets/images/Automated Steel Beam Welding Line.png",
-        "assets/images/Steel Fabrication Quality Inspection .png"
-      ],
-      "scopeOfWork": "We deliver PEB as a single steel package, engineered to the project’s size, loading and site requirements. From our Surat facilities, we fabricate and supply the rigid frames, secondary framing and roof and wall cladding.",
-      "materials": "Fabrication takes place at our units in Sachin GIDC and Bhatpore GIDC, Surat. The structure is trial-assembled and quality-inspected in the workshop, so it reaches site already checked for fit.",
-      "status": "Active",
-      "featured": true,
-      "displayOrder": 3
-    },
-    {
-      "id": "proj-kpil",
-      "title": "Kalpataru Projects International Limited (KPIL)",
-      "slug": "kalpataru-projects-international-limited",
-      "category": "Infrastructure EPC",
-      "location": "Mumbai, Maharashtra (Client HQ)",
-      "year": "",
-      "client": "Kalpataru Projects International Limited (KPIL)",
-      "shortDescription": "PEB work for a Mumbai-headquartered EPC company, engineered around span, eave height, bay spacing and loads.",
-      "description": "Kalpataru Projects International Limited (KPIL) is a Mumbai-headquartered EPC company founded in 1981, known as Kalpataru Power Transmission Limited until 2023. It works in India and abroad across power transmission, buildings and factories, water, railways, oil and gas, and urban infrastructure. Winsteel Engineering Works has delivered PEB work for KPIL. A good PEB design starts with how the building will be used.",
-      "coverImage": "assets/images/Modern Multi-Level Steel Industrial Plant.png",
-      "gallery": [
-        "assets/images/Modern Multi-Level Steel Industrial Plant.png",
-        "assets/images/Automated Steel Beam Welding Line.png",
-        "assets/images/Precision Steel Beam Inspection.png"
-      ],
-      "scopeOfWork": "The key inputs are span, eave height, bay spacing, wind loads and, in industrial buildings, any cranes or mezzanines. We engineer the structure around these inputs, then fabricate and supply the steel from Surat.",
-      "materials": "Those inputs affect the size and connections of each member, so the finished steel must match the design. At Sachin GIDC and Bhatpore GIDC, Surat, we trial-assemble and inspect it against the drawings before dispatch.",
-      "status": "Active",
-      "featured": false,
-      "displayOrder": 4
-    },
-    {
-      "id": "proj-necl",
-      "title": "Navayuga Engineering Company Limited",
-      "slug": "navayuga-engineering-company-limited",
-      "category": "Tunnels & Bridges",
-      "location": "Hyderabad, Telangana (Client HQ)",
-      "year": "",
-      "client": "Navayuga Engineering Company Limited",
-      "shortDescription": "PEB work for a Hyderabad-based ports and marine contractor, with surface protection planned for coastal exposure.",
-      "description": "Navayuga Engineering Company Limited, incorporated in 1986 and based in Hyderabad, works across ports, marine structures, special foundations, irrigation, power and roads. Winsteel Engineering Works has delivered pre-engineered building (PEB) work for Navayuga. On coastal and port sites, the choice of steel protection matters as much as frame design, because salt-laden air speeds up corrosion.",
-      "coverImage": "assets/images/Logistics Buildings.png",
-      "gallery": [
-        "assets/images/Logistics Buildings.png",
-        "assets/images/Industrial Steel Fabrication Welding Scene.png",
-        "assets/images/Steel Fabrication Quality Inspection .png"
-      ],
-      "scopeOfWork": "A PEB’s exposure conditions should be defined alongside its loads and spans. We engineer, fabricate and supply PEB steel from Surat, taking site exposure into account when planning the surface protection for frames and secondary members.",
-      "materials": "Correcting poor fit on site often means cutting or grinding, which damages protective coatings. Trial assembly and inspection at our units in Sachin GIDC and Bhatpore GIDC, Surat, help catch those problems before dispatch.",
-      "status": "Active",
-      "featured": false,
-      "displayOrder": 5
-    },
-    {
       "id": "proj-greencem",
       "title": "Greencem Infra Private Limited",
       "slug": "greencem-infra-private-limited",
@@ -522,7 +409,7 @@
       "scopeOfWork": "A bay is the space between two main steel frames. If you may need more bays later, the end frames and connections can be designed for them from the start. We engineer, fabricate and supply PEB steel from Surat.",
       "materials": "New bays have to connect neatly to the original building, so the first build needs to be accurate. We fabricate, trial-assemble and inspect the steel at our units in Sachin GIDC and Bhatpore GIDC, Surat.",
       "status": "Active",
-      "featured": false,
+      "featured": true,
       "displayOrder": 6
     }
   ],
