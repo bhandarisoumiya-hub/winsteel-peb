@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://winsteel.vercel.app/facilities.html">
   <link rel="icon" type="image/svg+xml" href="assets/logo/winsteel-logo.svg">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/components.css?v=4.5">
+  <link rel="stylesheet" href="css/components.css?v=4.6">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -320,12 +320,12 @@
 
       container.innerHTML = facilities.map((fac, idx) => `
         <article class="facility-card reveal is-visible">
-          <div class="facility-media">
+          <div class="facility-media${Array.isArray(fac.images) && fac.images.length > 1 ? ' has-slider' : ''}">
             ${Array.isArray(fac.images) && fac.images.length > 1 ? `
-              <div class="facility-slider" data-interval="4000">
+              <div class="facility-slider" data-interval="6000">
                 <div class="facility-slider-track">
                   ${fac.images.map((src, i) => `
-                    <img src="${src}" alt="${fac.title} - image ${i + 1}" class="facility-slide${i === 0 ? ' is-active' : ''}" loading="${i === 0 ? 'eager' : 'lazy'}">
+                    <img src="${src}" alt="${fac.title} - image ${i + 1}" class="facility-slide${i === 0 ? ' is-active' : ''}" style="object-fit: contain; transform: none;" loading="${i === 0 ? 'eager' : 'lazy'}">
                   `).join('')}
                 </div>
                 <button type="button" class="facility-slider-btn prev" aria-label="Previous image">&#10094;</button>

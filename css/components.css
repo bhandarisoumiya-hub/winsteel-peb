@@ -545,9 +545,17 @@
 }
 
 /* Facility image slider (auto-sliding) */
+.facility-media.has-slider {
+  display: flex;
+  align-items: center;
+  min-height: 0;
+  background: #F1F5F9;
+}
+
 .facility-slider {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #F1F5F9;
 }
