@@ -195,7 +195,7 @@ async function initProjectDetail() {
           </div>
           <p class="pd-section-text">${project.materials}</p>
           <div class="pd-unit-chips">
-            <span class="pd-unit-chip"><strong>Unit 01</strong> Sachin GIDC, Surat</span>
+            <span class="pd-unit-chip"><strong>Unit 01 · Head Office</strong> Sachin GIDC, Surat</span>
             <span class="pd-unit-chip"><strong>Unit 02</strong> Bhatpore GIDC, Surat</span>
             <span class="pd-unit-chip pd-unit-chip-accent">Trial-assembled &amp; inspected before dispatch</span>
           </div>
