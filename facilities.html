@@ -321,7 +321,20 @@
       container.innerHTML = facilities.map((fac, idx) => `
         <article class="facility-card reveal is-visible">
           <div class="facility-media">
-            ${fac.image && fac.image.trim() !== '' ? `
+            ${Array.isArray(fac.images) && fac.images.length > 1 ? `
+              <div class="facility-slider" data-interval="4000">
+                <div class="facility-slider-track">
+                  ${fac.images.map((src, i) => `
+                    <img src="${src}" alt="${fac.title} - image ${i + 1}" class="facility-slide${i === 0 ? ' is-active' : ''}" loading="${i === 0 ? 'eager' : 'lazy'}">
+                  `).join('')}
+                </div>
+                <button type="button" class="facility-slider-btn prev" aria-label="Previous image">&#10094;</button>
+                <button type="button" class="facility-slider-btn next" aria-label="Next image">&#10095;</button>
+                <div class="facility-slider-dots">
+                  ${fac.images.map((_, i) => `<button type="button" class="facility-slider-dot${i === 0 ? ' is-active' : ''}" aria-label="Go to image ${i + 1}"></button>`).join('')}
+                </div>
+              </div>
+            ` : fac.image && fac.image.trim() !== '' ? `
               <img src="${fac.image}" alt="${fac.title}" class="facility-img" loading="lazy" onerror="if(!this.dataset.tried){this.dataset.tried='1'; this.src=encodeURI('${fac.image}');}">
             ` : `
               <div class="facility-img-blank">
@@ -372,6 +385,44 @@
           </div>
         </article>
       `).join('');
+
+      container.querySelectorAll('.facility-slider').forEach(slider => {
+        const slides = slider.querySelectorAll('.facility-slide');
+        const dots = slider.querySelectorAll('.facility-slider-dot');
+        const delay = parseInt(slider.dataset.interval, 10) || 4000;
+        let current = 0;
+        let timer = null;
+
+        const goTo = (n) => {
+          slides[current].classList.remove('is-active');
+          dots[current].classList.remove('is-active');
+          current = (n + slides.length) % slides.length;
+          slides[current].classList.add('is-active');
+          dots[current].classList.add('is-active');
+        };
+        const start = () => { stop(); timer = setInterval(() => goTo(current + 1), delay); };
+        const stop = () => { if (timer) clearInterval(timer); timer = null; };
+
+        slider.querySelector('.prev').addEventListener('click', () => { goTo(current - 1); start(); });
+        slider.querySelector('.next').addEventListener('click', () => { goTo(current + 1); start(); });
+        dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); start(); }));
+        slider.addEventListener('mouseenter', stop);
+        slider.addEventListener('mouseleave', start);
+
+        // Touch swipe support
+        let touchX = null;
+        slider.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; stop(); }, { passive: true });
+        slider.addEventListener('touchend', e => {
+          if (touchX !== null) {
+            const dx = e.changedTouches[0].clientX - touchX;
+            if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+          }
+          touchX = null;
+          start();
+        });
+
+        start();
+      });
 
       if (typeof initScrollReveal === 'function') {
         initScrollReveal();

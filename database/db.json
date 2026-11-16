@@ -573,6 +573,13 @@
       "title": "Six Premises. One Integrated Manufacturing Network.",
       "description": "Our manufacturing operations are distributed across five premises, providing substantial production and storage space for large-scale engineering requirements. With approximately 324,000 sq. ft. of total plot area and 237,000 sq. ft. of covered area, the infrastructure is designed to support fabrication, material handling, processing and assembly activities under one coordinated manufacturing ecosystem.",
       "image": "assets/images/Winsteel Integrated Manufacturing Network new image.png",
+      "images": [
+        "assets/Slider/S1.jpeg",
+        "assets/Slider/S2.jpeg",
+        "assets/Slider/S3.jpeg",
+        "assets/Slider/S4.jpeg",
+        "assets/Slider/S5.jpeg"
+      ],
       "capacity": "324,000 Sq. Ft.",
       "specLabel1": "TOTAL PLOT AREA",
       "area": "237,000 Sq. Ft.",
